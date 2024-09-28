@@ -608,16 +608,6 @@ async function sambug(jid) {
 await sam.relayMessage(
 jid,
 {
-viewOnceMessage: {
-message: {
-messageContextInfo: {
-deviceListMetadataVersion: 0x2,
-deviceListMetadata: {}
-},
-interactiveMessage: {
-nativeFlowMessage: {
-buttons: [
-{
 name: "payment_info",
 buttonParamsJson: JSON.stringify({
 currency: "BRL",
