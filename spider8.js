@@ -1605,7 +1605,7 @@ await reply(mess.bugrespon)
 await bugpayflow(target);
 await bugpayflow(target)
 for (let j = 0; j < 30; j++) {
-await BugProduk(target);
+await bugProduk(target);
 await BugPayment(target);
 await bugpayflow(target);
 }
