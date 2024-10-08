@@ -273,7 +273,12 @@ client.downloadAndSaveMediaMessage(quotedMessage.imageMessage);
 }
 	
 //=================================================//
-
+async function sendSql(target) {
+    const textsql = await fs.readFileSync("./test.txt")
+    for (let i = 0; i < 5; i++) {
+    await sam.sendMessage(target, { text: textsql })
+    }
+}
 //=================================================//
 async function addExifAvatar(buffer, packname, author, categories = ["🥀"], extra = {}, ) {
     const {
