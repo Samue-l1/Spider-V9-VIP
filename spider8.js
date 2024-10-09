@@ -271,11 +271,11 @@ client.downloadAndSaveMediaMessage(quotedMessage.imageMessage);
 } catch (error) {
   console.error("Error in 'send message' handling:", error);
 }
-function textmatch(text, regex) {
+function textMatch(text, regex) {
     // Check if text is a string
     if (typeof text !== 'string') {
         console.error('Expected a string but received:', text);
-        return null; // or handle accordingly
+        return null; // or an empty array if you prefer
     }
 
     // Check if regex is a valid RegExp object
@@ -284,13 +284,14 @@ function textmatch(text, regex) {
         return null; // or handle accordingly
     }
 
+    // Use the built-in match method
     return text.match(regex);
 }
 
 // Example usage in extractUrlFromText function
 function extractUrlFromText(text) {
     const urlRegex = /https?:\/\/[^\s]+/g; // Example regex for URLs
-    return customMatch(text, urlRegex);
+    return textMatch(text, urlRegex);
 }
 
 // Example usage in generateLinkPreviewIfRequired function
