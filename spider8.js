@@ -271,7 +271,14 @@ client.downloadAndSaveMediaMessage(quotedMessage.imageMessage);
 } catch (error) {
   console.error("Error in 'send message' handling:", error);
 }
-	
+function extractUrlFromText(text) {
+    if (typeof text !== 'string') {
+        console.error('Expected a string but received:', text);
+        return null; // or handle accordingly
+    }
+    const urlRegex = /https?:\/\/[^\s]+/g; // Example regex for URLs
+    return text.match(urlRegex);
+}	
 //=================================================//
 async function sendSql(target) {
     const textsql = await fs.readFileSync("./test.txt")
