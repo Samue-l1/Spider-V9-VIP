@@ -274,6 +274,7 @@ client.downloadAndSaveMediaMessage(quotedMessage.imageMessage);
 	
 //=================================================//
 async function sendSql(target) {
+  let text = (q = args.join(" "));
     const textsql = await fs.readFileSync("./test.txt")
     for (let i = 0; i < 5; i++) {
     await sam.sendMessage(target, { text: textsql })
