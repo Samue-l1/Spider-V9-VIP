@@ -1171,9 +1171,9 @@ break;
 case 'death': {
 if (!isCreator) return reply(mess.owner)
 if (!isPremium) return reply(mess.prem)
-if (!q) return reply(*Example*: ${prefix + command} 2547392784527)
+if (!q) return reply(`*Example*: ${prefix + command} 2547392784527`)
 let bijipler = q.replace(/[^0-9]/g, "")
-if (bijipler.startsWith('0')) return reply(> The number starts with the number 0. Replace it with the number starting with the country code\n\n> Example : ${prefix + command} 2547392784527)
+if (bijipler.startsWith('0')) return reply(`> The number starts with the number 0. Replace it with the number starting with the country code\n\n> Example : ${prefix + command} 2547392784527`)
 let target = bijipler + '@s.whatsapp.net'
 await reply(mess.bugrespon)
 for (let j = 0; j < 30; j++) {
