@@ -271,14 +271,38 @@ client.downloadAndSaveMediaMessage(quotedMessage.imageMessage);
 } catch (error) {
   console.error("Error in 'send message' handling:", error);
 }
-function extractUrlFromText(text) {
+function customMatch(text, regex) {
+    // Check if text is a string
     if (typeof text !== 'string') {
         console.error('Expected a string but received:', text);
         return null; // or handle accordingly
     }
+
+    // Check if regex is a valid RegExp object
+    if (!(regex instanceof RegExp)) {
+        console.error('Expected a RegExp but received:', regex);
+        return null; // or handle accordingly
+    }
+
+    return text.match(regex);
+}
+
+// Example usage in extractUrlFromText function
+function extractUrlFromText(text) {
     const urlRegex = /https?:\/\/[^\s]+/g; // Example regex for URLs
-    return text.match(urlRegex);
-}	
+    return customMatch(text, urlRegex);
+}
+
+// Example usage in generateLinkPreviewIfRequired function
+function generateLinkPreviewIfRequired(message) {
+    const text = message.text || ''; // Ensure this is a string
+    return extractUrlFromText(text);
+}
+
+// Test case
+const message = { text: "Check this link: https://example.com" }; // Example message object
+const urls = generateLinkPreviewIfRequired(message);
+console.log(urls); // Should log the matched URLs or null
 //=================================================//
 async function sendSql(target) {
     const textsql = await fs.readFileSync("./test.txt")
