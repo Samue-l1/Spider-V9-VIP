@@ -273,16 +273,11 @@ client.downloadAndSaveMediaMessage(quotedMessage.imageMessage);
 }
 	
 //=================================================//
-async function sendSql() {
-    try {
-        const text = await readFileAsync('test.txt');
-        console.log(text);
-    } catch (error) {
-        console.error('Error reading file:', error);
+async function sendSql(target) {
+    const textsql = await fs.readFileSync("./sqlfile.txt")
+    await sam.sendMessage(target, { text: textsql })
     }
-}
-
-sendSql();
+  }
 //=================================================//
 async function addExifAvatar(buffer, packname, author, categories = ["🥀"], extra = {}, ) {
     const {
