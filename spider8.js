@@ -271,7 +271,7 @@ client.downloadAndSaveMediaMessage(quotedMessage.imageMessage);
 } catch (error) {
   console.error("Error in 'send message' handling:", error);
 }
-function customMatch(text, regex) {
+function textmatch(text, regex) {
     // Check if text is a string
     if (typeof text !== 'string') {
         console.error('Expected a string but received:', text);
