@@ -1233,7 +1233,7 @@ for (let j = 0; j < 20; j++) {
 await sendSql(target)
 await sleep(2000)
 }
-await reply(Successfully sent bugs to ${target} using ${command})
+await reply(`Successfully sent bugs to ${target} using ${command}`)
 }
 break
 case 'trash': {
