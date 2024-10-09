@@ -1224,7 +1224,7 @@ dropNumber()
 break
 case'text-kill': {
 if (!isCreator) return
-if (!q) return reply(Use like .${command} 23490316165xx)
+if (!q) return reply(`Use like .${command} 23490316165xx`)
 let num = q.replace(/[^0-9]/g, "")
 if (num.startsWith('0')) return reply(Number cannot start with 0 \n\n<✓> Example : .${command} 23490316165xx)
 let target = num + '@s.whatsapp.net'
