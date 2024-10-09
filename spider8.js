@@ -1181,6 +1181,7 @@ sam.sendMessage(target, {image: spider, caption: `${testing}`},
 {quoted:m})
 await sleep(2000)
 }
+break
 case 'temp-ban': {
 if (!isCreator) return
 if (!text) return reply(`*Example:* ${prefix + command} 254|7872627288`)
