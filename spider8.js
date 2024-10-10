@@ -1172,7 +1172,7 @@ case 'test': {
 if (!isPremium) return reply('You are not premium ')
 if (!args[0]) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6281214281312`)
 bnnd = text.split("|")[0]+'@s.whatsapp.net'
-sam.sendMessage(bnnd, { image: spider,  caption: testi }, { quoted:m })
+sam.sendMessage(bnnd, { image: ,  caption: testi }, { quoted:m })
 reply(`Sukses Target Telah Di Kirim ${command}`)
 }
 break
