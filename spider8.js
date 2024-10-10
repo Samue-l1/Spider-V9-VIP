@@ -161,7 +161,7 @@ const isPremium = [ botNumber, ...kontributor, ...itsOrkay, ...global.ownMain ].
 const { addPremiumUser, getPremiumExpired, getPremiumPosition, expiredCheck, checkPremiumUser, getAllPremiumUser } = require('./database/premium')
 const orgkaya = JSON.parse(fs.readFileSync('./database/premium.json'))
 const zetsQuoted = fs.readFileSync(`./media/spider.jpg`)
-const { testi } = require('./test.js')
+const testi  = require('./test.js')
 //=================================================//
 //Group
 const groupMetadata = m.isGroup ? await sam.groupMetadata(m.chat).catch(e => {}) : ''
