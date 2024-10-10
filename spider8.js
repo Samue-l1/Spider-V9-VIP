@@ -162,7 +162,7 @@ const { addPremiumUser, getPremiumExpired, getPremiumPosition, expiredCheck, che
 const orgkaya = JSON.parse(fs.readFileSync('./database/premium.json'))
 const zetsQuoted = fs.readFileSync(`./media/spider.jpg`)
 const testi  = fs.readFileSync(`./test.txt`)
-const {make} = require('./test.js')
+const { make } = require('./test.js')
 
 //=================================================//
 //Group
