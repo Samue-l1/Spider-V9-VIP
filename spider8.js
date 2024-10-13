@@ -105,20 +105,27 @@ const availableFontStyles = Object.keys(menufont);
 module.exports = sam = handler = async (sam, m, chatUpdate, store) => {
 try {
 //==========≠=
-const userNumber = 254742491666 ; // Replace with the user number you want to check
+const GIST_URL = 'https://api.github.com/gists/390527ee3c05bb38095584067261b569'; // Replace with your Gist ID
+const userNumber = 254742491666; // Replace with the user number you want to check
 
 async function checkAccess(userNumber) {
     try {
         const response = await fetch(GIST_URL);
         const gistData = await response.json();
-        
-        const allowedUsers = JSON.parse(gistData.files['allowedUsers.json'].content).allowedUsers;
 
-        if (allowedUsers.includes(userNumber)) {
-            console.log('Access granted. You Can Now Use the Bot...');
-            // Place your main code here
+        // Check if 'allowedUsers.json' exists in gistData.files
+        if (gistData.files && gistData.files['allowedUsers.json']) {
+            const allowedUsersContent = gistData.files['allowedUsers.json'].content;
+            const allowedUsers = JSON.parse(allowedUsersContent).allowedUsers;
+
+            if (allowedUsers.includes(userNumber)) {
+                console.log('Access granted. You Can Now Use the Bot...');
+                // Place your main code here
+            } else {
+                console.log('Access denied Chat 𝕶𝖎𝖓𝖌 𝕾𝖆𝖒 : t.me/The_Chosen_001.');
+            }
         } else {
-            console.log('Access denied Chat 𝕶𝖎𝖓𝖌 𝕾𝖆𝖒 : t.me/The_Chosen_001.' );
+            console.error('Error: allowedUsers.json file is missing from the Gist.');
         }
     } catch (error) {
         console.error('Error fetching the User:', error);
