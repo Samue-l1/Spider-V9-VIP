@@ -122,13 +122,15 @@ async function checkAccess(userNumber) {
                 console.log('Access granted. You Can Now Use the Bot...');
                 // Place your main code here
             } else {
-                console.log('Access denied Chat 𝕶𝖎𝖓𝖌 𝕾𝖆𝖒 : t.me/The_Chosen_001.');
+                throw new Error('Access denied: User number not allowed.');
             }
         } else {
-            console.error('Error: allowedUsers.json file is missing from the Gist.');
+            throw new Error('Error: allowedUsers.json file is missing from the Gist.');
         }
     } catch (error) {
-        console.error('Error fetching the User:', error);
+        console.error(error.message);
+        // Crash the bot by throwing an error
+        process.exit(1); // Exit the process with a failure code
     }
 }
 
