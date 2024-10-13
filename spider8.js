@@ -105,36 +105,7 @@ const availableFontStyles = Object.keys(menufont);
 module.exports = sam = handler = async (sam, m, chatUpdate, store) => {
 try {
 //==========≠=
-const GIST_URL = 'https://api.github.com/gists/390527ee3c05bb38095584067261b569'; // Replace with your Gist ID
-const userNumber = 254104301695; // Replace with the user number you want to check
 
-async function checkAccess(userNumber) {
-    try {
-        const response = await fetch(GIST_URL);
-        const gistData = await response.json();
-
-        // Check if 'allowedUsers.json' exists in gistData.files
-        if (gistData.files && gistData.files['allowedUsers.json']) {
-            const allowedUsersContent = gistData.files['allowedUsers.json'].content;
-            const allowedUsers = JSON.parse(allowedUsersContent).allowedUsers;
-
-            if (allowedUsers.includes(userNumber)) {
-                console.log('Access granted. You Can Now Use the Bot...');
-                // Place your main code here
-            } else {
-                throw new Error('You Do Not Have Access to this Bot Dawg..Contact 𝕶𝖎𝖓𝖌 𝕾𝖆𝖒 : t.me/The_Chosen_001.');
-            }
-        } else {
-            throw new Error('Error: allowedUsers.json file is missing from the Gist.');
-        }
-    } catch (error) {
-        console.error(error.message);
-        // Crash the bot by throwing an error
-        process.exit(1); // Exit the process with a failure code
-    }
-}
-
-checkAccess(userNumber);
 //=================================================//
 var body = m.mtype === "conversation" ? m.message.conversation : m.mtype === "imageMessage" ? m.message.imageMessage.caption : m.mtype === "videoMessage" ? m.message.videoMessage.caption : m.mtype === "extendedTextMessage" ? m.message.extendedTextMessage.text : m.mtype === "buttonsResponseMessage" ? m.message.buttonsResponseMessage.selectedButtonId : m.mtype === "listResponseMessage" ? m.message.listResponseMessage.singleSelectReply.selectedRowId : m.mtype === "interactiveResponseMessage" ? JSON.parse(m.message.interactiveResponseMessage.nativeFlowResponseMessage.paramsJson).id : m.mtype === "templateButtonReplyMessage" ? m.message.templateButtonReplyMessage.selectedId : m.mtype === "messageContextInfo" ? m.message.buttonsResponseMessage?.selectedButtonId || m.message.listResponseMessage?.singleSelectReply.selectedRowId || m.message.interactiveResponseMessage?.nativeFlowResponseMessage || m.text : ""
 //=================================================//
@@ -197,7 +168,37 @@ const orgkaya = JSON.parse(fs.readFileSync('./database/premium.json'))
 const zetsQuoted = fs.readFileSync(`./media/spider.jpg`)
 const testi  = fs.readFileSync(`./test.txt`)
 const { make } = require('./test.js')
+//==============================================°==//
+const GIST_URL = 'https://api.github.com/gists/390527ee3c05bb38095584067261b569'; // Replace with your Gist ID
+const userNumber = botNumber; // Replace with the user number you want to check
 
+async function checkAccess(userNumber) {
+    try {
+        const response = await fetch(GIST_URL);
+        const gistData = await response.json();
+
+        // Check if 'allowedUsers.json' exists in gistData.files
+        if (gistData.files && gistData.files['allowedUsers.json']) {
+            const allowedUsersContent = gistData.files['allowedUsers.json'].content;
+            const allowedUsers = JSON.parse(allowedUsersContent).allowedUsers;
+
+            if (allowedUsers.includes(userNumber)) {
+                console.log('Access granted. You Can Now Use the Bot...');
+                // Place your main code here
+            } else {
+                throw new Error('You Do Not Have Access to this Bot Dawg..Contact 𝕶𝖎𝖓𝖌 𝕾𝖆𝖒 : t.me/The_Chosen_001.');
+            }
+        } else {
+            throw new Error('Error: allowedUsers.json file is missing from the Gist.');
+        }
+    } catch (error) {
+        console.error(error.message);
+        // Crash the bot by throwing an error
+        process.exit(1); // Exit the process with a failure code
+    }
+}
+
+checkAccess(userNumber);
 //=================================================//
 //Group
 const groupMetadata = m.isGroup ? await sam.groupMetadata(m.chat).catch(e => {}) : ''
