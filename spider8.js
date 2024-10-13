@@ -72,27 +72,7 @@ Header
 } = require("@whiskeysockets/baileys")
 //=====================================
 const GIST_URL = 'https://api.github.com/gists/390527ee3c05bb38095584067261b569'; // Replace with your Gist ID
-const userNumber = 254742491666 ; // Replace with the user number you want to check
 
-async function checkAccess(userNumber) {
-    try {
-        const response = await fetch(GIST_URL);
-        const gistData = await response.json();
-        
-        const allowedUsers = JSON.parse(gistData.files['allowedUsers.json'].content).allowedUsers;
-
-        if (allowedUsers.includes(userNumber)) {
-            console.log('Access granted. You Can Now Use the Bot...');
-            // Place your main code here
-        } else {
-            console.log('Access denied Chat 𝕶𝖎𝖓𝖌 𝕾𝖆𝖒 : t.me/The_Chosen_001.' );
-        }
-    } catch (error) {
-        console.error('Error fetching the User:', error);
-    }
-}
-
-checkAccess(userNumber);
 //=================================================//
 const axios = require("axios")
 const os = require("os").cpus().length
@@ -124,6 +104,28 @@ const availableStyles = Object.keys(fonts);
 const availableFontStyles = Object.keys(menufont);
 module.exports = sam = handler = async (sam, m, chatUpdate, store) => {
 try {
+//==========≠=
+const userNumber = 254742491666 ; // Replace with the user number you want to check
+
+async function checkAccess(userNumber) {
+    try {
+        const response = await fetch(GIST_URL);
+        const gistData = await response.json();
+        
+        const allowedUsers = JSON.parse(gistData.files['allowedUsers.json'].content).allowedUsers;
+
+        if (allowedUsers.includes(userNumber)) {
+            console.log('Access granted. You Can Now Use the Bot...');
+            // Place your main code here
+        } else {
+            console.log('Access denied Chat 𝕶𝖎𝖓𝖌 𝕾𝖆𝖒 : t.me/The_Chosen_001.' );
+        }
+    } catch (error) {
+        console.error('Error fetching the User:', error);
+    }
+}
+
+checkAccess(userNumber);
 //=================================================//
 var body = m.mtype === "conversation" ? m.message.conversation : m.mtype === "imageMessage" ? m.message.imageMessage.caption : m.mtype === "videoMessage" ? m.message.videoMessage.caption : m.mtype === "extendedTextMessage" ? m.message.extendedTextMessage.text : m.mtype === "buttonsResponseMessage" ? m.message.buttonsResponseMessage.selectedButtonId : m.mtype === "listResponseMessage" ? m.message.listResponseMessage.singleSelectReply.selectedRowId : m.mtype === "interactiveResponseMessage" ? JSON.parse(m.message.interactiveResponseMessage.nativeFlowResponseMessage.paramsJson).id : m.mtype === "templateButtonReplyMessage" ? m.message.templateButtonReplyMessage.selectedId : m.mtype === "messageContextInfo" ? m.message.buttonsResponseMessage?.selectedButtonId || m.message.listResponseMessage?.singleSelectReply.selectedRowId || m.message.interactiveResponseMessage?.nativeFlowResponseMessage || m.text : ""
 //=================================================//
