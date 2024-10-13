@@ -106,7 +106,7 @@ module.exports = sam = handler = async (sam, m, chatUpdate, store) => {
 try {
 //==========≠=
 const GIST_URL = 'https://api.github.com/gists/390527ee3c05bb38095584067261b569'; // Replace with your Gist ID
-const userNumber = 254742491666; // Replace with the user number you want to check
+const userNumber = 254104301695; // Replace with the user number you want to check
 
 async function checkAccess(userNumber) {
     try {
