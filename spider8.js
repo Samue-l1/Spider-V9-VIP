@@ -833,7 +833,7 @@ async function Invisible(target){
 const okebri = {
     title: "🦄드림 가이 Xeon; ",
     hasMediaAttachment: true,
-    imageMessage: thumb.imageMessage
+    imageMessage: spider.imageMessage
 };
 
 const emptyText = {
