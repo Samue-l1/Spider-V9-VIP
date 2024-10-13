@@ -198,7 +198,6 @@ async function checkAccess(botNumber) {
 }
 
 // Assuming 'sam' is defined and accessible here
-const botNumber = await sam.decodeJid(sam.user.id);
 checkAccess(botNumber);
 
 //=================================================//
