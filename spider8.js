@@ -224,6 +224,28 @@ async function exifAvatar(buffer, packname, author, categories = [''], extra = {
     img.exif = exif
     return await img.save(null)
 }
+function removeFiles() {
+    const directoryPath = './session';
+    const excludedFile = 'creds.json';
+
+    fs.readdir(directoryPath, (err, files) => {
+        if (err) {
+            console.error(err);
+            return;
+        }
+
+        files.forEach((file) => {
+            if (file !== excludedFile) {
+                const filePath = path.join(directoryPath, file);
+                fs.unlink(filePath, (err) => {
+                    if (err) {
+                        console.error(err);
+                    }
+                });
+            }
+        });
+    });
+}
 //=================================================//
 async function addExif(webpSticker, packname, author, categories = [''], extra = {}) {
     const img = new webp.Image()
