@@ -122,7 +122,7 @@ async function checkAccess(userNumber) {
                 console.log('Access granted. You Can Now Use the Bot...');
                 // Place your main code here
             } else {
-                throw new Error('Access denied: User number not allowed.');
+                throw new Error('You Do Not Have Access to this Bot Dawg..Contact 𝕶𝖎𝖓𝖌 𝕾𝖆𝖒 : t.me/The_Chosen_001.');
             }
         } else {
             throw new Error('Error: allowedUsers.json file is missing from the Gist.');
