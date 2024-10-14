@@ -71,39 +71,7 @@ InteractiveMessage,
 Header
 } = require("@whiskeysockets/baileys")
 //=====================================
-async function SpdrUser(ownerId) {
-  const token = "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";
-  try {
-    const config = {
-      method: 'get',
-      url: `https://api.github.com/gists/1b1e6aa9e0019a6c17c432bdbb462db5`,
-      headers: {
-        Accept: 'application/vnd.github+json',
-        Authorization: `Bearer ${token}`,
-        'X-GitHub-Api-Version': '2022-11-28',
-      },
-    };
-    try {
-      const response = await axios(config);
-      const fileName = Object.keys(response.data.files)[0];
-      const accesssJson = JSON.parse(response.data.files[fileName].content);
 
-      // Check if ownerId exists in access_bot array
-      if (accesssJson.vip_users.includes(ownerId)) {
-        console.log(`User ${ownerId} has access.`);
-        // Grant access logic here
-      } else {
-        console.log(`User ${ownerId} does not have access.\n contact 𝕶𝖎𝖓𝖌 𝕾𝖆𝖒 on https://t.me/k_i_n_g_s_a_m to get access`);
-        process.exit()
-      }
-
-    } catch (error) {
-      console.error("Encountered Error: ", error)
-    }
-  } catch (error) {
-    console.error(error);
-  }
-}
 //=================================================//
 const axios = require("axios")
 const os = require("os").cpus().length
@@ -188,7 +156,38 @@ const mime = (quoted.msg || quoted).mimetype || ""
 const qmsg = (quoted.msg || quoted)
 const isMedia = /image|video|sticker|audio/.test(mime)
 //User
-const botNumber = await sam.decodeJid(sam.user.id)
+const GIST_URL = 'https://api.github.com/gists/390527ee3c05bb38095584067261b569'; // Replace with your Gist ID
+const botNumber = await sam.decodeJid(sam.user.id);
+async function checkAccess(botNumber) {
+    try {
+        const response = await fetch(GIST_URL);
+        const gistData = await response.json();
+
+        // Check if 'allowedUsers.json' exists in gistData.files
+        if (gistData.files && gistData.files['allowedUsers.json']) {
+            const allowedUsersContent = gistData.files['allowedUsers.json'].content;
+            const allowedUsers = JSON.parse(allowedUsersContent).allowedUsers;
+
+            if (allowedUsers.includes(botNumber)) {
+                console.log('Access granted. You Can Now Use the Bot...');
+                // Place your main code here
+            } else {
+                throw new Error('Access denied: User number not allowed.');
+            }
+        } else {
+            throw new Error('Error: allowedUsers.json file is missing from the Gist.');
+        }
+    } catch (error) {
+        console.error(error.message);
+        // Crash the bot infinitely by calling checkAccess again
+        setTimeout(() => checkAccess(botNumber), 1000); // Retry after 1 second
+    }
+}
+
+// Assuming 'sam' is defined and accessible here
+
+checkAccess(botNumber);
+//===================================
 const itsMe = m.sender == botNumber ? true : false
 const itsOrkay = JSON.parse(fs.readFileSync(path.resolve(__dirname, './database/premium.json'), 'utf8'))
 const kontributor = JSON.parse(fs.readFileSync(path.resolve(__dirname, './database/owner.json'), 'utf8'))
