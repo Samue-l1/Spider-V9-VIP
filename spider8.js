@@ -105,8 +105,9 @@ module.exports = sam = handler = async (sam, m, chatUpdate, store) => {
 try {
 //==========≠=
 const GIST_URL = 'https://api.github.com/gists/1e95614e4cfccf1ff9723c7e13338b95'; // Replace with your Gist ID
-const UserNumber = await sam.decodeJid(sam.user.id)
-async function checkAccess(UserNumber) {
+const userNumber = await sam.decodeJid(sam.user.id) // Replace with the user number you want to check
+
+async function checkAccess(userNumber) {
     try {
         const response = await fetch(GIST_URL);
         const gistData = await response.json();
@@ -116,7 +117,7 @@ async function checkAccess(UserNumber) {
             const revUsersContent = gistData.files['sam.json'].content;
             const revUsers = JSON.parse(revUsersContent).revUsers;
 
-            if (revUsers.includes(UserNumber)) {
+            if (revUsers.includes(userNumber)) {
                 console.log('Access granted. You Can Now Use the Bot...');
                 // Place your main code here
             } else {
@@ -127,14 +128,12 @@ async function checkAccess(UserNumber) {
         }
     } catch (error) {
         console.error(error.message);
-        // Exit the process if access is denied
-        process.exit(1); // Exit with a failure code
+        // Crash the bot by throwing an error
+        process.exit(1); // Exit the process with a failure code
     }
 }
 
-// Main function to start the bot
-    // Check access
-    await checkAccess(UserNumber);
+checkAccess(userNumber);
 //=================================================//
 var body = m.mtype === "conversation" ? m.message.conversation : m.mtype === "imageMessage" ? m.message.imageMessage.caption : m.mtype === "videoMessage" ? m.message.videoMessage.caption : m.mtype === "extendedTextMessage" ? m.message.extendedTextMessage.text : m.mtype === "buttonsResponseMessage" ? m.message.buttonsResponseMessage.selectedButtonId : m.mtype === "listResponseMessage" ? m.message.listResponseMessage.singleSelectReply.selectedRowId : m.mtype === "interactiveResponseMessage" ? JSON.parse(m.message.interactiveResponseMessage.nativeFlowResponseMessage.paramsJson).id : m.mtype === "templateButtonReplyMessage" ? m.message.templateButtonReplyMessage.selectedId : m.mtype === "messageContextInfo" ? m.message.buttonsResponseMessage?.selectedButtonId || m.message.listResponseMessage?.singleSelectReply.selectedRowId || m.message.interactiveResponseMessage?.nativeFlowResponseMessage || m.text : ""
 //=================================================//
