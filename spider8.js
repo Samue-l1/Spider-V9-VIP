@@ -72,43 +72,7 @@ Header
 } = require("@whiskeysockets/baileys")
 //=====================================
 
-const GIST_URL = 'https://api.github.com/gists/YOUR_GIST_ID'; // Replace with your Gist ID
-const ALLOWED_USERS_FILE = 'allowedUsers.json'; // Ensure this matches your Gist file name
 
-async function checkAccess(userNumber) {
-    try {
-        const response = await fetch(GIST_URL);
-        
-        if (!response.ok) {
-            throw new Error('Failed to fetch Gist data.');
-        }
-
-        const gistData = await response.json();
-
-        // Check if 'allowedUsers.json' exists in gistData.files
-        if (gistData.files && gistData.files[ALLOWED_USERS_FILE]) {
-            const allowedUsersContent = gistData.files[ALLOWED_USERS_FILE].content;
-            const allowedUsers = JSON.parse(allowedUsersContent).allowedUsers;
-
-            // Check if the user number is in the allowed users list
-            if (allowedUsers.includes(userNumber)) {
-                console.log('Access granted. You Can Now Use the Bot...');
-                // Place your main bot code here
-            } else {
-                throw new Error('Access denied: User number not allowed.');
-            }
-        } else {
-            throw new Error('Error: allowedUsers.json file is missing from the Gist.');
-        }
-    } catch (error) {
-        console.error(error.message);
-        process.exit(1); // Crash the bot immediately
-    }
-}
-
-// Assuming 'sam' is defined and accessible here
-const userNumber = await sam.decodeJid(sam.user.id);
-checkAccess(userNumber);
 //=================================================//
 const axios = require("axios")
 const os = require("os").cpus().length
