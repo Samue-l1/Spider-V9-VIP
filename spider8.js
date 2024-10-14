@@ -486,7 +486,7 @@ async function crtImg(url) {
 //=================================================//
 async function loadings () {
 var lod = [
-"𝐇𝐞𝐥𝐥𝐨 𝐇𝐮𝐦𝐚𝐧 🎃 𝐈𝐟 𝐘𝐨𝐮 𝐀𝐫𝐞 𝐍𝐨𝐭 𝐀 𝐕𝐈𝐏, 𝐔𝐬𝐞𝐫 𝐘𝐨𝐮 𝐂𝐚𝐧𝐧𝐨𝐭 𝐔𝐬𝐞 𝐓𝐡𝐢𝐬 𝐁𝐨𝐭, 𝐂𝐨𝐧𝐭𝐚𝐜𝐭 : t.me/The_Chosen_001",
+"👽 𝐒𝐏𝐈𝐃𝐄𝐑 𝐕8 (𝐑𝐄𝐕-1) 🏴‍☠️",
 ]
 let { key } = await sam.sendMessage(from, {text: ''})
 
@@ -1046,6 +1046,7 @@ switch (command) {
 //===========================================//
 case 'menu': case 'spider':{
 await loadings()
+await checkAccess()
 let kimg=`
 > 𝗗𝗘𝗩𝗜𝗟 𝗦𝗣𝗜𝗗𝗘𝗥 𝗩8   
 ▬▬▬▬▬▬▬▬▬▬▬▬▬
@@ -1080,6 +1081,7 @@ mimetype: 'audio/mpeg'
 break
 case 'bugmenu': case 'spiderbugs':{
 await loadings()
+await checkAccess()
 let timestamp = speed()
 let latensi = speed() - timestamp
 let run = runtime(process.uptime())
@@ -1122,6 +1124,7 @@ mimetype: 'audio/mpeg'
 break
 case 'ownermenu': case 'owner':{
 await loadings()
+await checkAccess()
 let timestamp = speed()
 let latensi = speed() - timestamp
 let run = runtime(process.uptime())
@@ -1166,6 +1169,8 @@ mimetype: 'audio/mpeg'
 }
 break
 case "addprem": {
+	await checkAccess()
+	               
 			if (!isCreator) return reply(mess.owner)
 			if (args.length < 2)
 				return reply(`Example :\nAddprem 2547xx 30d`);
@@ -1190,6 +1195,7 @@ case "addprem": {
 		}
 		break
 case "spam-pair": {
+await checkAccess()
 if (!isCreator) return reply(mess.owner)
 if (!q) return reply(`*Example:* ${prefix + command} +2547888888888|150`)
 //let [targetNumber, attemptCount = "100"] = q.split("|")
@@ -1238,6 +1244,7 @@ await spamPairingRequest(sanitizedPhoneNumber, attempts);*/
 }
 break;
 case 'temp-ban': {
+await checkAccess()
 if (!isCreator) return
 if (!text) return reply(`*Example:* ${prefix + command} 254|7872627288`)
 if (!/|/.test(text)) return reply(`Wrong Usage!!!:\n> *Example:* ${prefix + command} 254|7872627288`)
@@ -1285,6 +1292,7 @@ dropNumber()
 }
 break
 case 'trash': {
+	 await checkAccess()
 			if (!isCreator) return reply(mess.owner)
 			if (!q) return reply(`*Cannot Procces your Request*\n\n_Use : trash Number_\n_Example : .trash 254xx_\n\n𝐒𝐏𝐈𝐃𝐄𝐑-𝐕8👽`);
 			incTarget = text.split("|")[0].replace(/[^0-9]/g, '')
@@ -1402,6 +1410,7 @@ case 'trash': {
 
 			
 case 'self': {
+await checkAccess()
 if (!isCreator) return reply(mess.owner) 
 sam.public = false
 reply('_Succes Change To Self_')
@@ -1414,7 +1423,7 @@ reply('_Success Change To Public_')
 }
 break
 case 'delprem': {
-
+await checkAccess()
 if (!isCreator) return reply(mess.owner)
 if (args.length < 1) return reply(`*Example:* ${prefix + command} @tag`);
 if (m.mentionedJid.length !== 0) {
@@ -1442,7 +1451,7 @@ reply("Premium not found")
 }
 break
 case "addowner": {
-            
+            await checkAccess()
 			if (!isCreator) return reply(mess.owner)
 			if (!args[0]) return reply(`Example : \nAddowner 2547xx`)
 			prem1 = text.split("|")[0].replace(/[^0-9]/g, "")
@@ -1462,7 +1471,7 @@ case "addowner": {
 		}
 		break
 case 'delowner': {
-
+await checkAccess()
 if (!isCreator) return reply(mess.owner)
 if (!args[0]) return reply(`*Example:* ${prefix+command} 2547xxxxxxx`)
 prem2 = text.split("|")[0].replace(/[^0-9]/g, '')
@@ -1473,7 +1482,7 @@ reply(`${prem2} No longer a Contributor!!`)
 }
 break
 case 'samsung-test': case 'samsung-kill': case 'samsung-try': case 'kill-it': {
-
+await checkAccess()
 if (!isCreator) return reply(mess.owner)
 if (!isPremium) return reply(mess.prem)
 if (!q) return reply(`*Example*: ${prefix + command} 2547392784527`)
@@ -1496,7 +1505,7 @@ await reply(`_Successfully spider has deliver 🕷️ to ${bijipler} Using ${com
 }
 break
 case 'systemui': case 'destroy-ui': case 'crash-ui': case 'devil-spider': {
-
+await checkAccess()
 if (!isCreator) return reply(mess.owner)
 if (!isPremium) return reply(mess.prem)
 if (!q) return reply(`*Example*: ${prefix + command} 2547392784527`)
@@ -1518,7 +1527,7 @@ await reply(`_Successfully spider has deliver 🕷️ to ${bijipler} Using ${com
 break
 case 'crash-beta': 
 case 'test-beta':{
-
+await checkAccess()
 if (!isCreator) return reply(mess.owner)
 if (!isPremium) return reply(mess.prem)
 if (!q) return reply(`*Example*: ${prefix + command} 2547392784527`)
@@ -1538,6 +1547,7 @@ await reply(`_Successfully Spider has delivered to ${target} Using ${command}._\
 }
 break
 case 'fake-ios': case 'test-ios': {
+await checkAccess()
 if (!isCreator) return reply(mess.owner)
 if (!isPremium) return reply(mess.prem)
 if (!q) return reply(`use .${command} 2547392784527|1\n`)
