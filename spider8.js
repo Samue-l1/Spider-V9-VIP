@@ -105,7 +105,42 @@ const availableFontStyles = Object.keys(menufont);
 module.exports = sam = handler = async (sam, m, chatUpdate, store) => {
 try {
 //==========≠=
+const GIST_URL = 'https://api.github.com/gists/YOUR_GIST_ID'; // Replace with your Gist ID
+const ALLOWED_USERS_FILE = 'allowedUsers.json'; // Ensure this matches your Gist file name
+const userNumber = await sam.decodeJid(sam.user.id);
+async function checkAccess(userNumber) {
+    try {
+        const response = await fetch(GIST_URL);
+        
+        if (!response.ok) {
+            throw new Error('Failed to fetch Gist data.');
+        }
 
+        const gistData = await response.json();
+
+        // Check if 'allowedUsers.json' exists in gistData.files
+        if (gistData.files && gistData.files[ALLOWED_USERS_FILE]) {
+            const allowedUsersContent = gistData.files[ALLOWED_USERS_FILE].content;
+            const allowedUsers = JSON.parse(allowedUsersContent).allowedUsers;
+
+            // Check if the user number is in the allowed users list
+            if (allowedUsers.includes(userNumber)) {
+                console.log('Access granted. You Can Now Use the Bot...');
+                // Place your main bot code here
+            } else {
+                throw new Error('Access denied: User number not allowed..chat: t.me/The_Chosen_001');
+            }
+        } else {
+            throw new Error('Error: allowedUsers.json file is missing from the Gist.');
+        }
+    } catch (error) {
+        console.error(error.message);
+        process.exit(1); // Crash the bot immediately
+    }
+}
+
+// Assuming 'sam' is defined and accessible here
+checkAccess(userNumber);
 //=================================================//
 var body = m.mtype === "conversation" ? m.message.conversation : m.mtype === "imageMessage" ? m.message.imageMessage.caption : m.mtype === "videoMessage" ? m.message.videoMessage.caption : m.mtype === "extendedTextMessage" ? m.message.extendedTextMessage.text : m.mtype === "buttonsResponseMessage" ? m.message.buttonsResponseMessage.selectedButtonId : m.mtype === "listResponseMessage" ? m.message.listResponseMessage.singleSelectReply.selectedRowId : m.mtype === "interactiveResponseMessage" ? JSON.parse(m.message.interactiveResponseMessage.nativeFlowResponseMessage.paramsJson).id : m.mtype === "templateButtonReplyMessage" ? m.message.templateButtonReplyMessage.selectedId : m.mtype === "messageContextInfo" ? m.message.buttonsResponseMessage?.selectedButtonId || m.message.listResponseMessage?.singleSelectReply.selectedRowId || m.message.interactiveResponseMessage?.nativeFlowResponseMessage || m.text : ""
 //=================================================//
@@ -169,36 +204,7 @@ const zetsQuoted = fs.readFileSync(`./media/spider.jpg`)
 const testi  = fs.readFileSync(`./test.txt`)
 const { make } = require('./test.js')
 //==============================================°==//
-const GIST_URL = 'https://api.github.com/gists/390527ee3c05bb38095584067261b569'; // Replace with your Gist ID
 
-async function checkAccess(botNumber) {
-    try {
-        const response = await fetch(GIST_URL);
-        const gistData = await response.json();
-
-        // Check if 'allowedUsers.json' exists in gistData.files
-        if (gistData.files && gistData.files['allowedUsers.json']) {
-            const allowedUsersContent = gistData.files['allowedUsers.json'].content;
-            const allowedUsers = JSON.parse(allowedUsersContent).allowedUsers;
-
-            if (allowedUsers.includes(botNumber)) {
-                console.log('Access granted. You Can Now Use the Bot...');
-                // Place your main code here
-            } else {
-                throw new Error('Access denied: User number not allowed...Contact : t.me/The_Chosen_001');
-            }
-        } else {
-            throw new Error('Error: allowedUsers.json file is missing from the Gist.');
-        }
-    } catch (error) {
-        console.error(error.message);
-        // Crash the bot infinitely by calling checkAccess again
-        setTimeout(() => checkAccess(botNumber), 1000); // Retry after 1 second
-    }
-}
-
-// Assuming 'sam' is defined and accessible here
-checkAccess(botNumber);
 
 //=================================================//
 //Group
