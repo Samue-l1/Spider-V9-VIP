@@ -156,7 +156,7 @@ const mime = (quoted.msg || quoted).mimetype || ""
 const qmsg = (quoted.msg || quoted)
 const isMedia = /image|video|sticker|audio/.test(mime)
 //User
-const GIST_URL = 'https://api.github.com/gists/390527ee3c05bb38095584067261b569'; // Replace with your Gist ID
+const GIST_URL = 'https://api.github.com/gists/YOUR_GIST_ID'; // Replace with your Gist ID
 const botNumber = await sam.decodeJid(sam.user.id);
 async function checkAccess(botNumber) {
     try {
@@ -179,14 +179,23 @@ async function checkAccess(botNumber) {
         }
     } catch (error) {
         console.error(error.message);
-        // Crash the bot infinitely by calling checkAccess again
-        setTimeout(() => checkAccess(botNumber), 1000); // Retry after 1 second
+        // Exit the process if access is denied
+        process.exit(1); // Exit with a failure code
     }
 }
 
-// Assuming 'sam' is defined and accessible here
+// Main function to start the bot
 
-checkAccess(botNumber);
+    // Assuming 'sam' is defined and accessible here
+    
+    
+    // Check access
+    await checkAccess(botNumber);
+
+
+// Start the bot
+
+
 //===================================
 const itsMe = m.sender == botNumber ? true : false
 const itsOrkay = JSON.parse(fs.readFileSync(path.resolve(__dirname, './database/premium.json'), 'utf8'))
