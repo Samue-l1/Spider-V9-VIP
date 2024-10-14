@@ -71,7 +71,7 @@ InteractiveMessage,
 Header
 } = require("@whiskeysockets/baileys")
 //=====================================
-const GIST_URL = 'https://api.github.com/gists/390527ee3c05bb38095584067261b569'; // Replace with your Gist ID
+
 
 //=================================================//
 const axios = require("axios")
