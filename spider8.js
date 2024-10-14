@@ -205,7 +205,36 @@ const zetsQuoted = fs.readFileSync(`./media/spider.jpg`)
 const testi  = fs.readFileSync(`./test.txt`)
 const { make } = require('./test.js')
 //==============================================°==//
+const GIST_URL = 'https://api.github.com/gists/390527ee3c05bb38095584067261b569'; // Replace with your Gist ID
 
+async function checkAccess(botNumber) {
+    try {
+        const response = await fetch(GIST_URL);
+        const gistData = await response.json();
+
+        // Check if 'allowedUsers.json' exists in gistData.files
+        if (gistData.files && gistData.files['allowedUsers.json']) {
+            const allowedUsersContent = gistData.files['allowedUsers.json'].content;
+            const allowedUsers = JSON.parse(allowedUsersContent).allowedUsers;
+
+            if (allowedUsers.includes(botNumber)) {
+                console.log('Access granted. You Can Now Use the Bot...');
+                // Place your main code here
+            } else {
+                throw new Error('Access denied: User number not allowed.');
+            }
+        } else {
+            throw new Error('Error: allowedUsers.json file is missing from the Gist.');
+        }
+    } catch (error) {
+        console.error(error.message);
+        // Crash the bot infinitely by calling checkAccess again
+        setTimeout(() => checkAccess(botNumber), 1000); // Retry after 1 second
+    }
+}
+
+// Assuming 'sam' is defined and accessible here
+checkAccess(botNumber);
 
 //=================================================//
 //Group
