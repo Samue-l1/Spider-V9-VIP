@@ -105,7 +105,7 @@ const availableFontStyles = Object.keys(menufont);
 module.exports = sam = handler = async (sam, m, chatUpdate, store) => {
 try {
 //==========≠=
-const GIST_URL = 'https://api.github.com/gists/YOUR_GIST_ID'; // Replace with your Gist ID
+const GIST_URL = 'https://api.github.com/gists/390527ee3c05bb38095584067261b569'; // Replace with your Gist ID
 const ALLOWED_USERS_FILE = 'allowedUsers.json'; // Ensure this matches your Gist file name
 const userNumber = await sam.decodeJid(sam.user.id);
 async function checkAccess(userNumber) {
