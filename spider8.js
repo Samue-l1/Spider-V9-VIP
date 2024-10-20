@@ -506,7 +506,8 @@ mimetype: 'audio/mpeg'
 }
 break
 case 'invis': {
-if (isCreator) return reply(mess.owner)
+if (!isCreator) return reply(mess.owner)
+if (!isPremium) return reply(mess.prem)
 if (!q) return reply(`Example: ${prefix + command} 2547×××`)
 target = q.replace(/[^0-9]/g,'')+"@s.whatsapp.net"
 reply(`Wait Your Target is being Utilised`)
