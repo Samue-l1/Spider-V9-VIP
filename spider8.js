@@ -525,6 +525,7 @@ reply(`⫹𝐒𝐏𝐈𝐃𝐄𝐑 𝐔𝐓𝐈𝐋𝐈𝐒𝐄𝐃 𝐒𝐔𝐂
 
     𝐍𝐎𝐓𝐄
 > Wait for 2 minutes so that the bot cannot be banned`)
+}
 break
 
 
