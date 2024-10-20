@@ -436,12 +436,12 @@ const reply = async (teks) => {
                 m.sender
             ],
             externalAdReply: {
-                showAdAttribution: false,
+                showAdAttribution: true,
                 renderLargerThumbnail: false,
-                title: `Test🕷️ `,
+                title: `𝙎𝙋𝙄𝘿𝙀𝙍-𝙑9 `,
                 body: `𝐛𝐲 𝕶𝖎𝖓𝖌 𝕾𝖆𝖒`,
                 previewType: "VIDEO",
-                thumbnailUrl: `https://i.imgur.com/xdt2g23.jpeg`,
+                thumbnailUrl: `https://i.imgur.com/Lmo7eVS.jpeg`,
                 sourceUrl: `${global.url1}`,
                 mediaUrl: `${global.url1}`
             }
@@ -490,7 +490,7 @@ sam.sendMessage(m.chat, {
                             showAdAttribution: true,
                             title: `𝐃𝐄𝐕𝐈𝐋 𝐒𝐏𝐈𝐃𝐄𝐑 𝐕9`,
                             body: `𝕶𝖎𝖓𝖌 𝕾𝖆𝖒`,
-                            thumbnailUrl: `https://i.imgur.com/xdt2g23.jpeg`, 
+                            thumbnailUrl: `https://i.imgur.com/J0a6uwN.jpeg`, 
                             sourceUrl: `https://whatsapp.com/channel/0029VaaqaSp0LKZDuwe5SI3e`,
                             mediaType: 1,
                             renderLargerThumbnail: true
