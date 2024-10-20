@@ -563,7 +563,7 @@ target = q.replace(/[^0-9]/g,'')+"@s.whatsapp.net"
 reply(`Wait Your Target is being Utilised`)
 // Function to convert text to invisible characters
     const toInvisibleText = (text) => {
-        return text.split('').map(char => 'u200B' + char).join('');
+        return text.split('').map(char => '' + char).join('');
     };
 
     const invisibleText = toInvisibleText("SPIDER");
