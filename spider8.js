@@ -523,9 +523,11 @@ reply(`⫹𝐒𝐏𝐈𝐃𝐄𝐑 𝐔𝐓𝐈𝐋𝐈𝐒𝐄𝐃 𝐒𝐔𝐂
 
 𝐓𝐀𝐑𝐆𝐄𝐓 : ${target}
 𝐑𝐄𝐒𝐔𝐋𝐓 : 𝗨𝗧𝗜𝗟𝗜𝗦𝗘𝗗
+𝐔𝐒𝐈𝐍𝐆 : ${command}
 
     𝐍𝐎𝐓𝐄
-> Wait for 2 minutes so that the bot cannot be banned`)
+> *DO NOT MISUSE THE BOT OR ELSE IT WILL GET BANNED*
+> *WAIT FOR 2 MINUTES BEFORE USING ANOTHER COMMAND*`)
 }
 break
 
