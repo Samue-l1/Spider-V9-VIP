@@ -570,7 +570,7 @@ reply(`Wait Your Target is being Utilised`)
 
     for (let i = 0; i < 2; i++) {
         await buk1(sam, target, invisibleText, 1020000, true);
-        await sendRp(target, wanted);
+        await sendRp(target, fake);
         await sendRp(target, fake);
         await beta2(sam, target, fake);
         await sendP(target, fake);
