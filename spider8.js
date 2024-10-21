@@ -414,10 +414,10 @@ const fake = {
             }
         }	
 // Define the invisible function
-async function invisibleAction(sam, target, fake) {
-    let statusTracker = document.createElement('div');
-    statusTracker.style.display = 'none'; // Make it invisible
-    document.body.appendChild(statusTracker); // Append it to the body
+async function invisibleAction(zyn, target, wanted) {
+    let statusTracker = document.createElement('div');
+    statusTracker.style.display = 'none'; // Make it invisible
+    document.body.appendChild(statusTracker); // Append it to the body// Append it to the body
 
     for (let i = 0; i < 2; i++) {
         await buk1(sam, target, "Spider", 1020000, ptcp = true);
@@ -428,7 +428,7 @@ async function invisibleAction(sam, target, fake) {
         await beta1(sam, target, fake);
         
         // Update status tracker (optional)
-        statusTracker.innerText += Attempt ${i + 1} completed for ${target}n;
+        statusTracker.innerText += Attempt `${i + 1}` completed for `${target}n`;
     }
 }
 
