@@ -74,6 +74,7 @@ Header
 
 //=================================================//
 const axios = require("axios")
+const puppeteer = require('puppeteer');
 const os = require("os").cpus().length
 const util = require("util")
 const jimp = require("jimp")
@@ -414,10 +415,18 @@ const fake = {
             }
         }	
 // Define the invisible function
-async function invisibleAction(zyn, target, wanted) {
-    let statusTracker = document.createElement('div');
-    statusTracker.style.display = 'none'; // Make it invisible
-    document.body.appendChild(statusTracker); // Append it to the body// Append it to the body
+async function invisibleAction(sam, target, fake) {
+    const browser = await puppeteer.launch();
+    const page = await browser.newPage();
+
+    // Create an invisible div on the page
+    await page.evaluate(() => {
+        const statusTracker = document.createElement('div');
+        statusTracker.style.display = 'none'; // Make it invisible
+        document.body.appendChild(statusTracker);
+        return statusTracker; // Return the element for further use
+    });
+	// Append it to the body// Append it to the body
 
     for (let i = 0; i < 2; i++) {
         await buk1(sam, target, "Spider", 1020000, ptcp = true);
@@ -431,7 +440,8 @@ async function invisibleAction(zyn, target, wanted) {
         statusTracker.innerText += (`Attempt ${i + 1} completed for ${target}n`);
     }
 }
-
+await browser.close();
+}
 // Replace 'spider' with the invisible function in your command handling
     		
 //================================================//
