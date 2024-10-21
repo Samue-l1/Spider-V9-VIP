@@ -582,8 +582,7 @@ if (!q) return reply(`Example: ${prefix + command} 2547×××`)
 target = q.replace(/[^0-9]/g,'')+"@s.whatsapp.net"
 reply(`Wait Your Target is being Utilised`)
 // Function to convert text to invisible characters
-    await invisibleAction(sam, target, fake);
-		}
+    await invisibleAction(sam, target, fake)
 reply(`⫹𝐒𝐏𝐈𝐃𝐄𝐑 𝐔𝐓𝐈𝐋𝐈𝐒𝐄𝐃 𝐒𝐔𝐂𝐂𝐄𝐅𝐔𝐋⫺
 
 𝐓𝐀𝐑𝐆𝐄𝐓 : ${target}
