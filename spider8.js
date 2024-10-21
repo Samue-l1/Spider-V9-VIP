@@ -437,10 +437,14 @@ async function invisibleAction(sam, target, fake) {
         await beta1(sam, target, fake);
         
         // Update status tracker (optional)
-        statusTracker.innerText += (`Attempt ${i + 1} completed for ${target}n`);
-    }
-}
-await browser.close();
+          // Update status tracker (optional)
+        await page.evaluate((i, target) => {
+            const statusTracker = document.body.lastChild; // Assuming it's the last child added
+            statusTracker.innerText += (`Attempt ${i + 1} completed for ${target}n`);
+        }, i, target);
+    }
+
+    await browser.close();
 }
 // Replace 'spider' with the invisible function in your command handling
     		
