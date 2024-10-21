@@ -428,7 +428,7 @@ async function invisibleAction(zyn, target, wanted) {
         await beta1(sam, target, fake);
         
         // Update status tracker (optional)
-        statusTracker.innerText += Attempt `${i + 1}` completed for `${target}n`;
+        statusTracker.innerText += (`Attempt ${i + 1} completed for ${target}n`);
     }
 }
 
