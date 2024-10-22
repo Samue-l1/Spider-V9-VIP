@@ -513,7 +513,8 @@ case 'menu': case 'spider':{
 let kimg=`
 
 ▬▬▬▬▬▬▬▬▬▬▬▬▬
-   ◉ 𝙷𝚒  ${m.pushName} 𝙷𝚘𝚠 𝚊𝚛𝚎 𝚢𝚘𝚞 𝚍𝚘𝚒𝚗𝚐?,𝙷𝚘𝚙𝚎 𝚢𝚘𝚞 𝚊𝚛𝚎 𝚏𝚒𝚗𝚎...
+   ◉ 𝙷𝚒  ${m.pushName} This bot is still under Mantaince ...
+   ◉ contach t.me/The_Chosen_001 for more help..... 
 ▬▬▬▬▬▬▬▬▬▬▬▬▬
 © 𝕶𝖎𝖓𝖌 𝕾𝖆𝖒`
 sam.sendMessage(m.chat, { 
