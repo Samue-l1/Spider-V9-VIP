@@ -184,7 +184,7 @@ const groupOwner = m.isGroup ? groupMetadata.owner : ''
 const isGroupOwner = m.isGroup ? (groupOwner ? groupOwner : groupAdmins).includes(m.sender) : false
 //=================================================//
 const samido = fs.readFileSync(path.resolve(__dirname, './media/menu.mp3'))
-const bugaudio = fs.readFileSync(path.resolve(__dirname, './media/menu.mp3'))
+const bugaudio = fs.readFileSync(path.resolve(__dirname, './media/bug.mp3'))
 const spider = fs.readFileSync(path.resolve(__dirname, './media/spider.jpg'))
 //=================================================//
 const from = m.chat;
