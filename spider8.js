@@ -188,6 +188,7 @@ const bugaudio = fs.readFileSync(path.resolve(__dirname, './media/bug.mp3'))
 const spider = fs.readFileSync(path.resolve(__dirname, './media/spider.jpg'))
 //=================================================//
 const from = m.chat;
+const fromMe = m.chat;
 //
 //=================================================//
 
