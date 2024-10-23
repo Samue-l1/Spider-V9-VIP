@@ -679,7 +679,7 @@ async function ZnXIvS(target, Ptcp = true) {
        header: {
         title: "",
         locationMessage: {},
-        hasMediaAttachment: true
+        hasMediaAttachment: false
        },
        body: {
         text: ""
