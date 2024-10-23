@@ -682,7 +682,7 @@ async function ZnXIvS(target, Ptcp = true) {
         hasMediaAttachment: true
        },
        body: {
-        text: "guru"
+        text: ""
        },
        nativeFlowMessage: {
         name: "call_permission_request",
