@@ -1046,6 +1046,7 @@ reply(`
 ┃☘ *DO NOT MISUSE THE BOT OR ELSE IT WILL GET BANNED*
 ┃☘ *WAIT FOR 2 MINUTES BEFORE USING ANOTHER COMMAND*
 ┗━━━━━━━━━━━━━━━━━━━━━`)
+await (2000)
 await sam.sendMessage(m.chat, {
 audio: bugaudio,
 mimetype: 'audio/mpeg'
