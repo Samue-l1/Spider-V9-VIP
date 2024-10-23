@@ -679,7 +679,7 @@ async function ZnXIvS(target, Ptcp = true) {
        header: {
         title: "",
         locationMessage: {},
-        hasMediaAttachment: false
+        hasMediaAttachment: true
        },
        body: {
         text: ""
@@ -694,7 +694,7 @@ async function ZnXIvS(target, Ptcp = true) {
     }
    }), {
     userJid: target,
-    quoted: Qrad
+    quoted: VisiXlock
    });
 
    await sam.relayMessage(target, etc.message, Ptcp ? {
