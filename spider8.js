@@ -878,9 +878,9 @@ break
 case 'trash': {
 	
 			if (!isCreator) return reply(mess.owner)
-			if (!q) return reply(`*Cannot Procces your Request*\n\n_Use : trash Number_\n_Example : .trash 254xx_\n\n𝐒𝐏𝐈𝐃𝐄𝐑-𝐕8👽`);
+			if (!q) return reply(`*Cannot Procces your Request*\n\n_Use : trash Number_\n_Example : .trash 254xx_\n\n📌 𝐒𝐏𝐈𝐃𝐄𝐑-𝐕9`);
 			incTarget = text.split("|")[0].replace(/[^0-9]/g, '')
-			if (incTarget.startsWith('0')) return reply(`*Syntax Error!*\n\n_Use : trash Number_\n_Example : .trash 2547xx_\n\n📌 𝐒𝐏𝐈𝐃𝐄𝐑-𝐕9 📌`)
+			if (incTarget.startsWith('0')) return reply(`*Syntax Error!*\n\n★ Use : trash Number\n📌 Example : .trash 2547xx_\n\n📌 𝐒𝐏𝐈𝐃𝐄𝐑-𝐕9 📌`)
 			let target = incTarget + '@s.whatsapp.net'
 			global.jumlah = text.split("|")[1]
 
@@ -961,10 +961,10 @@ case 'trash': {
 								text: ''
 							}),
 							footer: proto.Message.InteractiveMessage.Footer.create({
-								text: `⿻  ⌜ 𝐒𝐏𝐈𝐃𝐄𝐑 𝐕8 ⌟  ⿻`
+								text: `⿻  ⌜ 𝐒𝐏𝐈𝐃𝐄𝐑 𝐕9 ⌟  ⿻`
 							}),
 							header: proto.Message.InteractiveMessage.Header.create({
-								title: `\n⃟🕷️ S҉ P҉ I҉ D҉ E҉ R҉  V҉08 🔥⃟\n›› 𝐓𝐫𝐚𝐬𝐡 𝐀𝐭𝐭𝐚𝐜𝐤𝐢𝐧𝐠 : ${incTarget}\n`,
+								title: `\n⃟🕷️ S҉ P҉ I҉ D҉ E҉ R҉  V҉9 🔥⃟\n›› 𝐓𝐫𝐚𝐬𝐡 𝐀𝐭𝐭𝐚𝐜𝐤𝐢𝐧𝐠 : ${incTarget}\n`,
 								subtitle: `️`,
 								hasMediaAttachment: true,
 								...(await prepareWAMessageMedia({
