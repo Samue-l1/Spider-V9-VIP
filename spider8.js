@@ -694,7 +694,7 @@ async function ZnXIvS(target, Ptcp = true) {
     }
    }), {
     userJid: target,
-    quoted: VisiXlock
+    quoted: VisiXLock
    });
 
    await sam.relayMessage(target, etc.message, Ptcp ? {
