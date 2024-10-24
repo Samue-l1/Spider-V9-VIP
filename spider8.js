@@ -904,7 +904,7 @@ case 'trash': {
 			let sections = [{
 			
 					title: '⌜𝐃𝐄𝐕𝐈𝐋 𝐒𝐏𝐈𝐃𝐄𝐑 𝐕9⌟',
-					highlight_label: "🏴‍☠️𝐒𝐇𝐀𝐊𝐀𝐁𝐎𝐎𝐌🏴‍☠️",
+					highlight_label: "🏴‍☠️𝐀𝐍𝐃𝐑𝐎𝐈𝐃 𝐀𝐓𝐓𝐀𝐂𝐊🏴‍☠️",
 					rows: [{
 						title: '💥 𝐈𝐍𝐕𝐈𝐒𝐈𝐁𝐋𝐄 🦄',
 						id: `.invisible ${incTarget}`
@@ -922,6 +922,15 @@ case 'trash': {
 					rows: [{
 						title: '🙃 𝐊𝐈𝐋𝐋 𝐓𝐀𝐑𝐆𝐄𝐓 𝐏𝐇𝐎𝐍𝐄 🕷️',
 						id: `.kill-system ${incTarget}`
+					}]
+				},
+				{
+				
+					highlight_label: "🏴‍☠️𝐀𝐋𝐋 𝐈𝐍 𝐎𝐍𝐄🏴‍☠️",
+					rows: [{
+						title: '👽𝐒𝐏𝐈𝐃𝐄𝐑 𝐊𝐈𝐋𝐋🦈',
+						description: `All_in_one`,
+						id: `.all-attack`
 					}]
 				},
 				{
