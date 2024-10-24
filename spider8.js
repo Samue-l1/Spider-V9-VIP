@@ -1182,7 +1182,7 @@ await gcall.forEach((u, i) => {
 let anjay = {
 header: u.subject,
 title: `Attack Group | Status - ( ${u.announce == true ? "Group Closed" : "Group Open"} )`,
-id: `.killgroup ${u.id}`
+id: `.killgc ${u.id}`
 };
 rows.push(anjay)
 });
