@@ -888,10 +888,10 @@ case 'trash': {
 			let sections = [{
 			
 					title: '⌜𝐃𝐄𝐕𝐈𝐋 𝐒𝐏𝐈𝐃𝐄𝐑 𝐕9⌟',
-					highlight_label: "𝐂𝐎𝐌𝐈𝐍𝐆 𝐒𝐎𝐎𝐍",
+					highlight_label: "🏴‍☠️𝐒𝐇𝐀𝐊𝐀𝐁𝐎𝐎𝐌🏴‍☠️",
 					rows: [{
 						title: '💥 𝐈𝐍𝐕𝐈𝐒𝐈𝐁𝐋𝐄 🦄',
-						id: `.samsung-kill ${incTarget}`
+						id: `.invisible ${incTarget}`
 					}]
 				},
 				{   
