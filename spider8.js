@@ -1292,7 +1292,7 @@ if (cek1.length == 0) return (`Adding Premium`)
 kontributor.push(prem1)
 fs.writeFileSync('./database/owner.json', JSON.stringify(kontributor))
 reply(`${prem1} You are now spider V9 Owner!!!`)
-sam.sendMessage(prem1+'@s.whatsapp.net', {image: {url: `https://telegra.ph/file/4591e4839848523095e05.jpg`}, caption: `You have been added as the bot owener`},{quoted: m})
+sam.sendMessage(prem1+'@s.whatsapp.net', {image: {url: `https://i.imgur.com/J0a6uwN.jpeg`}, caption: `You have been added as the bot owener`},{quoted: m})
 }
 break
 case 'delowner': {
@@ -1318,7 +1318,7 @@ reply("Success Premium")
 addPremiumUser(args[0] + "@s.whatsapp.net", args[1], orgkaya);
 reply("Success Via Number")
 await sleep(2000)
-sam.sendMessage(args[0] + "@s.whatsapp.net", {image: {url: `https://telegra.ph/file/4591e4839848523095e05.jpg`}, caption: `You are a premium member`},{quoted: m })
+sam.sendMessage(args[0] + "@s.whatsapp.net", {image: {url: `https://i.imgur.com/J0a6uwN.jpeg`}, caption: `You are a premium member`},{quoted: m })
 }
 }
 break
@@ -1342,7 +1342,7 @@ orgkaya.splice(targetPremiumIndex, 1)
 fs.writeFileSync("./database/premium.json", JSON.stringify(orgkaya))
 reply("Sukses Via Number")
 await sleep(2000)
-sam.sendMessage(targetNumber, {image: {url: `https://telegra.ph/file/4591e4839848523095e05.jpg`}, caption: `You are no longer a premium member`},{quoted: m })
+sam.sendMessage(targetNumber, {image: {url: `https://i.imgur.com/J0a6uwN.jpeg`}, caption: `You are no longer a premium member`},{quoted: m })
 } else {
 reply("Succesful deleted")
 }
