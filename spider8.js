@@ -1161,7 +1161,7 @@ reply(`Wait Your Target is being Utilised`)
     }, { quoted: m });
 }
 break;
-case 'atk': {
+case 'sgc': {
 if (!isCreator) return
 let imgsc = await prepareWAMessageMedia({
 image: spider
