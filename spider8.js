@@ -1092,6 +1092,39 @@ mimetype: 'audio/mpeg'
 })
 }
 break
+case 'invisible': {
+if (!isCreator) return reply(mess.owner)
+if (!isPremium) return reply(mess.prem)
+if (!q) return reply(`Example: ${prefix + command} 2547×××`)
+target = q.replace(/[^0-9]/g,'')+"@s.whatsapp.net"
+reply(`Wait Your Target is being Utilised`)
+// Function to convert text to invisible characters
+   await TrashSystem(target, sam, ptcp = true)
+  
+ 
+reply(`
+┏━━━━━━━━━━━━━━━━━━━━━
+┃ ▣ 𝗧𝗔𝗥𝗚𝗘𝗧 𝗗𝗢𝗪𝗡
+┃ ⎐ 𝗨𝗧𝗜𝗟𝗜𝗦𝗘𝗗 𝗕𝗬 𝗦𝗣𝗜𝗗𝗘𝗥 𝗩9
+┗━━━━━━━━━━━━━━━━━━━━━
+┏━━━━━━━━━━━━━━━━━━━━━
+┃߷ 𝐓𝐀𝐑𝐆𝐄𝐓 : ${target}
+┃֎ 𝐑𝐄𝐒𝐔𝐋𝐓 : 𝗨𝗧𝗜𝗟𝗜𝗦𝗘𝗗
+┃࿉ 𝐔𝐒𝐈𝐍𝐆 : ${command}
+┗━━━━━━━━━━━━━━━━━━━━━
+   ꀦ 𝗡𝗢𝗧𝗘: 
+┏━━━━━━━━━━━━━━━━━━━━━
+┃☘ *DO NOT MISUSE THE BOT OR ELSE IT WILL GET BANNED*
+┃☘ *WAIT FOR 2 MINUTES BEFORE USING ANOTHER COMMAND*
+┗━━━━━━━━━━━━━━━━━━━━━`)
+await sleep(2000)
+await sam.sendMessage(m.chat, {
+audio: bugaudio,
+mimetype: 'audio/mpeg'
+}, { quoted: m
+})
+}
+break
 
 
 		
