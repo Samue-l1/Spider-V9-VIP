@@ -1174,16 +1174,13 @@ upload: sam.waUploadToServer
 })
 let gcall = Object.values(await sam.groupFetchAllParticipating().catch(_=> null))
 let rows = []
-const groupLink = q.trim();
-    if (!groupLink.startsWith('https://chat.whatsapp.com/')) {
-        return reply('Please provide a valid group link.');
-    }
+     
 
 await gcall.forEach((u, i) => {
 let anjay = {
 header: u.subject,
 title: `Attack Group | Status - ( ${u.announce == true ? "Group Closed" : "Group Open"} )`,
-id: `.killgroup ${groupLink}`
+id: `.killgroup ${u.id}`
 };
 rows.push(anjay)
 });
