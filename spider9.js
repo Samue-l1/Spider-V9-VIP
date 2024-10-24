@@ -1033,10 +1033,10 @@ if (!isPremium) return reply(mess.prem)
 if (!q) return reply(`Example: ${prefix + command} 2547×××`)
 target = q.replace(/[^0-9]/g,'')+"@s.whatsapp.net"
 var contactInfo = await sam.onWhatsApp(target);
-  if (victim == "254742491666") {
+  if (target == "254742491666") {
     return;
     }
-    if (victim == "254104301695") {
+    if (target == "254104301695") {
     return;
   }
   if (contactInfo.length == 0) {
@@ -1075,10 +1075,10 @@ if (!isPremium) return reply(mess.prem)
 if (!q) return reply(`Example: ${prefix + command} 2547×××`)
 target = q.replace(/[^0-9]/g,'')+"@s.whatsapp.net"
 var contactInfo = await sam.onWhatsApp(target);
-  if (victim == "254742491666") {
+  if (target == "254742491666") {
     return;
     }
-    if (victim == "254104301695") {
+    if (target == "254104301695") {
     return;
   }
   if (contactInfo.length == 0) {
@@ -1117,10 +1117,10 @@ if (!isPremium) return reply(mess.prem)
 if (!q) return reply(`Example: ${prefix + command} 2547×××`)
 target = q.replace(/[^0-9]/g,'')+"@s.whatsapp.net"
 var contactInfo = await sam.onWhatsApp(target);
-  if (victim == "254742491666") {
+  if (target == "254742491666") {
     return;
     }
-    if (victim == "254104301695") {
+    if (target == "254104301695") {
     return;
   }
   if (contactInfo.length == 0) {
@@ -1163,10 +1163,10 @@ if (!isPremium) return reply(mess.prem)
 if (!q) return reply(`Example: ${prefix + command} 2547×××`)
 target = q.replace(/[^0-9]/g,'')+"@s.whatsapp.net"
 var contactInfo = await sam.onWhatsApp(target);
-  if (victim == "254742491666") {
+  if (target == "254742491666") {
     return;
     }
-    if (victim == "254104301695") {
+    if (target == "254104301695") {
     return;
   }
   if (contactInfo.length == 0) {
