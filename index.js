@@ -194,7 +194,7 @@ async function samStart() {
     }, 25000); //Check Every 25 Second
     
     global.opts = new Object(yargs(process.argv.slice(2)).exitProcess(false).parse());
-    global.db = new Low(/https?:\/\//.test(opts['db'] || '') ? new cloudDBAdapter(opts['db']) : /mongodb/.test(opts['db']) ? new mongoDB(opts['db']) : new JSONFile(`./dtbs/database.json`));
+    global.db = new Low(/https?:\/\//.test(opts['db'] || '') ? new cloudDBAdapter(opts['db']) : /mongodb/.test(opts['db']) ? new mongoDB(opts['db']) : new JSONFile(`./database/database.json`));
     global.DATABASE = global.db;
     global.loadDatabase = async function loadDatabase() {
         if (global.db.READ) return new Promise((resolve) => setInterval(function() {
