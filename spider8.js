@@ -189,14 +189,6 @@ const spider = fs.readFileSync(path.resolve(__dirname, './media/spider.jpg'))
 //=================================================//
 const from = m.chat;
 const fromMe = m.chat;
-const {
-addPremiumUser,
-getPremiumExpired,
-getPremiumPosition,
-expiredCheck,
-checkPremiumUser,
-getAllPremiumUser,
-} = require('./database/premiun')
 //
 //=================================================//
 
