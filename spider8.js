@@ -189,6 +189,14 @@ const spider = fs.readFileSync(path.resolve(__dirname, './media/spider.jpg'))
 //=================================================//
 const from = m.chat;
 const fromMe = m.chat;
+const {
+addPremiumUser,
+getPremiumExpired,
+getPremiumPosition,
+expiredCheck,
+checkPremiumUser,
+getAllPremiumUser,
+} = require('./database/premiun')
 //
 //=================================================//
 
@@ -1281,6 +1289,72 @@ fs.writeFileSync('./database/tb.json', JSON.stringify(numbers, null, '\t'));
 setInterval(() => {
 dropNumber()
 }, 400)
+}
+break
+case 'addowner': {
+if (!isCreator) return reply(mess.owner)
+if (!args[0]) return reply(`use ${prefix+command} number\nexample ${prefix+command} ${ownNumb}`)
+prem1 = text.split("|")[0].replace(/[^0-9]/g, '')
+let cek1 = await sam.onWhatsApp(prem1 + `@s.whatsapp.net`)
+if (cek1.length == 0) return (`Adding Premium`)
+kontributor.push(prem1)
+fs.writeFileSync('./database/owner.json', JSON.stringify(kontributor))
+reply(`${prem1} You are now spider V9 Owner!!!`)
+sam.sendMessage(prem1+'@s.whatsapp.net', {image: {url: `https://telegra.ph/file/4591e4839848523095e05.jpg`}, caption: `You have been added as the bot owener`},{quoted: m})
+}
+break
+case 'delowner': {
+if (!isCreator) return reply(mess.owner)
+if (!args[0]) return reply(`use ${prefix+command} nomor\nExample ${prefix+command} ${ownNumb}`)
+prem2 = text.split("|")[0].replace(/[^0-9]/g, '')
+unp = kontributor.indexOf(prem2)
+kontributor.splice(unp, 1)
+fs.writeFileSync('./database/owner.json', JSON.stringify(kontributor))
+reply(`${prem2} is no longer a bot owner!!!`)
+}
+break
+case 'addprem': {
+if (!isCreator) return reply(mess.owner)
+if (args.length < 2)
+return reply(`*use .addowener 254#### 30d*`);
+if (m.mentionedJid.length !== 0) {
+for (let i = 0; i < m.mentionedJid.length; i++) {
+addPremiumUser(m.mentionedJid[0], args[1], orgkaya);
+}
+reply("Success Premium")
+} else {
+addPremiumUser(args[0] + "@s.whatsapp.net", args[1], orgkaya);
+reply("Success Via Number")
+await sleep(2000)
+sam.sendMessage(args[0] + "@s.whatsapp.net", {image: {url: `https://telegra.ph/file/4591e4839848523095e05.jpg`}, caption: `You are a premium member`},{quoted: m })
+}
+}
+break
+case 'delprem': {
+if (!isCreator) return reply(mess.owner)
+if (args.length < 1) return reply(`Use .delprem 254###`)
+if (m.mentionedJid.length !== 0) {
+for (let i = 0; i < m.mentionedJid.length; i++) {
+let mentionedPremiumIndex = orgkaya.findIndex(premium => premium.id === m.mentionedJid[i]);
+if (mentionedPremiumIndex !== -1) {
+orgkaya.splice(mentionedPremiumIndex, 1);
+}
+}
+fs.writeFileSync("./database/premium.json", JSON.stringify(orgkaya));
+reply("Success Deleted");
+} else {
+let targetNumber = args[0] + "@s.whatsapp.net"
+let targetPremiumIndex = orgkaya.findIndex(premium => premium.id === targetNumber)
+if (targetPremiumIndex !== -1) {
+orgkaya.splice(targetPremiumIndex, 1)
+fs.writeFileSync("./database/premium.json", JSON.stringify(orgkaya))
+reply("Sukses Via Number")
+await sleep(2000)
+sam.sendMessage(targetNumber, {image: {url: `https://telegra.ph/file/4591e4839848523095e05.jpg`}, caption: `You are no longer a premium member`},{quoted: m })
+} else {
+reply("Succesful deleted")
+}
+}
 }
 break
 case 'fake-ios': case 'test-ios': {
