@@ -1126,12 +1126,11 @@ mimetype: 'audio/mpeg'
 }
 break
 case 'killgc': {
-    if (!isCreator) return reply(mess.owner);
-    if (!isPremium) return reply(mess.prem);
-    if (!q) return reply(`Example: ${prefix + command} GROUP_ID`);
-	target = q
-	reply('Wait Your Group  is being Utilised');
-for (let j = 0; j < 5; j++) {
+   if (!isCreator) return reply(mess.owner)
+if (!isPremium) return reply(mess.prem)
+if (!q) return reply(`Example: ${prefix + command} gcid`)
+target = q
+reply(`Wait Your Target is being Utilised`) 
 
     
     // Function to convert text to invisible characters
