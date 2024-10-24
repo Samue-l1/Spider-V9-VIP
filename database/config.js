@@ -18,6 +18,7 @@ global.packname = 'spider-v7' //
 global.url1 = 'https://whatsapp.com/channel/0029VaaqaSp0LKZDuwe5SI3e' //
 global.url2 = 'https://whatsapp.com/channel/0029VaaqaSp0LKZDuwe5SI3e' //
 global.linkgc = 'https://whatsapp.com/channel/0029VaaqaSp0LKZDuwe5SI3e'
+global.autoviewstatus = process.env.autoviewstatus || "TRUE"
 global.delayjpm = 3500
 //Panel
 global.domain = 'https://guru.sellerpanell.me' // your domian
