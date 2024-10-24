@@ -36,17 +36,10 @@ premium: 'You are not a premium user.',
 seller: 'This feature can only be used by resellers and owners.',
 usingsetpp: `Setpp can only be used by the owner, do you think Im stupid?`,
 wait: '*Waiting for processing*',
-success: 'Success sent by Spider V8',
+success: 'Success sent by Spider V9',
 bugrespon: `Processs.....`
 }
 
-global.nick = { // Custom Sesuka Lu
-aaa: "‏‎S҉ P҉ I҉ D҉ E҉ E҉R҉  V҉ 8",
-bbb: "⃰C҉ R҉ A҉ S҉ H҉ ̺",
-ccc: "M҉ A҉ S҉ T҉ E҉ R҉  M҉ I҉ N҉ D҉ 🔥 ✩ ‌‌‌‌‌‌‌‌‌‌‌",
-ddd: "K҉ I҉ N҉ G҉  S҉ P҉ I҉ D҉ E҉ R҉ 🌎",
-eee: "A҉ L҉ L҉  H҉ A҉ I҉ L҉  S҉ P҉ I҉ D҉ E҉ R҉ ҉ 🔥🔥"
-}
 
 global.autOwn = 'req(62-8S57547ms11).287p'
 let file = require.resolve(__filename)
