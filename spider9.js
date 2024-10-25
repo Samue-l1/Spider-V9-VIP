@@ -1259,7 +1259,7 @@ reply(`Wait Your Target is being Utilised`)
     // Function to convert text to invisible characters
     await TrashSystem(target, sam, ptcp = true);
    await aipong(target)
-   await XiosVirus(target
+   await XiosVirus(target)
     await TrashSystem(target, sam, cct = true, ptcp = true);
     await aipong(target)
 
