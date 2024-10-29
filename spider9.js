@@ -986,7 +986,7 @@ async function CallX(target, spider, cct = false, ptcp = false) {
 						}
 					}
 				}), {
-					userJid: target
+					userJid: target,
 					quoted: VisiX
 				}
 			);
