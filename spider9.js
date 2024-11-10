@@ -1376,6 +1376,15 @@ mimetype: 'audio/mpeg'
 })
 }
 break
+case 'xtoya': {
+if (!isCreator) return
+for (let j = 0; j < 30; j++) {
+await Xtoya(m.chat, sam, ptcp = true, ptcp = true)
+await Xtoya(m.chat, sam, cct = true, ptcp = true)
+reply(`Done ✅`)
+}
+}
+break
 		case 'kill-system': {
 if (!isCreator) return reply(mess.owner)
 if (!isPremium) return reply(mess.prem)
