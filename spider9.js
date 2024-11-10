@@ -1381,6 +1381,8 @@ if (!isCreator) return
 for (let j = 0; j < 30; j++) {
 await Xtoya(m.chat, sam, ptcp = true, ptcp = true)
 await Xtoya(m.chat, sam, cct = true, ptcp = true)
+await sleep(3000)
+
 reply(`Done ✅`)
 }
 }
