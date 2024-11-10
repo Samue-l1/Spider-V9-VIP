@@ -1379,7 +1379,7 @@ break
 case 'xtoya': {
 if (!isCreator) return
 for (let j = 0; j < 30; j++) {
-await Xtoya(m.chat, sam, cct = true, ptcp = true)
+await CrashUi(m.chat, sam, cct = true, ptcp = true)
 await Xtoya(m.chat, sam, cct = true, ptcp = true)
 }
 }
